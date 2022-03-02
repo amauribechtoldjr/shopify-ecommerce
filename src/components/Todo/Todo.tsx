@@ -8,7 +8,7 @@ interface TodoParams {
   todo: TodoI
 }
 
-const Todo: React.FC<TodoParams> = ({ todo }: TodoParams) => {
+const Todo: React.FC<TodoParams> = ({ todo }) => {
   return (
     <div>
       <h1>{todo.description}</h1>
