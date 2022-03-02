@@ -1,19 +1,24 @@
-import Todo, { TodoInterface } from '../Todo/Todo'
+import Todo, { TodoI } from '../Todo/Todo'
 
 import { observer } from 'mobx-react'
 import todoStore from '../../stores/todo'
+import { TodoListContainer } from './styles'
 
-const TodoList: React.FC = () => {
+export interface TodoList {
+  isGreen?: boolean
+}
+
+const TodoList: React.FC<TodoList> = ({ isGreen = false }) => {
   return (
-    <div>
-      {todoStore.todos.map((todo: TodoInterface) => {
+    <TodoListContainer isGreen={isGreen}>
+      {todoStore.todos.map((todo: TodoI) => {
         return (
           <div key={todo.id}>
-            <Todo id="211321" name={todo.name} description={todo.description} />
+            <Todo todo={todo} />
           </div>
         )
       })}
-    </div>
+    </TodoListContainer>
   )
 }
 

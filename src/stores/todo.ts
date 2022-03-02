@@ -1,9 +1,9 @@
 import { makeAutoObservable } from 'mobx'
-import { TodoInterface } from '../components/Todo/Todo'
+import { TodoI } from '../components/Todo/Todo'
 
 class TodoStore {
-  todos: TodoInterface[] = []
-  newTodo: TodoInterface
+  todos: TodoI[] = []
+  newTodo: TodoI
 
   constructor() {
     makeAutoObservable(this)

@@ -28,6 +28,7 @@ const Home: React.FC = () => {
         <h1>Hello world</h1>
         <button onClick={handleNewTodo}>ADICIONAR NOVO TODO</button>
         <TodoList />
+        <TodoList isGreen />
       </main>
     </Container>
   )

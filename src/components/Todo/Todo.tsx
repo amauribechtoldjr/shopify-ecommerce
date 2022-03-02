@@ -1,14 +1,18 @@
-export interface TodoInterface {
-  id: string
+export interface TodoI {
+  id?: string
   description: string
   name: string
 }
 
-const Todo: React.FC<TodoInterface> = (todo: TodoInterface) => {
+interface TodoParams {
+  todo: TodoI
+}
+
+const Todo: React.FC<TodoParams> = ({ todo }: TodoParams) => {
   return (
     <div>
       <h1>{todo.description}</h1>
-      <span>{todo.description}</span>
+      <span>{todo.name}</span>
     </div>
   )
 }
