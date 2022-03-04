@@ -5,17 +5,24 @@ import TodoList from '../components/TodoList/TodoList'
 import { Container } from '../styles/pages/Home'
 
 import { observer } from 'mobx-react'
-import todoStore from '../stores/todo'
+import type { InferGetStaticPropsType } from 'next'
+import getAllProducts from '../../framework/shopify/schemas/product/get-all-products'
+// import todoStore from '../stores/todo'
 
-const Home: React.FC = () => {
+export async function getStaticProps() {
+  const products = await getAllProducts()
+
+  return {
+    props: {
+      products
+    },
+    revalidate: 4 * 60 * 60
+  }
+}
+
+const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const handleNewTodo = () => {
-    todoStore.newTodo = {
-      description: 'DESCRIÇÃO',
-      id: 'teste',
-      name: 'teste'
-    }
-
-    todoStore.addTodo()
+    console.log('adicionou novo todo')
   }
 
   return (
@@ -24,11 +31,12 @@ const Home: React.FC = () => {
         <title>Homepage</title>
       </Head>
       <main>
-        <TesteSVG />
+        {/* <TesteSVG />
         <h1>Hello world</h1>
         <button onClick={handleNewTodo}>ADICIONAR NOVO TODO</button>
         <TodoList />
-        <TodoList isGreen />
+        <TodoList isGreen /> */}
+        {JSON.stringify(products)}
       </main>
     </Container>
   )
