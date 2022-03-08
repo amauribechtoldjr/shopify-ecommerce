@@ -1,4 +1,4 @@
-import { ImageEdge, Product as ShopifyProduct } from '@shopify/schemas/shopify'
+import { ImageEdge, Product as ShopifyProduct } from '@shopify/types'
 import { Product } from '@common/types/product'
 
 export function normalizeProductImages({ edges }: { edges: Array<ImageEdge> }) {

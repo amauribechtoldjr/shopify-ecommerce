@@ -1,13 +1,10 @@
 import Head from 'next/head'
 
-// import TesteSVG from '../assets/teste.svg'
-// import TodoList from '../components/TodoList/TodoList'
 import { Container } from '@styles/pages/Home'
 
 import { observer } from 'mobx-react'
 import type { InferGetStaticPropsType } from 'next'
-import getAllProducts from '@shopify/schemas/product/get-all-products'
-// import todoStore from '../stores/todo'
+import getAllProducts from '@shopify/data/product/get-all-products'
 
 export async function getStaticProps() {
   const products = await getAllProducts()
@@ -30,14 +27,7 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Head>
         <title>Homepage</title>
       </Head>
-      <main>
-        {/* <TesteSVG />
-        <h1>Hello world</h1>
-        <button onClick={handleNewTodo}>ADICIONAR NOVO TODO</button>
-        <TodoList />
-        <TodoList isGreen /> */}
-        {JSON.stringify(products)}
-      </main>
+      <main>{JSON.stringify(products)}</main>
     </Container>
   )
 }

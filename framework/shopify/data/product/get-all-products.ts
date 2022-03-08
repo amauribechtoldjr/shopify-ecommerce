@@ -1,7 +1,5 @@
-import getAllProductsQuery from '@shopify/queries/get-all-products'
-import fetchApi from '@shopify/fetch-api'
-import { ProductConnection } from '@shopify/schemas/shopify'
-import { normalizeProduct } from '@shopify/normalize'
+import { fetchApi, normalizeProduct, getAllProductsQuery } from '@shopify'
+import { ProductConnection } from '@shopify/types'
 
 import { Product } from '@common/types/product'
 
