@@ -20,24 +20,38 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@styles": ["src/styles"],
-      "@styles/*": ["src/styles/*"],
-
-      "@common": ["framework/common"],
-      "@common/*": ["framework/common/*"],
-
-      "@shopify": ["framework/shopify"],
-      "@shopify/*": ["framework/shopify/*"],
-
-      "@components": ["src/components"],
-      "@components/*": ["src/components/*"]
+      "@styles": [
+        "src/styles"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@common": [
+        "framework/common"
+      ],
+      "@common/*": [
+        "framework/common/*"
+      ],
+      "@framework": [
+        "framework/bigcommerce"
+      ],
+      "@framework/*": [
+        "framework/bigcommerce/*"
+      ],
+      "@components": [
+        "src/components"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ]
     }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "framework/common/config.js"  ],
+    "**/*.tsx",
+    "framework/common/config.js"
+  ],
   "exclude": [
     "node_modules"
   ]

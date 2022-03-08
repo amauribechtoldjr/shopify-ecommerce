@@ -1,5 +1,5 @@
-import { fetchApi, normalizeProduct, getAllProductsQuery } from '@shopify'
-import { ProductConnection } from '@shopify/types'
+import { fetchApi, normalizeProduct, getAllProductsQuery } from '@framework'
+import { ProductConnection } from '@framework/types'
 
 import { Product } from '@common/types/product'
 

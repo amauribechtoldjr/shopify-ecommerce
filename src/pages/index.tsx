@@ -4,7 +4,7 @@ import { Container } from '@styles/pages/Home'
 
 import { observer } from 'mobx-react'
 import type { InferGetStaticPropsType } from 'next'
-import getAllProducts from '@shopify/data/product/get-all-products'
+import getAllProducts from '@framework/data/product/get-all-products'
 
 export async function getStaticProps() {
   const products = await getAllProducts()
