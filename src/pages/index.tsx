@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
-import TesteSVG from '../assets/teste.svg'
-import TodoList from '../components/TodoList/TodoList'
+// import TesteSVG from '../assets/teste.svg'
+// import TodoList from '../components/TodoList/TodoList'
 import { Container } from '../styles/pages/Home'
 
 import { observer } from 'mobx-react'
