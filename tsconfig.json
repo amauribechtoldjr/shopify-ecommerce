@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "es5",
     "lib": [
       "dom",
@@ -17,7 +18,20 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+      "@styles": ["src/styles"],
+      "@styles/*": ["src/styles/*"],
+
+      "@common": ["framework/common"],
+      "@common/*": ["framework/common/*"],
+
+      "@shopify": ["framework/shopify"],
+      "@shopify/*": ["framework/shopify/*"],
+
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"]
+    }
   },
   "include": [
     "next-env.d.ts",

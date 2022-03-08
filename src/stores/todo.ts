@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx'
-import { TodoI } from '../components/Todo/Todo'
+import { TodoI } from '@components/Todo/Todo'
 
 class TodoStore {
   todos: TodoI[] = []

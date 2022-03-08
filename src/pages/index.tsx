@@ -2,11 +2,11 @@ import Head from 'next/head'
 
 // import TesteSVG from '../assets/teste.svg'
 // import TodoList from '../components/TodoList/TodoList'
-import { Container } from '../styles/pages/Home'
+import { Container } from '@styles/pages/Home'
 
 import { observer } from 'mobx-react'
 import type { InferGetStaticPropsType } from 'next'
-import getAllProducts from '../../framework/shopify/schemas/product/get-all-products'
+import getAllProducts from '@shopify/schemas/product/get-all-products'
 // import todoStore from '../stores/todo'
 
 export async function getStaticProps() {
