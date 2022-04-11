@@ -1,13 +1,15 @@
 import Head from 'next/head'
 
 import { Container } from '@styles/pages/Home'
+import { getConfig } from '@framework/api/config'
 
 import { observer } from 'mobx-react'
 import type { InferGetStaticPropsType } from 'next'
 import getAllProducts from '@framework/data/product/get-all-products'
 
 export async function getStaticProps() {
-  const products = await getAllProducts()
+  const config = getConfig()
+  const products = await getAllProducts(config)
 
   return {
     props: {
