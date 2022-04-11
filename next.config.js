@@ -7,6 +7,9 @@ const withImages = require('next-images')
 module.exports =
   withFrameworkConfig(
     withImages({
+      framework: {
+        name: "shopify_local"
+      },
       esModule: true
     }
   )
