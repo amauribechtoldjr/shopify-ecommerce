@@ -2,11 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -20,30 +16,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@styles": [
-        "src/styles"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@common": [
-        "framework/common"
-      ],
-      "@common/*": [
-        "framework/common/*"
-      ],
-      "@framework": [
-        "framework/bigcommerce"
-      ],
-      "@framework/*": [
-        "framework/bigcommerce/*"
-      ],
-      "@components": [
-        "src/components"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ]
+      "@styles": ["src/styles"],
+      "@styles/*": ["src/styles/*"],
+      "@common": ["framework/common"],
+      "@common/*": ["framework/common/*"],
+      "@framework": ["framework/shopify"],
+      "@framework/*": ["framework/shopify/*"],
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"]
     }
   },
   "include": [
@@ -52,7 +32,5 @@
     "**/*.tsx",
     "framework/common/config.js"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
