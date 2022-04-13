@@ -20,10 +20,6 @@ export async function getStaticProps() {
 }
 
 const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const handleNewTodo = () => {
-    console.log('adicionou novo todo')
-  }
-
   return (
     <Container>
       <Head>
