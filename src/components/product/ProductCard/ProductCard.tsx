@@ -15,7 +15,7 @@ const ProductCard: FC<Props> = ({ product }) => {
     if (product.images) {
       return (
         <Image
-          src={PLACEHOLDER_IMAGE}
+          src={product.images[0].url ?? PLACEHOLDER_IMAGE}
           alt={product.name}
           width={540}
           height={540}
