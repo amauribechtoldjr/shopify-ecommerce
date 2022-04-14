@@ -1,5 +1,6 @@
 import Head from 'next/head'
 
+import { ProductCard } from '@components/product'
 import { Container } from '@styles/pages/Home'
 import { getConfig } from '@framework/api/config'
 
@@ -25,7 +26,11 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Head>
         <title>Homepage</title>
       </Head>
-      <main>{JSON.stringify(products)}</main>
+      <main>
+        {products.slice(0, 3).map(product => (
+          <ProductCard product={product} key={product.id} />
+        ))}
+      </main>
     </Container>
   )
 }
