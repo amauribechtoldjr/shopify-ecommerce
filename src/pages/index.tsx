@@ -7,6 +7,7 @@ import { getConfig } from '@framework/api/config'
 import { observer } from 'mobx-react'
 import type { InferGetStaticPropsType } from 'next'
 import getAllProducts from '@framework/data/product/get-all-products'
+import { Grid } from '@components/UI'
 
 export async function getStaticProps() {
   const config = getConfig()
@@ -23,13 +24,12 @@ export async function getStaticProps() {
 const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Container>
-      <Head>
-        <title>Homepage</title>
-      </Head>
       <main>
-        {products.slice(0, 3).map(product => (
-          <ProductCard product={product} key={product.id} />
-        ))}
+        <Grid>
+          {products.slice(0, 4).map(product => (
+            <ProductCard product={product} key={product.id} />
+          ))}
+        </Grid>
       </main>
     </Container>
   )
