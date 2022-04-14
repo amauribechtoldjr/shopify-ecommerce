@@ -12,4 +12,9 @@ export default createGlobalStyle`
     color: ${props => props.theme.colors.text};
     font-family: 'Rubik', sans-serif;
   }
+
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.colors.text};
+  }
 `

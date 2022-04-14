@@ -1,4 +1,5 @@
 import { Product } from '@common/types/product'
+import Link from 'next/link'
 
 interface Props {
   product: Product
@@ -7,7 +8,7 @@ interface Props {
 const ProductCard: React.FC<Props> = ({ product }) => {
   return (
     <div>
-      {product.name} - <span>{product.id}</span>
+      <Link href={`/product/${product.slug}`}>{product.name}</Link>
     </div>
   )
 }
