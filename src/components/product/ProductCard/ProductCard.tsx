@@ -31,7 +31,7 @@ const ProductCard: FC<Props> = ({ product }) => {
       <Link href={`/product/${product.slug}`}>
         <S.ProductCardContainer>
           <h1>{product.name}</h1>
-          <span> R$45.50 </span>
+          <span>R$ {product.price.value}</span>
           {renderProductImages()}
         </S.ProductCardContainer>
       </Link>
