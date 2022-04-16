@@ -1,10 +1,11 @@
 import { FC } from 'react'
-import { Footer } from '@components/UI'
+import { Footer, Navbar } from '@components/UI'
 import * as S from './styles'
 
 const Layout: FC = ({ children }) => {
   return (
     <S.LayoutContainer>
+      <Navbar />
       <S.Main>{children}</S.Main>
       <Footer />
     </S.LayoutContainer>
