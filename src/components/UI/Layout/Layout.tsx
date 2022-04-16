@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { Footer, Navbar } from '@components/UI'
 import * as S from './styles'
 
