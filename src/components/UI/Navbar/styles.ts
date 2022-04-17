@@ -5,6 +5,7 @@ export const NavbarContainer = styled.div`
 `
 export const NavbarContent = styled.div`
   padding: 2em 0.8em;
+  display: flex;
 `
 
 export const NavContainer = styled.nav`
@@ -12,6 +13,7 @@ export const NavContainer = styled.nav`
 `
 
 export const LinksContainer = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24,4 +26,10 @@ export const NavLink = styled.a`
   }
 
   margin-left: 0.6em;
+`
+
+export const UsernavContainer = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: end;
 `

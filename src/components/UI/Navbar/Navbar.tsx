@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { FC } from 'react'
+import { Usernav } from '@components/UI'
 
 import * as S from './styles'
 
@@ -28,6 +29,9 @@ const Navbar: FC = () => {
             </Link>
           </S.NavContainer>
         </S.LinksContainer>
+        <S.UsernavContainer>
+          <Usernav />
+        </S.UsernavContainer>
       </S.NavbarContent>
     </S.NavbarContainer>
   )
