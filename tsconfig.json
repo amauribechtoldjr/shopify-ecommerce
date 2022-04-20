@@ -23,7 +23,11 @@
       "@framework": ["framework/shopify"],
       "@framework/*": ["framework/shopify/*"],
       "@components": ["src/components"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@hooks": ["src/hooks"],
+      "@hooks/*": ["src/hooks/*"],
+      "@contexts": ["src/contexts"],
+      "@contexts/*": ["src/contexts/*"]
     }
   },
   "include": [
