@@ -16,7 +16,7 @@ const Usernav: FC = () => {
       </S.UsernavUL>
       <S.UsernavUL>
         <li>
-          <Link href="/">
+          <Link href="/cart">
             <Cart />
           </Link>
         </li>
