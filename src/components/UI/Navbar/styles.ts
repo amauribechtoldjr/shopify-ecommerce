@@ -20,12 +20,15 @@ export const LinksContainer = styled.div`
 `
 
 export const NavLink = styled.a`
+  margin-left: 0.6em;
+
+  transition-duration: 200ms;
+  transition-property: width;
+
   & :hover {
     font-weight: 600;
     cursor: pointer;
   }
-
-  margin-left: 0.6em;
 `
 
 export const UsernavContainer = styled.div`
