@@ -1,5 +1,3 @@
-import Head from 'next/head'
-
 import { ProductCard } from '@components/product'
 import { Container } from '@styles/pages/Home'
 import { getConfig } from '@framework/api/config'

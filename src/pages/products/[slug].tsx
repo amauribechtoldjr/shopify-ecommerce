@@ -1,3 +1,5 @@
+import { getConfig } from '@framework/api/config'
+import getAllProductsPaths from '@framework/data/product/get-all-products-paths'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { PageProps } from 'src/types/pages'
 
@@ -6,12 +8,12 @@ type Props = {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const config = getConfig()
+
+  const { products } = await getAllProductsPaths(config)
+
   return {
-    paths: [
-      { params: { slug: 'cool-hat' } },
-      { params: { slug: 'lightweight-jacket' } },
-      { params: { slug: 't-shirt' } }
-    ],
+    paths: products.map(product => ({ params: { slug: product.slug } })),
     fallback: false
   }
 }
