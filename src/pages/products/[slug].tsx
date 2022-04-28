@@ -1,10 +1,11 @@
 import { getConfig } from '@framework/api/config'
-import { getAllProductsPaths } from '@framework/fetchers'
+import { getAllProductsPaths, getProduct } from '@framework/fetchers'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { PageProps } from 'src/types/pages'
 
 type Props = {
   slug: string
+  name: string
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -21,17 +22,22 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps = async ({
   params
 }: GetStaticPropsContext<Props>) => {
+  const config = getConfig()
+  const { product } = await getProduct(config)
+
   return {
     props: {
-      product: {
-        slug: params.slug
-      }
+      product
     }
   }
 }
 
 const ProductDetailPage: PageProps<typeof getStaticProps> = ({ product }) => {
-  return <div>{product.slug}</div>
+  return (
+    <div>
+      {product.slug}-{product.name}
+    </div>
+  )
 }
 
 export default ProductDetailPage
