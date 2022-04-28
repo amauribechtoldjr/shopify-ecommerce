@@ -28,7 +28,7 @@ const ProductCard: FC<Props> = ({ product }) => {
 
   return (
     <>
-      <Link href={`/product/${product.slug}`}>
+      <Link href={`/products/${product.slug}`}>
         <S.ProductCardContainer>
           <h1>{product.name}</h1>
           <span>R$ {product.price.value}</span>
