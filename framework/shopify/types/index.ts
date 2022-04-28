@@ -4097,15 +4097,6 @@ export enum ProductCollectionSortKeys {
   Relevance = 'RELEVANCE'
 }
 
-/** An auto-generated type for paginating through multiple Products. */
-export type ProductConnection = {
-  __typename?: 'ProductConnection'
-  /** A list of edges. */
-  edges: Array<ProductEdge>
-  /** Information to aid in pagination. */
-  pageInfo: PageInfo
-}
-
 /** An auto-generated type which holds one Product and a cursor during pagination. */
 export type ProductEdge = {
   __typename?: 'ProductEdge'
@@ -4113,6 +4104,15 @@ export type ProductEdge = {
   cursor: Scalars['String']
   /** The item at the end of ProductEdge. */
   node: Product
+}
+
+/** An auto-generated type for paginating through multiple Products. */
+export type ProductConnection = {
+  __typename?: 'ProductConnection'
+  /** A list of edges. */
+  edges: Array<ProductEdge>
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo
 }
 
 /** The set of valid sort keys for the ProductImage query. */
