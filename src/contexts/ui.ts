@@ -9,20 +9,20 @@ export interface StateValues {
   isSidebarOpen: boolean
 }
 
-const DEFAULT_STATE_MODIFIES = {
+export const UI_DEFAULT_STATE_MODIFIES = {
   openSidebar: () => null,
   closeSidebar: () => null
 }
 
-const INITIAL_STATE = {
+export const UI_INITIAL_STATE = {
   isSidebarOpen: false
 }
 
 type State = StateValues & StateModifiers
 
 const UIContext = createContext<State>({
-  ...DEFAULT_STATE_MODIFIES,
-  ...INITIAL_STATE
+  ...UI_DEFAULT_STATE_MODIFIES,
+  ...UI_INITIAL_STATE
 })
 
 export default UIContext

@@ -6,8 +6,6 @@ import { useUI } from '@hooks'
 const Layout: FC = ({ children }) => {
   const { openSidebar } = useUI()
 
-  console.log(openSidebar)
-
   return (
     <S.LayoutContainer>
       <Navbar />
