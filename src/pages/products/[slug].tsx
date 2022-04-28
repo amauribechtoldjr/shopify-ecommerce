@@ -1,5 +1,5 @@
 import { getConfig } from '@framework/api/config'
-import getAllProductsPaths from '@framework/data/product/get-all-products-paths'
+import getAllProductsPaths from '@framework/fetchers/products/get-all-products-paths'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { PageProps } from 'src/types/pages'
 
