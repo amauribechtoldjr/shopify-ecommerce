@@ -1,19 +1,32 @@
-import { ApiConfig } from '@common/types/api'
+import { ApiConfig, FetcherVariables } from '@common/types/api'
+import { normalizeProduct } from '@framework/normalize'
 import { getProductQuery } from '@framework/queries'
+import { Product as ShopifyProduct } from '@framework/types'
+import { Product } from '@common/types/product'
 
-const getProduct = async (config: ApiConfig): Promise<any> => {
-  const { data } = await config.fetch({
+type FetchType = {
+  productByHandle: ShopifyProduct
+}
+
+type ReturnType = {
+  product: Product | null
+}
+
+const getProduct = async (options: {
+  config: ApiConfig
+  variables?: FetcherVariables
+}): Promise<ReturnType> => {
+  const { config, variables } = options
+  const { data } = await config.fetch<FetchType>({
     query: getProductQuery,
-    url: config.apiUrl
+    url: config.apiUrl,
+    variables
   })
 
-  console.log(JSON.stringify(data))
+  const { productByHandle } = data
 
   return {
-    product: {
-      name: 'teste',
-      slug: 'my-super-product'
-    }
+    product: productByHandle ? normalizeProduct(productByHandle) : null
   }
 }
 
