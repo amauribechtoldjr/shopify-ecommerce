@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "keen-slider": "^6.6.14",
     "mobx": "^6.4.2",
     "mobx-react": "^7.3.0",
     "next": "12.1.0",
