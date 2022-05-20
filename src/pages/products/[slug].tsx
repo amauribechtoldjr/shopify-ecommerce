@@ -3,6 +3,7 @@ import { getAllProductsPaths, getProduct } from '@framework/fetchers'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { PageProps } from 'src/types/pages'
 import * as S from '@styles/pages/products/slug'
+import { ProductImagesCarousel, ProductPageDetails } from '@components/product'
 
 type Props = {
   slug: string
@@ -39,25 +40,12 @@ export const getStaticProps = async ({
 const ProductDetailPage: PageProps<typeof getStaticProps> = ({ product }) => {
   return (
     <S.Container>
-      <h2>{product.id}</h2>
-      <h2>{product.name}</h2>
-      <span>{product.price.currencyCode}</span>
-      <span>{product.price.value}</span>
-
-      <div>
-        {product.options.map(option => {
-          return (
-            <div key={option.id}>
-              <span>Name: {option.displayName}</span>
-              <div>
-                {option.values.map(value => (
-                  <span key={value.label}>{value.label}</span>
-                ))}
-              </div>
-            </div>
-          )
-        })}
-      </div>
+      <S.ImagesContainer>
+        <ProductImagesCarousel images={product.images} />
+      </S.ImagesContainer>
+      <S.DetailsContainer>
+        <ProductPageDetails product={product} />
+      </S.DetailsContainer>
     </S.Container>
   )
 }
