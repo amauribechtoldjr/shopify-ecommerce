@@ -2,8 +2,9 @@ import { getConfig } from '@framework/api/config'
 import { getAllProductsPaths, getProduct } from '@framework/fetchers'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { PageProps } from 'src/types/pages'
-import * as S from '@styles/pages/products/slug'
 import { ProductImagesCarousel, ProductPageDetails } from '@components/product'
+
+import * as S from '@styles/pages/products/slug'
 
 type Props = {
   slug: string
@@ -41,7 +42,19 @@ const ProductDetailPage: PageProps<typeof getStaticProps> = ({ product }) => {
   return (
     <S.Container>
       <S.ImagesContainer>
-        <ProductImagesCarousel images={product.images} />
+        <ProductImagesCarousel>
+          {product.images.map(image => (
+            <S.ImageContainer key={image.url}>
+              <S.StyledImage
+                src={image.url}
+                alt={image.alt}
+                width={1050}
+                height={1050}
+                quality="85"
+              />
+            </S.ImageContainer>
+          ))}
+        </ProductImagesCarousel>
       </S.ImagesContainer>
       <S.DetailsContainer>
         <ProductPageDetails product={product} />
