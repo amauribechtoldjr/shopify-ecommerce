@@ -2,7 +2,7 @@ import { getConfig } from '@framework/api/config'
 import { getAllProductsPaths, getProduct } from '@framework/fetchers'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { PageProps } from 'src/types/pages'
-import { ProductImagesCarousel, ProductPageDetails } from '@components/product'
+import { ProductImagesCarousel, PageDetails } from '@components/product'
 
 import * as S from '@styles/pages/products/slug'
 
@@ -57,7 +57,7 @@ const ProductDetailPage: PageProps<typeof getStaticProps> = ({ product }) => {
         </ProductImagesCarousel>
       </S.ImagesContainer>
       <S.DetailsContainer>
-        <ProductPageDetails product={product} />
+        <PageDetails product={product} />
       </S.DetailsContainer>
     </S.Container>
   )
