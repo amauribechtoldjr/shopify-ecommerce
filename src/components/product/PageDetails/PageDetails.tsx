@@ -22,7 +22,13 @@ const PageDetails: React.FC<Props> = ({ product }) => {
         <S.Description>{product.description}</S.Description>
         <div>
           {product.options.map(option => {
-            return <ProductOptions key={option.id} option={option} />
+            return (
+              <ProductOptions
+                key={option.id}
+                option={option}
+                product={product}
+              />
+            )
           })}
         </div>
       </S.OptionsContainer>

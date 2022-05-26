@@ -1,15 +1,20 @@
 import { FC, useState } from 'react'
-import { ProductOption, ProductOptionValues } from '@common/types/product'
+import {
+  Product,
+  ProductOption,
+  ProductOptionValues
+} from '@common/types/product'
 import * as S from './styles'
 
 interface Props {
   option: ProductOption
+  product: Product
 }
 
-const ProductOptions: FC<Props> = ({ option }) => {
+const ProductOptions: FC<Props> = ({ option, product }) => {
   const [selectedOption, setSelectedOption] =
     useState<ProductOptionValues>(null)
-
+  console.log(product)
   const handleSelectOption = (option: ProductOptionValues) => {
     return () => {
       if (option !== selectedOption) setSelectedOption(option)

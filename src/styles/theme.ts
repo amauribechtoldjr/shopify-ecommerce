@@ -3,8 +3,8 @@ const theme = {
     background: '#ffffff',
     background2: '#bbbbbb',
     text: '#222222',
-    primary: '#D4F593',
-    secundary: '#DED490'
+    primary: '#FBF3FF',
+    secundary: '#F1D6FF'
   },
   screen_size: {
     xm: '320px', // Mobile devices
