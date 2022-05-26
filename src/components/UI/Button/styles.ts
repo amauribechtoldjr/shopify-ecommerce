@@ -7,4 +7,11 @@ export const Container = styled.button`
   cursor: pointer;
 
   user-select: none;
+  transition: 125ms;
+  transition-timing-function: ease-in-out;
+  border-radius: 0.4em;
+
+  &:hover {
+    background-color: ${({ theme }) => `${theme.colors.secundary}`};
+  }
 `

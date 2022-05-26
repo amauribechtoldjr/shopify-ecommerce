@@ -5,9 +5,9 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: string | ReactNode | ReactNode[]
 }
 
-const Button: FC<Props> = ({ children, onClick }) => {
+const Button: FC<Props> = ({ children, ...props }) => {
   return (
-    <S.Container onClick={onClick} type="button">
+    <S.Container {...props} type="button">
       {children}
     </S.Container>
   )
