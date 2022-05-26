@@ -1,4 +1,5 @@
 import { Product } from '@common/types/product'
+import { Button } from '@components/UI'
 import React from 'react'
 import * as S from './styles'
 
@@ -22,6 +23,9 @@ const ProductPageDetails: React.FC<Props> = ({ product }) => {
         <span>Tamanhos:</span>
         <span>Cores:</span>
       </S.OptionsContainer>
+      <Button onClick={() => alert('add to cart')}>
+        Adicionar ao carrinho
+      </Button>
     </S.Container>
   )
 }
