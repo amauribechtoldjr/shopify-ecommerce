@@ -1,14 +1,29 @@
-import { Product } from '@common/types/product'
+import React, { useEffect, useState } from 'react'
+import { Product, ProductOptionValues } from '@common/types/product'
 import { Button } from '@components/UI'
-import React from 'react'
 import { ProductOptions } from '@components/product'
 import * as S from './styles'
+import { getVariant, SelectedOptions } from '../helpers'
 
 type Props = {
   product: Product
 }
 
 const PageDetails: React.FC<Props> = ({ product }) => {
+  const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>(null)
+
+  const handleAddOption = (option: ProductOptionValues, category) => {
+    setSelectedOptions({
+      ...selectedOptions,
+      [category]: option
+    })
+  }
+
+  useEffect(() => {
+    const variant = getVariant(product, selectedOptions)
+    console.log(variant)
+  }, [selectedOptions])
+
   return (
     <S.Container>
       <S.TitlePriceContainer>
@@ -27,6 +42,7 @@ const PageDetails: React.FC<Props> = ({ product }) => {
                 key={option.id}
                 option={option}
                 product={product}
+                onSelectOption={handleAddOption}
               />
             )
           })}

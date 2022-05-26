@@ -9,15 +9,21 @@ import * as S from './styles'
 interface Props {
   option: ProductOption
   product: Product
+  onSelectOption?: (option: ProductOptionValues, category: string) => void
 }
 
-const ProductOptions: FC<Props> = ({ option, product }) => {
-  const [selectedOption, setSelectedOption] =
-    useState<ProductOptionValues>(null)
-  console.log(product)
-  const handleSelectOption = (option: ProductOptionValues) => {
+const ProductOptions: FC<Props> = ({ option, onSelectOption }) => {
+  const [selectedValue, setSelectedValue] = useState<ProductOptionValues>(null)
+
+  const handleSelectOption = (value: ProductOptionValues) => {
     return () => {
-      if (option !== selectedOption) setSelectedOption(option)
+      if (value !== selectedValue) {
+        setSelectedValue(value)
+
+        if (onSelectOption) {
+          onSelectOption(value, option.displayName.toLowerCase())
+        }
+      }
     }
   }
 
@@ -30,7 +36,7 @@ const ProductOptions: FC<Props> = ({ option, product }) => {
             <S.OptionLabel
               key={value.label}
               optionColor={value.hexColor}
-              selected={value.label === selectedOption?.label}
+              selected={value.label === selectedValue?.label}
               onClick={handleSelectOption(value)}
             >
               {!value.hexColor && value.label.toUpperCase()}

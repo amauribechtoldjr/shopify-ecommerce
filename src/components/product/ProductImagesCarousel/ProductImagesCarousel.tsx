@@ -10,7 +10,6 @@ const ProductImagesCarousel: FC = ({ children }) => {
       console.log(s.track.details)
     },
     created() {
-      console.log('chegou aqui!')
       setLoaded(true)
     }
   })
