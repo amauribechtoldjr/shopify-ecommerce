@@ -30,8 +30,10 @@ const ProductCard: FC<Props> = ({ product }) => {
     <>
       <Link href={`/products/${product.slug}`}>
         <S.ProductCardContainer>
-          <h1>{product.name}</h1>
-          <span>R$ {product.price.value}</span>
+          <S.TitleContainer>
+            <h1>{product.name}</h1>
+            <S.Price>R$ {product.price.value}</S.Price>
+          </S.TitleContainer>
           {renderProductImages()}
         </S.ProductCardContainer>
       </Link>

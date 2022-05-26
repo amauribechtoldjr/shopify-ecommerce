@@ -4,11 +4,13 @@ import { LayoutContainer, Main } from './styles'
 
 const Layout: FC = ({ children }) => {
   return (
-    <LayoutContainer>
-      <Navbar />
-      <Main>{children}</Main>
+    <>
+      <LayoutContainer>
+        <Navbar />
+        <Main>{children}</Main>
+      </LayoutContainer>
       <Footer />
-    </LayoutContainer>
+    </>
   )
 }
 

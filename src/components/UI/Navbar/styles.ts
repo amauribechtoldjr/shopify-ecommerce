@@ -4,7 +4,7 @@ export const NavbarContainer = styled.div`
   user-select: none;
 `
 export const NavbarContent = styled.div`
-  padding: 2em 0.8em;
+  padding: 2em 0;
   display: flex;
 `
 

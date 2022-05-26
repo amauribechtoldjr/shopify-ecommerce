@@ -7,3 +7,11 @@ export const ProductCardContainer = styled.div`
     cursor: pointer;
   }
 `
+
+export const Price = styled.div`
+  margin-top: 0.6em;
+`
+
+export const TitleContainer = styled.div`
+  padding: 1.4em;
+`
