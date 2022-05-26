@@ -6,4 +6,5 @@ export const LayoutContainer = styled.div`
 
 export const Main = styled.main`
   min-height: 90vh;
+  max-width: 100vw;
 `

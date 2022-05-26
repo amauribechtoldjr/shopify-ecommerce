@@ -1,14 +1,14 @@
 import { FC } from 'react'
 import { Footer, Navbar } from '@components/UI'
-import * as S from './styles'
+import { LayoutContainer, Main } from './styles'
 
 const Layout: FC = ({ children }) => {
   return (
-    <S.LayoutContainer>
+    <LayoutContainer>
       <Navbar />
-      <S.Main>{children}</S.Main>
+      <Main>{children}</Main>
       <Footer />
-    </S.LayoutContainer>
+    </LayoutContainer>
   )
 }
 

@@ -1,7 +1,9 @@
-export { default as Layout } from './Layout/Layout'
-export { default as Grid } from './Grid/Grid'
-export { default as Hero } from './Hero/Hero'
-export { default as Footer } from './Footer/Footer'
-export { default as Navbar } from './Navbar/Navbar'
-export { default as Usernav } from './Usernav/Usernav'
-export { default as UIProvider } from './UIProvider/UIProvider'
+import Layout from './Layout/Layout'
+import Grid from './Grid/Grid'
+import Footer from './Footer/Footer'
+import Hero from './Hero/Hero'
+import Navbar from './Navbar/Navbar'
+import Usernav from './Usernav/Usernav'
+import UIProvider from './UIProvider/UIProvider'
+
+export { Layout, Grid, Footer, Hero, Navbar, Usernav, UIProvider }

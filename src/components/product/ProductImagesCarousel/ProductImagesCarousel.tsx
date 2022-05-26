@@ -1,10 +1,25 @@
-import React, { FC, Children, isValidElement } from 'react'
+import { FC, Children, isValidElement, useState } from 'react'
+import { useKeenSlider } from 'keen-slider/react'
 import * as S from './styles'
 
 const ProductImagesCarousel: FC = ({ children }) => {
+  const [loaded, setLoaded] = useState(false)
+  const [sliderRef, instanceRef] = useKeenSlider({
+    initial: 0,
+    slideChanged(s) {
+      console.log(s.track.details)
+    },
+    created() {
+      console.log('chegou aqui!')
+      setLoaded(true)
+    }
+  })
+
+  console.log()
+
   return (
     <S.Container>
-      <div className="keen-slider">
+      <div ref={sliderRef} className="keen-slider">
         {Children.map(children, child => {
           if (isValidElement(child)) {
             return {

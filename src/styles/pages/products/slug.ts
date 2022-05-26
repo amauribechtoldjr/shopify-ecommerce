@@ -2,26 +2,41 @@ import styled from 'styled-components'
 import Image from 'next/image'
 
 export const Container = styled.div`
-  padding: 2em;
-  display: flex;
-  flex-direction: row;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  grid-gap: 8px;
+  overflow-x: hidden;
 `
-
 export const ImagesContainer = styled.div`
-  flex: 1;
+  position: relative;
   display: flex;
-  padding: 1em 2em;
+  padding: 0;
+  box-sizing: border-box;
+  grid-column: span 1;
+  min-height: 600px;
 `
 
 export const DetailsContainer = styled.div`
-  flex: 1;
   display: flex;
-  padding: 1em 2em;
+  flex-direction: column;
+  grid-column: span 1;
+  margin: auto 0;
+  width: 100%;
+  height: 100%;
 `
 
 export const ImageContainer = styled.div`
+  max-width: 700px;
+  max-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   & > div {
     height: 100%;
+
     & > div {
       height: 100%;
     }
@@ -30,7 +45,7 @@ export const ImageContainer = styled.div`
 
 export const StyledImage = styled(Image)`
   width: 100%;
-  height: auto;
+  height: 100%;
   max-height: 100%;
   object-fit: cover;
 `
