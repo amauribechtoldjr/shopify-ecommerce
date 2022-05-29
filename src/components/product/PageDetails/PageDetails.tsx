@@ -22,7 +22,7 @@ const PageDetails: React.FC<Props> = ({ product }) => {
     })
   }
 
-  const handleAddCart = () => {
+  const handleAddCart = async () => {
     try {
       const item = {
         productId: String(product.id),
@@ -30,7 +30,7 @@ const PageDetails: React.FC<Props> = ({ product }) => {
         variantOptions: variant?.options
       }
 
-      const response = addItem(item)
+      const response = await addItem(item)
       console.log(response)
     } catch {}
   }
