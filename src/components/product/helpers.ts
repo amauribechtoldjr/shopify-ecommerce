@@ -5,26 +5,22 @@ export interface SelectedOptions {
   size: ProductOptionValues
 }
 
-export function getVariant(product: Product, selectedOptions: SelectedOptions) {
+export const getVariant = (
+  product: Product,
+  selectedOptions: SelectedOptions
+) => {
   if (!selectedOptions) return null
 
-  const variant = product.variants.find(variant => {
+  return product.variants.find(variant => {
     const isMatchingOption = variant.options.every(variantOption => {
       const optionName = variantOption.displayName.toLowerCase()
 
-      if (optionName in selectedOptions) {
-        if (
-          selectedOptions[optionName].label === variantOption.values[0].label
-        ) {
-          return true
-        }
-      }
-
-      return false
+      return (
+        optionName in selectedOptions &&
+        selectedOptions[optionName].label === variantOption.values[0].label
+      )
     })
 
     return isMatchingOption
   })
-
-  return variant
 }
