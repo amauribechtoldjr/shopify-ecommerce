@@ -1,12 +1,12 @@
-// import { useAddItem } from '@common/cart'
-
 export const handler = {
-  fetcher: () => {
-    console.log('fetch data')
+  fetcher: (input: any) => {
+    return JSON.stringify(input) + '_modified'
   },
-  useHook: () => {
+  useHook: ({ fetch }: any) => {
     return (input: any) => {
-      return { output: JSON.stringify(input) + 'modified' }
+      const response = fetch(input)
+
+      return { response }
     }
   }
 }

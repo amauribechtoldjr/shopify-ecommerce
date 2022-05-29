@@ -5,15 +5,12 @@ import { ProductOptions } from '@components/product'
 import * as S from './styles'
 import { getVariant, SelectedOptions } from '../helpers'
 import { useAddItem } from '@common/cart'
-import { useApiProvider } from '@common'
 
 type Props = {
   product: Product
 }
 
 const PageDetails: React.FC<Props> = ({ product }) => {
-  const api = useApiProvider()
-  debugger
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>(null)
   const variant = getVariant(product, selectedOptions)
   const addItem = useAddItem()
