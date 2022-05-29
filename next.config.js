@@ -8,7 +8,7 @@ module.exports =
   withFrameworkConfig(
     withImages({
       framework: {
-        name: 'shopify_local'
+        name: process.env.NEXT_PUBLIC_FRAMEWORK
       },
       esModule: true
     }
