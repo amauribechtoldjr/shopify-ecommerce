@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Product, ProductOptionValues } from '@common/types/product'
 import { Button } from '@components/UI'
 import { ProductOptions } from '@components/product'
 import * as S from './styles'
 import { getVariant, SelectedOptions } from '../helpers'
+import { useUI } from '@hooks'
 
 type Props = {
   product: Product
 }
 
 const PageDetails: React.FC<Props> = ({ product }) => {
+  const provider = useUI()
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>(null)
+  const variant = getVariant(product, selectedOptions)
 
   const handleAddOption = (option: ProductOptionValues, category) => {
     setSelectedOptions({
@@ -19,10 +22,17 @@ const PageDetails: React.FC<Props> = ({ product }) => {
     })
   }
 
-  useEffect(() => {
-    const variant = getVariant(product, selectedOptions)
-    console.log(variant)
-  }, [selectedOptions])
+  const handleAddCart = () => {
+    try {
+      const item = {
+        productId: String(product.id),
+        variantId: variant?.id,
+        variantOptions: variant?.options
+      }
+
+      console.log(item)
+    } catch {}
+  }
 
   return (
     <S.Container>
@@ -48,9 +58,7 @@ const PageDetails: React.FC<Props> = ({ product }) => {
           })}
         </div>
       </S.OptionsContainer>
-      <Button onClick={() => alert('add to cart')}>
-        Adicionar ao carrinho
-      </Button>
+      <Button onClick={handleAddCart}>Adicionar ao carrinho</Button>
     </S.Container>
   )
 }
