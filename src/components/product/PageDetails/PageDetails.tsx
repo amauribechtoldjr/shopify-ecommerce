@@ -5,6 +5,7 @@ import { ProductOptions } from '@components/product'
 import * as S from './styles'
 import { getVariant, SelectedOptions } from '../helpers'
 import { useUI } from '@hooks'
+import { useAddItem } from '@common/cart'
 
 type Props = {
   product: Product
@@ -14,6 +15,7 @@ const PageDetails: React.FC<Props> = ({ product }) => {
   const provider = useUI()
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>(null)
   const variant = getVariant(product, selectedOptions)
+  const addItem = useAddItem()
 
   const handleAddOption = (option: ProductOptionValues, category) => {
     setSelectedOptions({
@@ -30,7 +32,8 @@ const PageDetails: React.FC<Props> = ({ product }) => {
         variantOptions: variant?.options
       }
 
-      console.log(item)
+      const response = addItem(item)
+      console.log(response)
     } catch {}
   }
 
