@@ -1,9 +1,25 @@
 import { MutationHook } from '@common/types/hooks'
+import { getCheckoutId } from '@framework'
 
 export const handler: MutationHook = {
-  fetcher: ({ fetch, input }) => {
+  fetcherOptions: {
+    query: 'query { hello }'
+  },
+  fetcher: ({ fetch, options, input }) => {
+    console.log(getCheckoutId())
+    const variables = {
+      checkoutId: getCheckoutId(),
+      lineItems: [
+        {
+          variantId: input.variantId,
+          quantity: 1
+        }
+      ]
+    }
+
     const response = fetch({
-      query: 'query { hello }'
+      ...options,
+      variables
     })
 
     return response
