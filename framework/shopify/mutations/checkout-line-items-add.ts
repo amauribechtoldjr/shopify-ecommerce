@@ -1,7 +1,7 @@
-export const checkoutLineItemsAdd = `
+const checkoutLineItemsAddMutation = `
   mutation(
-    $checkoutId: ID = "123",
-    $lineItems: [CheckoutLineItemInput] = [{quantity: 1, variantId: "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDQxNDM2NjMzNTE2Mw=="}]) {
+    $checkoutId: ID = ID!,
+    $lineItems: [CheckoutLineItemInput!]! ) {
     checkoutLineItemsAdd(checkoutId: $checkoutId, lineItems: $lineItems) {
       checkoutUserErrors {
         field
@@ -64,3 +64,5 @@ export const checkoutLineItemsAdd = `
     }
   }
 `
+
+export default checkoutLineItemsAddMutation
