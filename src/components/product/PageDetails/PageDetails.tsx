@@ -4,7 +4,7 @@ import { Button } from '@components/UI'
 import { ProductOptions } from '@components/product'
 import * as S from './styles'
 import { getVariant, SelectedOptions } from '../helpers'
-import { useAddItem } from '@common/cart'
+import { useAddItem } from '@common/hooks'
 
 type Props = {
   product: Product

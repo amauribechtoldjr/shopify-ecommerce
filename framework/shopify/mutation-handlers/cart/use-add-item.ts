@@ -7,7 +7,6 @@ export const handler: MutationHook = {
     query: checkoutLineItemsAddMutation
   },
   fetcher: async ({ fetch, options, input }) => {
-    console.log(getCheckoutId())
     const variables = {
       checkoutId: getCheckoutId(),
       lineItems: [
