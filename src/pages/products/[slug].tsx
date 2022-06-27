@@ -5,6 +5,7 @@ import { PageProps } from 'src/types/pages'
 import { ProductImagesCarousel, PageDetails } from '@components/product'
 
 import * as S from '@styles/pages/products/slug'
+import useCart from '@common/hooks/cart/use-cart'
 
 type Props = {
   slug: string
@@ -39,6 +40,8 @@ export const getStaticProps = async ({
 }
 
 const ProductDetailPage: PageProps<typeof getStaticProps> = ({ product }) => {
+  const data = useCart()
+  console.log(data)
   return (
     <S.Container>
       <S.ImagesContainer>

@@ -4,15 +4,17 @@ export default useCart
 
 export const handler = {
   fetchOptions: {
-    query: ''
+    query: 'query { hello }'
   },
-  fetcher() {
+  async fetcher({ fetch, options }: any) {
+    const data = await fetch({ ...options })
+
     return {
-      data: 'Cart already!'
+      data
     }
   },
-  useHook: ({ fetch }) => {
-    const data = fetch()
+  useHook: ({ useData }) => {
+    const data = useData()
 
     return { data }
   }
