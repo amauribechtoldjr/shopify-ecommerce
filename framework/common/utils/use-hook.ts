@@ -22,13 +22,14 @@ export const useMutationHook = (hook: MutationHook) => {
   })
 }
 
-const useSWRData = (hook, fetcher: ApiFetcher) => {
+const useSWRData = (hook: any, fetcher: ApiFetcher) => {
   const [data, setData] = useState(null)
 
   const hookFetcher = async () => {
     return await hook.fetcher({
       fetch: fetcher,
-      options: hook.fetchOptions
+      options: hook.fetchOptions,
+      input: {}
     })
   }
 
