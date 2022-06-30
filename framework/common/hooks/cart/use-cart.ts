@@ -8,8 +8,6 @@ const useCart = () => {
 
   const fetcherWrapper: typeof hook.fetcher = context => {
     context.input.checkoutId = Cookies.get(checkoutCookieKey)
-    console.log('chegou aqui', checkoutCookieKey)
-    console.log(context.input.checkoutId)
 
     return hook.fetcher(context)
   }

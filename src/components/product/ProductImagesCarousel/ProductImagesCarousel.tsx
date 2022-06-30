@@ -14,8 +14,6 @@ const ProductImagesCarousel: FC = ({ children }) => {
     }
   })
 
-  console.log()
-
   return (
     <S.Container>
       <div ref={sliderRef} className="keen-slider">

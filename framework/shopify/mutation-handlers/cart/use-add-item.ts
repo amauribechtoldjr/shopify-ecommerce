@@ -22,8 +22,6 @@ export const handler: MutationHook = {
       variables
     })
 
-    console.log(response)
-
     return response
   },
   useHook: ({ fetch }) => {
