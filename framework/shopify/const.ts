@@ -1,3 +1,8 @@
+export const SHOPIFY_CHECKOUT_URL_COOKIE = 'shopify_checkoutUrl'
+
+// Shpify rule is max 90 days
+export const SHOPIFY_COOKIE_EXPIRE = 30
+
 export const API_URL =
   process.env.NEXT_PUBLIC_FRAMEWORK === 'shopify_local'
     ? process.env.NEXT_PUBLIC_LOCAL_STORE_DOMAIN
