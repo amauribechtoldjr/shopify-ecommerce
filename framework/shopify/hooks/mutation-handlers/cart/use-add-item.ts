@@ -1,6 +1,6 @@
 import { MutationHook } from '@common/types/hooks'
 import { getCheckoutId } from '@framework'
-import { checkoutLineItemsAddMutation } from '@framework/mutations'
+import { checkoutLineItemsAddMutation } from '@framework/database/mutations'
 
 export const handler: MutationHook = {
   fetcherOptions: {

@@ -1,5 +1,5 @@
 import { getConfig } from '@framework/api/config'
-import { getAllProductsPaths, getProduct } from '@framework/fetchers'
+import { getAllProductsPaths, getProduct } from '@framework/database/fetchers'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { PageProps } from 'src/types/pages'
 import { ProductImagesCarousel, PageDetails } from '@components/product'

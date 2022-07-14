@@ -1,17 +1,22 @@
 import useCart from '@common/hooks/cart/use-cart'
-import { createCheckout } from '@framework'
+import { createCheckout, getCheckoutQuery } from '@framework'
 
 export default useCart
 
 export const handler = {
   fetchOptions: {
-    query: 'query { hello }'
+    query: getCheckoutQuery
   },
   async fetcher({ fetch, options, input: { checkoutId } }: any) {
-    let checkout: any
+    let checkout
 
     if (checkoutId) {
-      const { data } = await fetch({ ...options })
+      const { data } = await fetch({
+        ...options,
+        variables: {
+          checkoutId
+        }
+      })
 
       checkout = data.node
     }

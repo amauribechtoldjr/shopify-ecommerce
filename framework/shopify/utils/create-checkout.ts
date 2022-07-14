@@ -4,7 +4,7 @@ import {
   SHOPIFY_CHECKOUT_URL_COOKIE,
   SHOPIFY_COOKIE_EXPIRE
 } from '@framework/const'
-import { createCheckoutMutation } from '@framework/mutations'
+import { createCheckoutMutation } from '@framework/database/mutations'
 import { Checkout, CheckoutCreatePayload, Maybe } from '@framework/types'
 import Cookies from 'js-cookie'
 
@@ -25,7 +25,6 @@ const createCheckout = async (
 
     Cookies.set(SHOPIFY_CHECKOUT_ID_COOKIE, checkoutId, options)
     Cookies.set(SHOPIFY_CHECKOUT_URL_COOKIE, checkout?.webUrl, options)
-    alert('123')
   }
 
   return checkout

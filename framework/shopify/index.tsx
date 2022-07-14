@@ -3,4 +3,4 @@ export { default as getCheckoutId } from './utils/get-checkout-id'
 export { default as createCheckout } from './utils/create-checkout'
 
 export * from './normalize'
-export * from './queries'
+export * from './database/queries'

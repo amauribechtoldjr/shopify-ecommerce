@@ -1,6 +1,6 @@
 const checkoutLineItemsAddMutation = `
   mutation(
-    $checkoutId: ID = ID!,
+    $checkoutId: ID!,
     $lineItems: [CheckoutLineItemInput!]! ) {
     checkoutLineItemsAdd(checkoutId: $checkoutId, lineItems: $lineItems) {
       checkoutUserErrors {

@@ -4,7 +4,7 @@ import { getConfig } from '@framework/api/config'
 
 import { observer } from 'mobx-react'
 import type { InferGetStaticPropsType } from 'next'
-import { getAllProducts } from '@framework/fetchers'
+import { getAllProducts } from '@framework/database/fetchers'
 import { Grid, Hero } from '@components/UI'
 
 export async function getStaticProps() {
