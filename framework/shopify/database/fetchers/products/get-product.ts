@@ -1,6 +1,6 @@
 import { ApiConfig, FetcherVariables } from '@common/types/api'
 import { normalizeProduct } from '@framework/normalize'
-import { getProductQuery } from '@framework/queries'
+import { getProductQuery } from '@framework/database/queries'
 import { Product as ShopifyProduct } from '@framework/types'
 import { Product } from '@common/types/product'
 

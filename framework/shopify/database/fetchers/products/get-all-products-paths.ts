@@ -1,6 +1,6 @@
 import { ApiConfig } from '@common/types/api'
 import { Product } from '@common/types/product'
-import getAllProductsPathsQuery from '@framework/queries/products/get-all-products-paths'
+import getAllProductsPathsQuery from '@framework/database/queries/products/get-all-products-paths'
 import { ProductConnection } from '@framework/types'
 
 type ReturnType = {
