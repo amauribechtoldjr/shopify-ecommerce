@@ -1,7 +1,7 @@
 import { useApiProvider } from '@common'
 import { ApiFetcher } from '@common/types/api'
 import { ApiHooks, MutationHook } from '@common/types/hooks'
-import { useState } from 'react'
+import useSWR from 'swr'
 
 export const useHook = (fn: (ApiHooks: ApiHooks) => MutationHook) => {
   const { hooks } = useApiProvider()
@@ -22,24 +22,21 @@ export const useMutationHook = (hook: MutationHook) => {
   })
 }
 
-const useSWRData = (hook: any, fetcher: ApiFetcher) => {
-  const [data, setData] = useState(null)
-
-  const hookFetcher = async () => {
+const useData = (hook: any, fetcher: ApiFetcher) => {
+  const hookFetcher = async (query: string) => {
     return await hook.fetcher({
       fetch: fetcher,
-      options: hook.fetchOptions,
+      options: { query },
       input: {}
     })
   }
 
-  if (!data) {
-    hookFetcher().then(data => {
-      setData({ data })
-    })
-  }
+  const response = useSWR(hook.fetchOptions.query, hookFetcher, {
+    revalidateOnMount: true,
+    revalidateOnFocus: true
+  })
 
-  return data
+  return response
 }
 
 export const useSWRHook = (hook: any) => {
@@ -47,7 +44,7 @@ export const useSWRHook = (hook: any) => {
 
   return hook.useHook({
     useData() {
-      const data = useSWRData(hook, fetcher)
+      const data = useData(hook, fetcher)
 
       return data
     }
