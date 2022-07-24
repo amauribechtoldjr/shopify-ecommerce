@@ -10,7 +10,7 @@ import {
   SelectedOption
 } from '@framework/types'
 
-import { Cart } from '@common/types/cart'
+import { Cart, LineItem } from '@common/types/cart'
 import { Product } from '@common/types/product'
 
 export function normalizeProductImages({ edges }: { edges: Array<ImageEdge> }) {
@@ -136,26 +136,43 @@ export function normalizeCart(checkout: Checkout): Cart {
     taxesIncluded: checkout.taxesIncluded,
     lineItemsSubTotalPrie: +checkout.subtotalPriceV2.amount,
     totalPrice: checkout.totalPriceV2.amount,
-    lineItems: checkout.lineItems.edges.map(({ node }) => node),
+    lineItems: checkout.lineItems?.edges?.map(normalizeLineItem),
     discounts: []
   }
 }
 
 const normalizeLineItem = ({
   node: { id, title, variant, ...rest }
-}: CheckoutLineItemEdge): any => {
+}: CheckoutLineItemEdge): LineItem => {
   return {
     id,
     variantId: String(variant?.id),
     productId: String(variant?.id),
     name: title,
-    path: variant?.product?.handle,
+    path: variant?.product?.handle ?? '',
     discounts: [],
+    options: variant?.selectedOptions?.map(
+      ({ name, value }: SelectedOption) => {
+        const option = normalizeProductOption({
+          id,
+          name,
+          values: [value]
+        })
+
+        return option
+      }
+    ),
     variant: {
       id: String(variant?.id),
       sku: variant?.sku ?? '',
       name: variant?.title,
-      requiresShipping: variant.requiresShipping ?? false,
+      image: {
+        url:
+          process.env.NEXT_PUBLIC_FRAMEWORK === 'shopify_local'
+            ? `/images/${variant?.image?.originalSrc}`
+            : variant?.image?.originalSrc ?? '/product-placeholder.svg'
+      },
+      requiresShipping: variant?.requiresShipping ?? false,
       price: variant?.priceV2.amount,
       listPrice: variant?.compareAtPriceV2.amount
     },
