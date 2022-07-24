@@ -7,3 +7,6 @@ export const shopifyHooks = {
     useCart
   }
 }
+
+export { default as useAddItem } from './mutation-handlers/cart/use-add-item'
+export { default as useCart } from './mutation-handlers/cart/use-add-item'

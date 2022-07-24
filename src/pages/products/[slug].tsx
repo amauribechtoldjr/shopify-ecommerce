@@ -41,7 +41,7 @@ export const getStaticProps = async ({
 
 const ProductDetailPage: PageProps<typeof getStaticProps> = ({ product }) => {
   const { data } = useCart()
-  console.log('asdfasdf', data)
+
   return (
     <S.Container>
       <S.ImagesContainer>

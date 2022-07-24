@@ -1,4 +1,4 @@
-import useCart from '@common/hooks/cart/use-cart'
+import { useCart } from '@common/hooks'
 import { getCheckoutQuery } from '@framework'
 import { useMemo } from 'react'
 import { createCheckout, checkoutToCart } from '@framework/utils'

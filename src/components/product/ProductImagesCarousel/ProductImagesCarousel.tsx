@@ -6,9 +6,6 @@ const ProductImagesCarousel: FC = ({ children }) => {
   const [loaded, setLoaded] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider({
     initial: 0,
-    slideChanged(s) {
-      console.log(s.track.details)
-    },
     created() {
       setLoaded(true)
     }

@@ -4,7 +4,7 @@ import { Button } from '@components/UI'
 import { ProductOptions } from '@components/product'
 import * as S from './styles'
 import { getVariant, SelectedOptions } from '../helpers'
-import { useAddItem } from '@common/hooks'
+import { useAddItem } from '@framework/hooks'
 
 type Props = {
   product: Product
@@ -27,11 +27,11 @@ const PageDetails: React.FC<Props> = ({ product }) => {
       const item = {
         productId: String(product.id),
         variantId: variant?.id,
-        variantOptions: variant?.options
+        variantOptions: variant?.options,
+        quantity: 1
       }
 
       const response = await addItem(item)
-      console.log(response)
     } catch {}
   }
 
