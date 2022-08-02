@@ -13,7 +13,7 @@ const Usernav: FC = () => {
       <S.UsernavUL>
         <li>
           <Link href="/">
-            <a>{data?.data?.id}</a>
+            <a>{data?.id}</a>
           </Link>
         </li>
       </S.UsernavUL>

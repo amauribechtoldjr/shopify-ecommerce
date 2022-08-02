@@ -32,6 +32,7 @@ const PageDetails: React.FC<Props> = ({ product }) => {
       }
 
       const response = await addItem(item)
+      console.log(response)
     } catch {}
   }
 

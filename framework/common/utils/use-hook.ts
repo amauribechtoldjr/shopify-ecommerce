@@ -3,7 +3,7 @@ import { ApiFetcher } from '@common/types/api'
 import { ApiHooks, MutationHook } from '@common/types/hooks'
 import useSWR from 'swr'
 
-export const useHook = (fn: (ApiHooks: ApiHooks) => MutationHook) => {
+export const useHook = <T>(fn: (ApiHooks: ApiHooks) => T) => {
   const { hooks } = useApiProvider()
 
   return fn(hooks)
@@ -31,7 +31,11 @@ const useData = (hook: any, fetcher: ApiFetcher, ctx: any) => {
     })
   }
 
-  const response = useSWR(hook.fetchOptions.query, hookFetcher, ctx.swrOptions)
+  const response = useSWR(
+    hook.fetcherOptions.query,
+    hookFetcher,
+    ctx.swrOptions
+  )
   return response
 }
 
