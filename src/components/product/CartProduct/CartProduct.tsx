@@ -3,16 +3,23 @@ import { Minus, Plus, Trash } from '../../icons'
 import Image from 'next/image'
 import Link from 'next/link'
 import ProductOptions from '../ProductOptions/ProductOptions'
+import { useRemoveItem } from '@framework/hooks'
 
-const CartItem = ({
+const CartProduct = ({
   item,
   currencyCode
 }: {
   item?: LineItem
   currencyCode: string
 }) => {
-  const price = item.variant.price * item.quantity || 0
+  const removeItem = useRemoveItem()
+  const price = item.variant.price * item?.quantity || 0
   const { options } = item
+
+  const handleRemoveItem = async () => {
+    const cart = await removeItem({ id: item.id })
+    console.log(cart.lineItems)
+  }
 
   return (
     <li>
@@ -33,7 +40,7 @@ const CartItem = ({
           {options &&
             options.length > 0 &&
             options.map(option => {
-              const value = option.values[0]
+              const value = option.values[0].label
 
               return (
                 <ProductOptions
@@ -49,7 +56,13 @@ const CartItem = ({
             <Minus />
           </button>
           <label>
-            <input type="number" max={99} min={0} value={item.quantity} />
+            <input
+              type="number"
+              max={99}
+              min={0}
+              value={item.quantity}
+              onChange={() => console.log('trocou')}
+            />
           </label>
           <button type="button" onClick={() => console.log('mais')}>
             <Plus />
@@ -60,10 +73,10 @@ const CartItem = ({
         <span>
           {price} {currencyCode}
         </span>
-        <Trash />
+        <Trash onClick={handleRemoveItem} />
       </div>
     </li>
   )
 }
 
-export default CartItem
+export default CartProduct

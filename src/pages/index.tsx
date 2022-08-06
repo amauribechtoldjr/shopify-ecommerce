@@ -1,4 +1,4 @@
-import { ProductCard } from '@components/product'
+import { CardProduct } from '@components/product'
 import { Container } from '@styles/pages/Home'
 import { getConfig } from '@framework/api/config'
 
@@ -25,7 +25,7 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <main>
         <Grid>
           {products.slice(0, 4).map(product => (
-            <ProductCard product={product} key={product.id} />
+            <CardProduct product={product} key={product.id} />
           ))}
         </Grid>
         <Hero
