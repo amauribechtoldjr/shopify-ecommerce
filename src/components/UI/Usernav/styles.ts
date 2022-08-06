@@ -17,3 +17,26 @@ export const UsernavUL = styled.ul`
     cursor: pointer;
   }
 `
+
+export const CartItemsQuantityContainer = styled.div`
+  position: absolute;
+
+  width: 16px;
+  height: 16px;
+
+  top: 30px;
+  right: 16px;
+
+  border-radius: 50px;
+  background-color: ${({ theme }) => theme.colors.secundary};
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  /* border: 1px soild #000; */
+`
+export const CartItemsQuantityText = styled.div`
+  font-size: 10.5px;
+`

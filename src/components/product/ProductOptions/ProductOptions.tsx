@@ -1,14 +1,9 @@
 import { FC, useState } from 'react'
-import {
-  Product,
-  ProductOption,
-  ProductOptionValues
-} from '@common/types/product'
+import { ProductOption, ProductOptionValues } from '@common/types/product'
 import * as S from './styles'
 
 interface Props {
   option: ProductOption
-  product: Product
   onSelectOption?: (option: ProductOptionValues, category: string) => void
 }
 

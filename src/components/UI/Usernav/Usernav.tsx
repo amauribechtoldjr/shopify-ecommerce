@@ -4,15 +4,21 @@ import * as S from './styles'
 import Cart from '@components/icons/Cart'
 import User from '@components/icons/User'
 import { useCart } from '@framework/hooks'
+import { LineItem } from '@common/types/cart'
 
 const Usernav: FC = () => {
   const { data } = useCart()
-  console.log(data)
+
+  const itemsCount = data?.lineItems.reduce(
+    (count: number, item: LineItem) => count + item.quantity,
+    0
+  )
+
   return (
     <S.UsernavContainer>
       <S.UsernavUL>
         <li>
-          <Link href="/">
+          <Link href="/cart">
             <a>{data?.id}</a>
           </Link>
         </li>
@@ -31,6 +37,9 @@ const Usernav: FC = () => {
           <Link href="/cart">
             <a>
               <Cart />
+              <S.CartItemsQuantityContainer>
+                <S.CartItemsQuantityText>{itemsCount}</S.CartItemsQuantityText>
+              </S.CartItemsQuantityContainer>
             </a>
           </Link>
         </li>

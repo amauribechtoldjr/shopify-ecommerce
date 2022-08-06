@@ -5,6 +5,7 @@ import { Cart } from '@common/types/cart'
 import { CheckoutLineItemsAddPayload } from '@framework/types'
 import { useAddItem } from '@common/hooks'
 import { UseAddItem } from '@common/hooks/cart/use-add-item'
+import useCart from './use-cart'
 
 export type AddItemHookDescriptor = {
   fetcherInput: {
@@ -44,8 +45,12 @@ export const handler: MutationHook<AddItemHookDescriptor> = {
   useHook:
     ({ fetch }) =>
     () => {
+      const { mutate } = useCart()
+
       return async input => {
         const response = await fetch(input)
+
+        await mutate(response, false)
 
         return response
       }

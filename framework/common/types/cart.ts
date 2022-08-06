@@ -27,6 +27,6 @@ export interface Cart {
   lineItemsSubTotalPrie: number
   // discounts included
   totalPrice: number
-  lineItems: any[]
+  lineItems: LineItem[]
   discounts: Discount[]
 }
