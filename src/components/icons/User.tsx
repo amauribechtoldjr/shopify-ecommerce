@@ -1,6 +1,4 @@
-import { FC } from 'react'
-
-const User: FC = ({ ...props }) => {
+const User = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -53,7 +53,6 @@ const PageDetails: React.FC<Props> = ({ product }) => {
               <ProductOptions
                 key={option.id}
                 option={option}
-                product={product}
                 onSelectOption={handleAddOption}
               />
             )

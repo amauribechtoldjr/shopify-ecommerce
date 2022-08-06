@@ -1,5 +1,5 @@
 import { LineItem } from '@common/types/cart'
-import CartProduct from '@components/product/Cart/Product'
+import { CartProduct } from '@components/product'
 import { useCart } from '@framework/hooks'
 import { FC } from 'react'
 

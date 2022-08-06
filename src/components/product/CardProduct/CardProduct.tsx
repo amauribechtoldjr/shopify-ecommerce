@@ -24,7 +24,7 @@ const ProductCard: FC<Props> = ({ product }) => {
         />
       )
     }
-  }, [product.images])
+  }, [product.name, product.images])
 
   return (
     <>
