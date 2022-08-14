@@ -5,7 +5,7 @@ export type UseRemoveItem<H extends MutationHook = MutationHook> = ReturnType<
   H['useHook']
 >
 
-const useRemoveItem = () => {
+const useRemoveItem: UseRemoveItem = () => {
   const hook = useHook(hooks => hooks.cart.useRemoveItem)
 
   return useMutationHook({ ...hook })()

@@ -3,7 +3,7 @@ import { Minus, Plus, Trash } from '../../icons'
 import Image from 'next/image'
 import Link from 'next/link'
 import ProductOptions from '../ProductOptions/ProductOptions'
-import { useRemoveItem } from '@framework/hooks'
+import { useRemoveItem, useUpdateItem } from '@framework/hooks'
 
 const CartProduct = ({
   item,
@@ -13,11 +13,14 @@ const CartProduct = ({
   currencyCode: string
 }) => {
   const removeItem = useRemoveItem()
+  const updateItem = useUpdateItem()
+
   const price = item.variant.price * item?.quantity || 0
   const { options } = item
 
   const handleRemoveItem = async () => {
     const cart = await removeItem({ id: item.id })
+
     console.log(cart.lineItems)
   }
 
@@ -52,7 +55,15 @@ const CartProduct = ({
             })}
         </div>
         <div>
-          <button type="button" onClick={() => console.log('menos')}>
+          <button
+            type="button"
+            onClick={() =>
+              updateItem({
+                id: item.id,
+                quantity: item.quantity - 1
+              })
+            }
+          >
             <Minus />
           </button>
           <label>
@@ -64,7 +75,15 @@ const CartProduct = ({
               onChange={() => console.log('trocou')}
             />
           </label>
-          <button type="button" onClick={() => console.log('mais')}>
+          <button
+            type="button"
+            onClick={() =>
+              updateItem({
+                id: item.id,
+                quantity: item.quantity + 1
+              })
+            }
+          >
             <Plus />
           </button>
         </div>

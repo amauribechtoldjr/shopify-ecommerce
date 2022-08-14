@@ -10,8 +10,9 @@ type Props = {
   product: Product
 }
 
-const PageDetails: React.FC<Props> = ({ product }) => {
+const ProductDetails: React.FC<Props> = ({ product }) => {
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>(null)
+  const [isLoading, setLoading] = useState(false)
   const variant = getVariant(product, selectedOptions)
   const addItem = useAddItem()
 
@@ -25,15 +26,17 @@ const PageDetails: React.FC<Props> = ({ product }) => {
   const handleAddCart = async () => {
     try {
       const item = {
-        productId: String(product.id),
-        variantId: variant?.id,
-        variantOptions: variant?.options,
+        variantId: variant?.id ?? product.variants[0].id,
         quantity: 1
       }
+      setLoading(true)
 
-      const response = await addItem(item)
-      console.log(response)
-    } catch {}
+      await addItem(item)
+
+      setLoading(false)
+    } catch {
+      setLoading(false)
+    }
   }
 
   return (
@@ -59,9 +62,11 @@ const PageDetails: React.FC<Props> = ({ product }) => {
           })}
         </div>
       </S.OptionsContainer>
-      <Button onClick={handleAddCart}>Adicionar ao carrinho</Button>
+      <Button onClick={handleAddCart} isLoading={isLoading}>
+        Adicionar ao carrinho
+      </Button>
     </S.Container>
   )
 }
 
-export default PageDetails
+export default ProductDetails

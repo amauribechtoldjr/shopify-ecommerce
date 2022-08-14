@@ -1,5 +1,6 @@
 import { LineItem } from '@common/types/cart'
 import { CartProduct } from '@components/product'
+import { Button } from '@components/UI'
 import { useCart } from '@framework/hooks'
 import { FC } from 'react'
 
@@ -49,13 +50,13 @@ const Cart: FC = () => {
                 </span>
               </div>
             </div>
-            <button
+            <Button
               onClick={() => {
                 alert('Going to checkout!')
               }}
             >
               Proceed to Checkout
-            </button>
+            </Button>
           </div>
         </>
       )}
