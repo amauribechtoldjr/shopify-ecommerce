@@ -24,7 +24,7 @@ export type HookFetcherFn<Input, Output, Data> = (
 ) => Promise<Data>
 
 export type HookGenericDescriptor = {
-  fetcherInput: object
+  fetcherInput: any
   fetcherOutput: object
   data: object
 }
