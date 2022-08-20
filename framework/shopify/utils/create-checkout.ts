@@ -1,7 +1,7 @@
 import { ApiFetcher } from '@common/types/api'
 import {
   SHOPIFY_CHECKOUT_ID_COOKIE,
-  SHOPIFY_CHECKOUT_URL_COOKIE,
+  SHOPIFY_CHECKOUT_URL_COOKIE_NAME,
   SHOPIFY_COOKIE_EXPIRE
 } from '@framework/const'
 import { createCheckoutMutation } from '@framework/database/mutations'
@@ -24,7 +24,7 @@ const createCheckout = async (
     }
 
     Cookies.set(SHOPIFY_CHECKOUT_ID_COOKIE, checkoutId, options)
-    Cookies.set(SHOPIFY_CHECKOUT_URL_COOKIE, checkout?.webUrl, options)
+    Cookies.set(SHOPIFY_CHECKOUT_URL_COOKIE_NAME, checkout?.webUrl, options)
   }
 
   return checkout

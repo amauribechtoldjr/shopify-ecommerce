@@ -1,7 +1,7 @@
 import { LineItem } from '@common/types/cart'
 import { CartProduct } from '@components/product'
-import { Button } from '@components/UI'
 import { useCart } from '@framework/hooks'
+import Link from 'next/link'
 import { FC } from 'react'
 
 const Cart: FC = () => {
@@ -50,13 +50,9 @@ const Cart: FC = () => {
                 </span>
               </div>
             </div>
-            <Button
-              onClick={() => {
-                window.location = 'https://www.google.com.br'
-              }}
-            >
+            <Link href="/api/checkout">
               Proceed to Checkout
-            </Button>
+            </Link>
           </div>
         </>
       )}
