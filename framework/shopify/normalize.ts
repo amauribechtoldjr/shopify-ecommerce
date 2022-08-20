@@ -15,7 +15,10 @@ import { Product } from '@common/types/product'
 
 export function normalizeProductImages({ edges }: { edges: Array<ImageEdge> }) {
   return edges.map(({ node: { originalSrc, ...rest } }) => ({
-    url: `/images/${originalSrc}`,
+    url:
+      process.env.NEXT_PUBLIC_FRAMEWORK === 'shopify_local'
+        ? `/images/${originalSrc}`
+        : originalSrc ?? '/product-placeholder.svg',
     ...rest
   }))
 }
@@ -174,7 +177,7 @@ const normalizeLineItem = ({
       },
       requiresShipping: variant?.requiresShipping ?? false,
       price: variant?.priceV2.amount,
-      listPrice: variant?.compareAtPriceV2.amount
+      listPrice: variant?.compareAtPriceV2?.amount
     },
     ...rest
   }

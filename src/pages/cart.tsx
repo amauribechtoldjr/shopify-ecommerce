@@ -52,7 +52,7 @@ const Cart: FC = () => {
             </div>
             <Button
               onClick={() => {
-                alert('Going to checkout!')
+                window.location = 'https://www.google.com.br'
               }}
             >
               Proceed to Checkout

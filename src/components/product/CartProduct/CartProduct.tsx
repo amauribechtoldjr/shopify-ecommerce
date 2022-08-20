@@ -19,9 +19,7 @@ const CartProduct = ({
   const { options } = item
 
   const handleRemoveItem = async () => {
-    const cart = await removeItem({ id: item.id })
-
-    console.log(cart.lineItems)
+    await removeItem({ id: item.id })
   }
 
   return (
@@ -60,7 +58,8 @@ const CartProduct = ({
             onClick={() =>
               updateItem({
                 id: item.id,
-                quantity: item.quantity - 1
+                quantity: item.quantity - 1,
+                variantId: item.variantId
               })
             }
           >
@@ -80,7 +79,8 @@ const CartProduct = ({
             onClick={() =>
               updateItem({
                 id: item.id,
-                quantity: item.quantity + 1
+                quantity: item.quantity + 1,
+                variantId: item.variantId
               })
             }
           >

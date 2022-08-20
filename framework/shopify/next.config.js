@@ -1,3 +1,6 @@
 module.exports = {
-  moduleName: 'shopify'
+  moduleName: 'shopify',
+  images: {
+    domains: ['cdn.shopify.com']
+  }
 }

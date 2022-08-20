@@ -11,6 +11,7 @@ export type UpdateItemDescriptor = {
   fetcherInput: {
     id: string
     quantity: number
+    variantId: string
   }
   fetcherOutput: {
     checkoutLineItemsUpdate: CheckoutLineItemsUpdatePayload
@@ -30,7 +31,8 @@ export const handler: MutationHook<UpdateItemDescriptor> = {
         lineItems: [
           {
             id: input.id,
-            quantity: input.quantity
+            quantity: input.quantity,
+            variantId: input.variantId
           }
         ]
       }
