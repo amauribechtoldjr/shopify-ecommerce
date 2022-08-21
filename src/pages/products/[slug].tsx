@@ -40,8 +40,6 @@ export const getStaticProps = async ({
 }
 
 const ProductDetailPage: PageProps<typeof getStaticProps> = ({ product }) => {
-  const { data } = useCart()
-
   return (
     <S.Container>
       <S.ImagesContainer>

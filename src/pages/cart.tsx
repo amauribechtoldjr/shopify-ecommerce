@@ -50,9 +50,7 @@ const Cart: FC = () => {
                 </span>
               </div>
             </div>
-            <Link href="/api/checkout">
-              Proceed to Checkout
-            </Link>
+            <Link href="/api/checkout">Proceed to Checkout</Link>
           </div>
         </>
       )}
