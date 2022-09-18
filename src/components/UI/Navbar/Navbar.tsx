@@ -10,7 +10,7 @@ const Navbar: FC = () => {
       <S.NavbarContent>
         <S.LinksContainer>
           <Link href="/">
-            <h1>TRAVESSA</h1>
+            <h1>TRAVESSSA</h1>
           </Link>
           <S.NavContainer>
             <Link href="/products">

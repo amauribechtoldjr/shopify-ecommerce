@@ -6,6 +6,7 @@ import { ProductImagesCarousel, ProductDetails } from '@components/product'
 
 import * as S from '@styles/pages/products/slug'
 import useCart from '@framework/hooks/mutation-handlers/cart/use-cart'
+import Head from 'next/head'
 
 type Props = {
   slug: string
@@ -42,6 +43,9 @@ export const getStaticProps = async ({
 const ProductDetailPage: PageProps<typeof getStaticProps> = ({ product }) => {
   return (
     <S.Container>
+      <Head>
+        <title>Travesssa - {product.name}</title>
+      </Head>
       <S.ImagesContainer>
         <ProductImagesCarousel>
           {product.images.map(image => (

@@ -6,6 +6,7 @@ import { observer } from 'mobx-react'
 import type { InferGetStaticPropsType } from 'next'
 import { getAllProducts } from '@framework/database/fetchers'
 import { Grid, Hero } from '@components/UI'
+import Head from 'next/head'
 
 export async function getStaticProps() {
   const config = getConfig()
@@ -22,6 +23,9 @@ export async function getStaticProps() {
 const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Container>
+      <Head>
+        <title>Travesssa</title>
+      </Head>
       <main>
         <Grid>
           {products.slice(0, 4).map(product => (

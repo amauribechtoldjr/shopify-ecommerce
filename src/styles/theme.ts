@@ -1,10 +1,9 @@
 const theme = {
   colors: {
     background: '#ffffff',
-    background2: '#bbbbbb',
-    text: '#222222',
-    primary: '#FBF3FF',
-    secundary: '#F1D6FF'
+    text: '#262626',
+    primary: '#0500FF',
+    secundary: '#DE8603'
   },
   screen_size: {
     xm: '320px', // Mobile devices
@@ -18,6 +17,10 @@ const theme = {
     md: '0.8em',
     lg: '1em',
     xl: '1.2em'
+  },
+  fonts: {
+    text: 'Courier Prime',
+    title: 'Lexend Zetta'
   }
 }
 

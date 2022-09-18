@@ -1,6 +1,7 @@
 import { LineItem } from '@common/types/cart'
 import { CartProduct } from '@components/product'
 import { useCart } from '@framework/hooks'
+import Head from 'next/head'
 import Link from 'next/link'
 import { FC } from 'react'
 
@@ -9,6 +10,9 @@ const Cart: FC = () => {
 
   return (
     <div>
+      <Head>
+        <title>Travesssa - Carrinho de compras</title>
+      </Head>
       {isEmpty ? (
         <div>Seu carrinho está vazio</div>
       ) : (

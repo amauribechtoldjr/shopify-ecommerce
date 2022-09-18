@@ -17,6 +17,8 @@ export const LinksContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  font-family: ${({ theme }) => theme.fonts.title};
 `
 
 export const NavLink = styled.a`
