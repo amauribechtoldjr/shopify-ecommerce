@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Product, ProductOptionValues } from '@common/types/product'
-import { Button } from '@components/UI'
 import { ProductOptions } from '@components/product'
-import * as S from './styles'
 import { getVariant, SelectedOptions } from '../helpers'
 import { useAddItem } from '@framework/hooks'
 
@@ -40,16 +38,16 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
   }
 
   return (
-    <S.Container>
-      <S.TitlePriceContainer>
-        <S.Title>{product.name}</S.Title>
-        <S.Price>
+    <div>
+      <div>
+        <div>{product.name}</div>
+        <div>
           {product.price.currencyCode}
           {product.price.value}
-        </S.Price>
-      </S.TitlePriceContainer>
-      <S.OptionsContainer>
-        <S.Description>{product.description}</S.Description>
+        </div>
+      </div>
+      <div>
+        <div>{product.description}</div>
         <div>
           {product.options.map(option => {
             return (
@@ -61,11 +59,9 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
             )
           })}
         </div>
-      </S.OptionsContainer>
-      <Button onClick={handleAddCart} isLoading={isLoading}>
-        Adicionar ao carrinho
-      </Button>
-    </S.Container>
+      </div>
+      <button onClick={handleAddCart}>Adicionar ao carrinho</button>
+    </div>
   )
 }
 

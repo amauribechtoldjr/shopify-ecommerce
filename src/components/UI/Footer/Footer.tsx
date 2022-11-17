@@ -1,6 +1,6 @@
+import './Footer.module.scss'
 import { FC } from 'react'
 import Link from 'next/link'
-import * as S from './styles'
 
 const Footer: FC = () => {
   const getCurrentYear = () => {
@@ -8,13 +8,13 @@ const Footer: FC = () => {
   }
 
   return (
-    <S.FooterContainer>
-      <S.AboutTravesssa>@ Travesssa {getCurrentYear()}</S.AboutTravesssa>
-      <S.TravesssaLinksContainer>
+    <div>
+      <div>@ Travesssa {getCurrentYear()}</div>
+      <div>
         <Link href="/about">Sobre</Link>
         <Link href="/last-collection">Última coleção</Link>
-      </S.TravesssaLinksContainer>
-    </S.FooterContainer>
+      </div>
+    </div>
   )
 }
 

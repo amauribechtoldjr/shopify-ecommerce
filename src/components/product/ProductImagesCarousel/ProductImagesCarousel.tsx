@@ -1,6 +1,6 @@
+import './ProductImagesCarousel.module.scss'
 import { FC, Children, isValidElement, useState } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
-import * as S from './styles'
 
 const ProductImagesCarousel: FC = ({ children }) => {
   const [loaded, setLoaded] = useState(false)
@@ -12,7 +12,7 @@ const ProductImagesCarousel: FC = ({ children }) => {
   })
 
   return (
-    <S.Container>
+    <div>
       <div ref={sliderRef} className="keen-slider">
         {Children.map(children, child => {
           if (isValidElement(child)) {
@@ -28,7 +28,7 @@ const ProductImagesCarousel: FC = ({ children }) => {
           return child
         })}
       </div>
-    </S.Container>
+    </div>
   )
 }
 

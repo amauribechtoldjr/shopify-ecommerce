@@ -1,0 +1,47 @@
+@import "../../../styles/theme.module.scss";
+
+.hero {
+  // background-color: $cl-primary-light-2;
+  padding: $spacing-48 0 $spacing-96 0;
+}
+
+.grid-box {
+  max-width: $screen-xl;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: $spacing-48;
+
+  padding: 0 $spacing-32;
+
+  // background-color: $cl-primary-light-2;
+}
+
+.headline-text {
+  // background-color: $cl-primary-light-2;
+}
+
+.headline-box {
+  font-size: $font-size-52;
+  font-weight: $font-weight-800;
+  line-height: $font-lineHeight-1;
+  font-family: $font-type-title;
+  color: $cl-text;
+  letter-spacing: -8px;
+  user-select: none;
+  max-width: 683px;
+  word-break: break-all;
+  // background-color: $cl-primary-light-2;
+}
+
+.hero-buy-button {
+  margin-top: $spacing-80;
+  margin-right: $spacing-16;
+}
+
+.hero-img {
+  width: 100%;
+  max-height: $screen-md;
+  user-select: none;
+}

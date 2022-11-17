@@ -1,37 +1,36 @@
+import s from './Navbar.module.scss'
 import Link from 'next/link'
 import { FC } from 'react'
 import { Usernav } from '@components/UI'
 
-import * as S from './styles'
-
 const Navbar: FC = () => {
   return (
-    <S.NavbarContainer>
-      <S.NavbarContent>
-        <S.LinksContainer>
-          <Link href="/">
-            <h1>TRAVESSSA</h1>
+    <header className={s.header}>
+      <nav className={s['nav-box']}>
+        <Link href="/">
+          <img
+            src="/icons/logoname.svg"
+            alt="Logo da travesssa"
+            className={s['logo-img']}
+          />
+        </Link>
+        <div>
+          <Link href="/products" passHref>
+            <a className={s['nav-link']}>Produtos</a>
           </Link>
-          <S.NavContainer>
-            <Link href="/products">
-              <S.NavLink>Produtos</S.NavLink>
-            </Link>
-            <Link href="/products">
-              <S.NavLink>Sobre</S.NavLink>
-            </Link>
-            <Link href="/products">
-              <S.NavLink>Coleções</S.NavLink>
-            </Link>
-            <Link href="/products">
-              <S.NavLink>Travesssuras</S.NavLink>
-            </Link>
-          </S.NavContainer>
-        </S.LinksContainer>
-        <S.UsernavContainer>
-          <Usernav />
-        </S.UsernavContainer>
-      </S.NavbarContent>
-    </S.NavbarContainer>
+          <Link href="/products" passHref>
+            <a className={s['nav-link']}>Sobre</a>
+          </Link>
+          <Link href="/products" passHref>
+            <a className={s['nav-link']}>Coleções</a>
+          </Link>
+          <Link href="/products" passHref>
+            <a className={s['nav-link']}>Travesssuras</a>
+          </Link>
+          {/* <Usernav /> */}
+        </div>
+      </nav>
+    </header>
   )
 }
 

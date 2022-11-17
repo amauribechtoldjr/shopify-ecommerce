@@ -1,0 +1,27 @@
+@import "../../../styles/theme.module.scss";
+
+.header {
+  background-color: white;
+}
+
+.nav-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: $spacing-64;
+  padding: 0 $spacing-48;
+}
+
+.logo-img {
+  height: $spacing-48;
+  cursor: pointer;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: $font-size-14;
+  font-weight: $font-weight-800;
+
+  cursor: pointer;
+}

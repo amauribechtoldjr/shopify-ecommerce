@@ -5,6 +5,6 @@ import Hero from './Hero/Hero'
 import Navbar from './Navbar/Navbar'
 import Usernav from './Usernav/Usernav'
 import UIProvider from './UIProvider/UIProvider'
-import Button from './Button/Button'
+import LinkButton from './LinkButton/LinkButton'
 
-export { Layout, Grid, Footer, Hero, Navbar, Usernav, UIProvider, Button }
+export { Layout, Grid, Footer, Hero, Navbar, Usernav, UIProvider, LinkButton }

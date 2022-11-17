@@ -1,7 +1,7 @@
+import './CardProduct.module.scss'
 import { Product } from '@common/types/product'
 import Link from 'next/link'
 import Image from 'next/image'
-import * as S from './styles'
 import { FC, useCallback } from 'react'
 
 interface Props {
@@ -29,13 +29,13 @@ const ProductCard: FC<Props> = ({ product }) => {
   return (
     <>
       <Link href={`/products/${product.slug}`}>
-        <S.ProductCardContainer>
+        <div>
           {renderProductImages()}
-          <S.TitleContainer>
-            <S.ProductTitle>{product.name}</S.ProductTitle>
-            <S.Price>R$ {product.price.value}</S.Price>
-          </S.TitleContainer>
-        </S.ProductCardContainer>
+          <div>
+            <div>{product.name}</div>
+            <div>R$ {product.price.value}</div>
+          </div>
+        </div>
       </Link>
     </>
   )

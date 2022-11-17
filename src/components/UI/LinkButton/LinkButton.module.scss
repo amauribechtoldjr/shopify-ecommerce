@@ -1,0 +1,36 @@
+@import "../../../styles/theme.module.scss";
+
+.button-link:link, .button-link:visited {
+  font-family: $font-type-title;
+  font-size: $font-size-20;
+  text-decoration: none;
+  letter-spacing: normal;
+
+  display: inline-block;
+
+  border-radius: $br-1;
+
+  background-color: $cl-primary;
+  color: $cl-background;
+
+  padding: $spacing-16 $spacing-32;
+
+  cursor: pointer;
+
+  transition: all .3s;
+
+  &:hover {
+    background-color: $cl-primary-dark-2;
+  }
+
+  &.outline {
+    background-color: $cl-background;
+    color: $cl-primary;
+
+    box-shadow: inset 0 0 0 3px $cl-primary;
+
+    &:hover {
+      background-color: $cl-primary-light-2;
+    }
+  }
+}

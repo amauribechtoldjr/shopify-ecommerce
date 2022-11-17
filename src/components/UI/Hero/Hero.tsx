@@ -1,23 +1,36 @@
+import s from './Hero.module.scss'
 import { FC } from 'react'
-import Link from 'next/link'
-import * as S from './styles'
+import { LinkButton } from '@components/UI'
 
 interface Props {
-  headline: string
-  description: string
+  headline?: string
+  image?: {
+    alt: string
+    url: string
+  }
 }
 
-const Hero: FC<Props> = ({ headline, description }) => {
+const Hero: FC<Props> = ({
+  headline = 'Olhe para os dois lados antes de atravesssar',
+  image = { alt: 'Travessuras', url: '/images/hero-img.jpg' }
+}) => {
   return (
-    <S.HeroContainer>
-      <h2>{headline}</h2>
-      <div>
-        <p>{description}</p>
-        <Link href="#">
-          <S.HeroLinkContainer>Read it here</S.HeroLinkContainer>
-        </Link>
+    <section className={s.hero}>
+      <div className={s['grid-box']}>
+        <div className={s['headline-box']}>
+          <h1 className={s['headline-text']}>{headline.toUpperCase()}</h1>
+          <LinkButton href="/produtos" className={s['hero-buy-button']}>
+            COMPRAR
+          </LinkButton>
+          <LinkButton href="/produtos" className={s['hero-buy-button']} outline>
+            TRAVESSURAS
+          </LinkButton>
+        </div>
+        <div className={s['hero-img-box']}>
+          <img src={image.url} alt={image.alt} className={s['hero-img']} />
+        </div>
       </div>
-    </S.HeroContainer>
+    </section>
   )
 }
 

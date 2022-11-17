@@ -1,6 +1,6 @@
+import './Usernav.module.scss'
 import { FC } from 'react'
 import Link from 'next/link'
-import * as S from './styles'
 import Cart from '@components/icons/Cart'
 import User from '@components/icons/User'
 import { useCart } from '@framework/hooks'
@@ -15,15 +15,15 @@ const Usernav: FC = () => {
   )
 
   return (
-    <S.UsernavContainer>
-      <S.UsernavUL>
+    <div>
+      <div>
         <li>
           <Link href="/cart">
             <a>{data?.id}</a>
           </Link>
         </li>
-      </S.UsernavUL>
-      <S.UsernavUL>
+      </div>
+      <div>
         <li>
           <Link href="/">
             <a>
@@ -31,20 +31,20 @@ const Usernav: FC = () => {
             </a>
           </Link>
         </li>
-      </S.UsernavUL>
-      <S.UsernavUL>
+      </div>
+      <div>
         <li>
           <Link href="/cart">
             <a>
               <Cart />
-              <S.CartItemsQuantityContainer>
-                <S.CartItemsQuantityText>{itemsCount}</S.CartItemsQuantityText>
-              </S.CartItemsQuantityContainer>
+              <div>
+                <div>{itemsCount}</div>
+              </div>
             </a>
           </Link>
         </li>
-      </S.UsernavUL>
-    </S.UsernavContainer>
+      </div>
+    </div>
   )
 }
 

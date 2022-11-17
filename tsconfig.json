@@ -35,7 +35,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "framework/common/config.js"
+    "framework/common/config.js",
+    "src/styles/global.module.sass"
   ],
   "exclude": ["node_modules"]
 }

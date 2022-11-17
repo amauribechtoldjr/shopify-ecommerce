@@ -1,6 +1,6 @@
+import './ProductOptions.module.scss'
 import { FC, useState } from 'react'
 import { ProductOption, ProductOptionValues } from '@common/types/product'
-import * as S from './styles'
 
 interface Props {
   option: ProductOption
@@ -23,23 +23,23 @@ const ProductOptions: FC<Props> = ({ option, onSelectOption }) => {
   }
 
   return (
-    <S.OptionContanier>
+    <div>
       <span>{option.displayName}</span>
-      <S.OptionItems>
+      <div>
         {option.values.map(value => {
           return (
-            <S.OptionLabel
+            <div
               key={value.label}
-              optionColor={value.hexColor}
-              selected={value.label === selectedValue?.label}
+              // optionColor={value.hexColor}
+              // selected={value.label === selectedValue?.label}
               onClick={handleSelectOption(value)}
             >
               {!value.hexColor && value.label.toUpperCase()}
-            </S.OptionLabel>
+            </div>
           )
         })}
-      </S.OptionItems>
-    </S.OptionContanier>
+      </div>
+    </div>
   )
 }
 

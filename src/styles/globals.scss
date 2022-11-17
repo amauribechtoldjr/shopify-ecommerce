@@ -1,0 +1,19 @@
+@import "./theme.module.scss";
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  background-color: $cl-background;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-type-text;
+  line-height: $font-lineHeight-1;
+  font-weight: $font-weight-400;
+  color: $cl-text;
+}

@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import * as S from './styles'
+import './Grid.module.scss'
 
 const Grid: FC = ({ children }) => {
-  return <S.GridContainer>{children}</S.GridContainer>
+  return <div>{children}</div>
 }
 
 export default Grid
