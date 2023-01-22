@@ -12,7 +12,7 @@ const LinkButton: FC<Props> = ({ children, outline = false, ...props }) => {
   return (
     <Link href={props.href} passHref>
       <a
-        className={classnames(s['button-link'], props.className, {
+        className={classnames(props.className, s['button-link'], {
           [s.outline]: outline
         })}
       >

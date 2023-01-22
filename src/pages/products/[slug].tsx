@@ -2,10 +2,10 @@ import { getConfig } from '@framework/api/config'
 import { getAllProductsPaths, getProduct } from '@framework/database/fetchers'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { PageProps } from 'src/types/pages'
-import { ProductImagesCarousel, ProductDetails } from '@components/product'
+import { ProductDetails } from '@components/product'
 
-import * as S from '@styles/pages/products/slug'
-import useCart from '@framework/hooks/mutation-handlers/cart/use-cart'
+import s from '../../styles/pages/products/slug.module.scss'
+// import useCart from '@framework/hooks/mutation-handlers/cart/use-cart'
 import Head from 'next/head'
 
 type Props = {
@@ -42,29 +42,21 @@ export const getStaticProps = async ({
 
 const ProductDetailPage: PageProps<typeof getStaticProps> = ({ product }) => {
   return (
-    <S.Container>
+    <div className={s['product-container']}>
       <Head>
         <title>Travesssa - {product.name}</title>
       </Head>
-      <S.ImagesContainer>
-        <ProductImagesCarousel>
-          {product.images.map(image => (
-            <S.ImageContainer key={image.url}>
-              <S.StyledImage
-                src={image.url}
-                alt={image.alt}
-                width={1050}
-                height={1050}
-                quality="85"
-              />
-            </S.ImageContainer>
-          ))}
-        </ProductImagesCarousel>
-      </S.ImagesContainer>
-      <S.DetailsContainer>
+      <div>
+        {product.images.map(image => (
+          <div key={image.url}>
+            <img src={image.url} alt={image.alt} width={1050} height={1050} />
+          </div>
+        ))}
+      </div>
+      <div>
         <ProductDetails product={product} />
-      </S.DetailsContainer>
-    </S.Container>
+      </div>
+    </div>
   )
 }
 

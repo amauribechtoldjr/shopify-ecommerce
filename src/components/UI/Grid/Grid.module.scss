@@ -1,0 +1,14 @@
+@import '../../../styles/theme.module.scss';
+
+.grid {
+  display: grid;
+  gap: $spacing-96;
+}
+
+.columns-2 {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}

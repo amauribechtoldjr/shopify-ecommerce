@@ -1,4 +1,4 @@
-import './CardProduct.module.scss'
+import s from './CardProduct.module.scss'
 import { Product } from '@common/types/product'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -11,14 +11,14 @@ interface Props {
 const PLACEHOLDER_IMAGE = '/product-placeholder.svg'
 
 const ProductCard: FC<Props> = ({ product }) => {
-  const renderProductImages = useCallback(() => {
+  const renderProductImage = useCallback(() => {
     if (product.images) {
       return (
         <Image
           src={product.images[0].url ?? PLACEHOLDER_IMAGE}
           alt={product.name}
-          width={540}
-          height={540}
+          width={250}
+          height={250}
           quality="85"
           layout="responsive"
         />
@@ -29,8 +29,8 @@ const ProductCard: FC<Props> = ({ product }) => {
   return (
     <>
       <Link href={`/products/${product.slug}`}>
-        <div>
-          {renderProductImages()}
+        <div className={s['product-container']}>
+          {renderProductImage()}
           <div>
             <div>{product.name}</div>
             <div>R$ {product.price.value}</div>

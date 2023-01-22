@@ -1,27 +1,46 @@
-@import "../../../styles/theme.module.scss";
+@import '../../../styles/theme.module.scss';
 
 .header {
-  background-color: white;
-}
-
-.nav-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: $spacing-16;
+}
 
-  height: $spacing-64;
-  padding: 0 $spacing-48;
+.nav-box {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: $spacing-32;
 }
 
 .logo-img {
   height: $spacing-48;
+
   cursor: pointer;
 }
 
-.nav-link {
+.nav-link,
+.nav-link:visited,
+.nav-link:link {
   text-decoration: none;
-  font-size: $font-size-14;
-  font-weight: $font-weight-800;
+
+  font-size: $font-size-16;
+  font-weight: $fw-800;
+
+  color: $cl-text;
 
   cursor: pointer;
+  transition: all 0.25s;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: $cl-primary-dark-1;
+}
+
+.nav-link-button {
+  padding: $spacing-12 $spacing-32 !important;
+  font-size: $spacing-16 !important;
 }

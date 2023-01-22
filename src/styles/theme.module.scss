@@ -1,5 +1,5 @@
 // Colors
-$cl-primary: #B93C32;
+$cl-primary: #b93c32;
 $cl-primary-dark-1: #943028;
 $cl-primary-dark-2: #6f241e;
 $cl-primary-light-1: #c05047;
@@ -8,7 +8,7 @@ $cl-primary-light-2: #d58a84;
 $cl-background: #f6f5f6;
 $cl-text: #0a0a0a;
 $cl-small-text: #232323;
-$cl-secundary: #00007B ;
+$cl-secundary: #00007b;
 
 // Screen Sizes
 $screen-xm: 32rem;
@@ -27,7 +27,7 @@ $spacing-24: 2.4rem;
 $spacing-32: 3.2rem;
 $spacing-48: 4.8rem;
 $spacing-64: 6.4rem;
-$spacing-80: 8.0rem;
+$spacing-80: 8rem;
 $spacing-96: 9.6rem;
 $spacing-128: 12.8rem;
 
@@ -35,8 +35,9 @@ $spacing-128: 12.8rem;
 $br-1: 23px;
 
 // Font weights
-$font-weight-400: 400;
-$font-weight-800: 800;
+$fw-400: 400;
+$fw-500: 500;
+$fw-800: 800;
 
 // Font sizes
 $font-size-10: 1rem;
@@ -44,9 +45,9 @@ $font-size-12: 1.2rem;
 $font-size-14: 1.4rem;
 $font-size-16: 1.6rem;
 $font-size-18: 1.8rem;
-$font-size-20: 2.0rem;
+$font-size-20: 2rem;
 $font-size-24: 2.4rem;
-$font-size-30: 3.0rem;
+$font-size-30: 3rem;
 $font-size-36: 3.6rem;
 $font-size-44: 4.4rem;
 $font-size-52: 5.2rem;
@@ -58,8 +59,8 @@ $font-size-98: 9.8rem;
 // Font line heights
 $font-lineHeight-1: 1;
 $font-lineHeight-2: 1.05;
-$font-lineHeight-3: 1.10;
-$font-lineHeight-4: 1.20;
+$font-lineHeight-3: 1.1;
+$font-lineHeight-4: 1.2;
 
 // Font families
 $font-type-text: 'Courier Prime', monospace;

@@ -1,4 +1,4 @@
-@import "../../../styles/theme.module.scss";
+@import '../../../styles/theme.module.scss';
 
 .hero {
   // background-color: $cl-primary-light-2;
@@ -13,25 +13,21 @@
   align-items: center;
   gap: $spacing-48;
 
-  padding: 0 $spacing-32;
+  padding: 0 $spacing-16;
 
-  // background-color: $cl-primary-light-2;
-}
-
-.headline-text {
   // background-color: $cl-primary-light-2;
 }
 
 .headline-box {
   font-size: $font-size-52;
-  font-weight: $font-weight-800;
+  font-weight: $fw-800;
   line-height: $font-lineHeight-1;
   font-family: $font-type-title;
   color: $cl-text;
   letter-spacing: -8px;
   user-select: none;
   max-width: 683px;
-  word-break: break-all;
+  // word-break: break-all;
   // background-color: $cl-primary-light-2;
 }
 
