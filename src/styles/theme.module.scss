@@ -17,6 +17,9 @@ $screen-md: 77rem;
 $screen-lg: 102rem;
 $screen-xl: 130rem;
 
+// main hero special rem
+$screen-main-hero: 135rem;
+
 // Spacings
 $spacing-2: 0.2rem;
 $spacing-4: 0.4rem;
@@ -65,3 +68,11 @@ $font-lineHeight-4: 1.2;
 // Font families
 $font-type-text: 'Courier Prime', monospace;
 $font-type-title: 'Lexend Zetta', sans-serif;
+
+@mixin desktop {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+// how to use mixin: import as "mixin". @include mixin.desktop {...css}

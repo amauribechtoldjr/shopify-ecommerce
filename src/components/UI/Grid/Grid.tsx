@@ -2,27 +2,30 @@ import classNames from 'classnames'
 import { FC } from 'react'
 import s from './Grid.module.scss'
 
-type GridColumnOptions = 2 | 3
+type GridColumnOptions = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
 interface GridProps {
   cols: GridColumnOptions
+  extraClasses?: string[]
 }
 
-const columnOptions = {
-  '2': s['columns-2'],
-  '3': s['columns-3']
+const columnsNumber = 9
+const columnsOptions = {}
+
+for (let i = 0; i <= columnsNumber; i++) {
+  columnsOptions[i] = s[`columns-${i}`]
 }
 
 function convertColsToClassname(cols: GridColumnOptions): string {
-  console.log(cols)
-  console.log(columnOptions)
-  return columnOptions[cols]
+  return columnsOptions[cols]
 }
 
-const Grid: FC<GridProps> = ({ children, cols }) => {
-  const gridClasses = classNames([s.grid, convertColsToClassname(cols)])
-
-  console.log(gridClasses)
+const Grid: FC<GridProps> = ({ children, cols, extraClasses }) => {
+  const gridClasses = classNames(
+    s.grid,
+    convertColsToClassname(cols),
+    extraClasses
+  )
 
   return <div className={gridClasses}>{children}</div>
 }

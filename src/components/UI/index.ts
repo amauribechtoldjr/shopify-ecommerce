@@ -6,5 +6,16 @@ import Navbar from './Navbar/Navbar'
 import Usernav from './Usernav/Usernav'
 import UIProvider from './UIProvider/UIProvider'
 import LinkButton from './LinkButton/LinkButton'
+import Container from './Container/Container'
 
-export { Layout, Grid, Footer, Hero, Navbar, Usernav, UIProvider, LinkButton }
+export {
+  Layout,
+  Grid,
+  Footer,
+  Hero,
+  Navbar,
+  Usernav,
+  UIProvider,
+  LinkButton,
+  Container
+}

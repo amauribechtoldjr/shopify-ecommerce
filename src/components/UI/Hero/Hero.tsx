@@ -1,6 +1,6 @@
 import s from './Hero.module.scss'
 import { FC } from 'react'
-import { LinkButton } from '@components/UI'
+import { Grid, LinkButton } from '@components/UI'
 
 interface Props {
   headline?: string
@@ -16,7 +16,7 @@ const Hero: FC<Props> = ({
 }) => {
   return (
     <section className={s.hero}>
-      <div className={s['grid-box']}>
+      <Grid cols={2} extraClasses={[s['grid-box']]}>
         <div className={s['hero-img-box']}>
           <img src={image.url} alt={image.alt} className={s['hero-img']} />
         </div>
@@ -29,7 +29,7 @@ const Hero: FC<Props> = ({
             TRAVESSURAS
           </LinkButton>
         </div>
-      </div>
+      </Grid>
     </section>
   )
 }
