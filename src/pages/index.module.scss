@@ -3,3 +3,37 @@
 .hero-container {
   max-width: $screen-main-hero;
 }
+
+// stepsHero
+
+.heading-box {
+  margin-bottom: $spacing-96;
+}
+
+.subheading {
+  display: block;
+  font-size: $font-size-20;
+  font-weight: $fw-600;
+  color: $cl-primary-dark-2;
+  text-transform: uppercase;
+  margin-bottom: $spacing-16;
+  letter-spacing: $f-ls-75;
+}
+
+.step-img-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-img {
+  width: 50%;
+  height: 100%;
+}
+
+.step-number {
+}
+
+.step-desctiption {
+}
+// stepsHero

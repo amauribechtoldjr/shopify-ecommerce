@@ -3,6 +3,8 @@
 $columns: 9;
 
 .grid {
+  background-color: inherit;
+
   display: grid;
   gap: $spacing-48;
 

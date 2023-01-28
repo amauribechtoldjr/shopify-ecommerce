@@ -1,6 +1,8 @@
 @import '../../../styles/theme.module.scss';
 
 .container {
+  background-color: inherit;
+
   padding: 0 $spacing-24;
   margin: 0 auto;
 

@@ -1,0 +1,24 @@
+@import '../../../styles/theme.module.scss';
+
+.heading {
+  color: $cl-text-primary;
+  font-weight: $fw-800;
+  line-height: $font-lineHeight-2;
+  font-family: $font-type-title;
+  letter-spacing: $f-ls-002;
+  user-select: none;
+
+  &.heading-h1 {
+    font-size: $font-size-52;
+    line-height: $font-lineHeight-3;
+  }
+
+  &.heading-h2 {
+    font-size: $font-size-44;
+    line-height: $font-lineHeight-4;
+  }
+
+  &.heading-h3 {
+    font-size: $font-size-24;
+  }
+}

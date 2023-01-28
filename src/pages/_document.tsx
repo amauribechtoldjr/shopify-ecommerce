@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link
           href={
-            'https://fonts.googleapis.com/css2?family=Courier+Prime&family=Lexend+Zetta:wght@500;800;900&display=swap'
+            'https://fonts.googleapis.com/css2?family=Courier+Prime&family=Lexend+Zetta:wght@400,500;600;700;800;900&display=swap'
           }
           rel="stylesheet"
         />

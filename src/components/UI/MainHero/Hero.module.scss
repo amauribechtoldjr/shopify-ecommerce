@@ -9,14 +9,17 @@
   max-width: $screen-main-hero;
 }
 
-.headline-box {
-  font-size: $font-size-52;
+.headline-text {
+  color: $cl-text !important;
+  font-size: $font-size-86;
   font-weight: $fw-800;
   line-height: $font-lineHeight-1;
   font-family: $font-type-title;
-  color: $cl-text;
-  letter-spacing: -8px;
+  letter-spacing: $f-ls-008;
   user-select: none;
+}
+
+.headline-box {
   max-width: 683px;
 }
 

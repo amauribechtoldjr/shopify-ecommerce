@@ -1,6 +1,7 @@
 import s from './Hero.module.scss'
 import { FC } from 'react'
 import { Grid, LinkButton } from '@components/UI'
+import Heading from '../Heading/Heading'
 
 interface Props {
   headline?: string
@@ -21,7 +22,9 @@ const Hero: FC<Props> = ({
           <img src={image.url} alt={image.alt} className={s['hero-img']} />
         </div>
         <div className={s['headline-box']}>
-          <h1 className={s['headline-text']}>{headline.toUpperCase()}</h1>
+          <Heading as="h1" className={s['headline-text']}>
+            {headline.toUpperCase()}
+          </Heading>
           <LinkButton href="/produtos" className={s['hero-buy-button']}>
             COMPRAR
           </LinkButton>
