@@ -7,11 +7,11 @@ interface Props {
 }
 
 const Heading: FC<Props> = ({ children, as = 'h1', className, ...rest }) => {
-  const classNames = className || `${s.heading} ${s[`heading-${as}`]}`
+  const activeClassNames = className || `${s.heading} ${s[`heading-${as}`]}`
   const Component = as
 
   return (
-    <Component className={classNames} {...rest}>
+    <Component className={activeClassNames} {...rest}>
       {children}
     </Component>
   )

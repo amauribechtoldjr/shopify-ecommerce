@@ -6,11 +6,16 @@ $columns: 9;
   background-color: inherit;
 
   display: grid;
-  gap: $spacing-48;
+  column-gap: $spacing-48;
+  row-gap: $spacing-96;
 
   @for $i from 1 through $columns {
     &.columns-#{$i} {
       grid-template-columns: repeat(#{$i}, 1fr);
     }
+  }
+
+  &.center-v {
+    align-items: center;
   }
 }

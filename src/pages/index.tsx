@@ -1,4 +1,4 @@
-import { CardProduct } from '@components/product'
+// import { CardProduct } from '@components/product'
 import { getConfig } from '@framework/api/config'
 import type { InferGetStaticPropsType } from 'next'
 import { getAllProducts } from '@framework/database/fetchers'
@@ -6,7 +6,6 @@ import { Grid, Hero, Container } from '@components/UI'
 import Head from 'next/head'
 import s from './index.module.scss'
 import Heading from '@components/UI/Heading/Heading'
-import { render } from 'sass'
 import { FC } from 'react'
 
 export async function getStaticProps() {
@@ -57,7 +56,7 @@ const StepsHero = () => {
         <Heading as="h2">Criação de travessinhas e travessuras.</Heading>
       </Container>
       <Container>
-        <Grid cols={2}>
+        <Grid cols={2} alignCenter>
           <Step
             renderImage={() => {
               return (
@@ -75,7 +74,7 @@ const StepsHero = () => {
                 <div className={s['step-text-box']}>
                   <p className={s['step-number']}>01</p>
                   <Heading as="h3">Momento de travessura</Heading>
-                  <p className={s['step-description']}>
+                  <p className={s.desctiption}>
                     Primeiramente todas peças são projetadas e pensadas
                     previamente, na maior parte, pensadas como uma coleção,
                     separamos o material e iniciamos o desenvolvimento das
@@ -102,9 +101,9 @@ const StepsHero = () => {
             renderText={() => {
               return (
                 <div className={s['step-text-box']}>
-                  <p className={s['step-number']}>01</p>
+                  <p className={s['step-number']}>02</p>
                   <Heading as="h3">Momento de travessura</Heading>
-                  <p className={s['step-description']}>
+                  <p className={s.desctiption}>
                     Primeiramente todas peças são projetadas e pensadas
                     previamente, na maior parte, pensadas como uma coleção,
                     separamos o material e iniciamos o desenvolvimento das
@@ -130,9 +129,9 @@ const StepsHero = () => {
             renderText={() => {
               return (
                 <div className={s['step-text-box']}>
-                  <p className={s['step-number']}>01</p>
+                  <p className={s['step-number']}>03</p>
                   <Heading as="h3">Momento de travessura</Heading>
-                  <p className={s['step-description']}>
+                  <p className={s.desctiption}>
                     Primeiramente todas peças são projetadas e pensadas
                     previamente, na maior parte, pensadas como uma coleção,
                     separamos o material e iniciamos o desenvolvimento das

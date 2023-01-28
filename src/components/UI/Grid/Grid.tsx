@@ -6,6 +6,7 @@ type GridColumnOptions = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
 interface GridProps {
   cols: GridColumnOptions
+  alignCenter?: boolean
   extraClasses?: string[]
 }
 
@@ -20,9 +21,15 @@ function convertColsToClassname(cols: GridColumnOptions): string {
   return columnsOptions[cols]
 }
 
-const Grid: FC<GridProps> = ({ children, cols, extraClasses }) => {
+const Grid: FC<GridProps> = ({
+  children,
+  cols,
+  extraClasses,
+  alignCenter = false
+}) => {
   const gridClasses = classNames(
     s.grid,
+    { [s['center-v']]: alignCenter },
     convertColsToClassname(cols),
     extraClasses
   )
