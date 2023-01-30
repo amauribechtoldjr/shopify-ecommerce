@@ -4,6 +4,7 @@ import type { InferGetStaticPropsType } from 'next'
 import { getAllProducts } from '@framework/database/fetchers'
 import { Grid, Hero } from '@components/UI'
 import Head from 'next/head'
+import s from './index.module.scss'
 
 export async function getStaticProps() {
   const config = getConfig()
@@ -24,7 +25,7 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <title>Travesssa</title>
       </Head>
       <main>
-        <Hero />
+        <div className={s['main-container']}>Site disponível em breve!</div>
       </main>
     </div>
   )
