@@ -4,9 +4,9 @@ import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { PageProps } from 'src/types/pages'
 import { ProductImagesCarousel, ProductDetails } from '@components/product'
 
-import * as S from '@styles/pages/products/slug'
-import useCart from '@framework/hooks/mutation-handlers/cart/use-cart'
-import Head from 'next/head'
+// import * as S from '@styles/pages/products/slug'
+// import useCart from '@framework/hooks/mutation-handlers/cart/use-cart'
+// import Head from 'next/head'
 
 type Props = {
   slug: string
@@ -42,29 +42,30 @@ export const getStaticProps = async ({
 
 const ProductDetailPage: PageProps<typeof getStaticProps> = ({ product }) => {
   return (
-    <S.Container>
-      <Head>
-        <title>Travesssa - {product.name}</title>
-      </Head>
-      <S.ImagesContainer>
-        <ProductImagesCarousel>
-          {product.images.map(image => (
-            <S.ImageContainer key={image.url}>
-              <S.StyledImage
-                src={image.url}
-                alt={image.alt}
-                width={1050}
-                height={1050}
-                quality="85"
-              />
-            </S.ImageContainer>
-          ))}
-        </ProductImagesCarousel>
-      </S.ImagesContainer>
-      <S.DetailsContainer>
-        <ProductDetails product={product} />
-      </S.DetailsContainer>
-    </S.Container>
+    // <S.Container>
+    //   <Head>
+    //     <title>Travesssa - {product.name}</title>
+    //   </Head>
+    //   <S.ImagesContainer>
+    //     <ProductImagesCarousel>
+    //       {product.images.map(image => (
+    //         <S.ImageContainer key={image.url}>
+    //           <S.StyledImage
+    //             src={image.url}
+    //             alt={image.alt}
+    //             width={1050}
+    //             height={1050}
+    //             quality="85"
+    //           />
+    //         </S.ImageContainer>
+    //       ))}
+    //     </ProductImagesCarousel>
+    //   </S.ImagesContainer>
+    //   <S.DetailsContainer>
+    //     <ProductDetails product={product} />
+    //   </S.DetailsContainer>
+    // </S.Container>
+    <div></div>
   )
 }
 
