@@ -27,17 +27,17 @@ const ProductCard: FC<Props> = ({ product }) => {
   }, [product.name, product.images])
 
   return (
-    <>
+    <section className={s['card-product-box']}>
       <Link href={`/products/${product.slug}`}>
-        <div className={s['product-container']}>
+        <div>
           {renderProductImage()}
           <div>
-            <div>{product.name}</div>
+            <div className={s['product-title']}>{product.name}</div>
             <div>R$ {product.price.value}</div>
           </div>
         </div>
       </Link>
-    </>
+    </section>
   )
 }
 
