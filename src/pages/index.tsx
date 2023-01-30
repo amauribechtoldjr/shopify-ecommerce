@@ -1,13 +1,12 @@
-// import { CardProduct } from '@components/product'
+import { CardProduct } from '@components/product'
 import { getConfig } from '@framework/api/config'
 import type { InferGetStaticPropsType } from 'next'
 import { getAllProducts } from '@framework/database/fetchers'
-import { Grid, Hero, Container } from '@components/UI'
+import { Hero, Container, Grid } from '@components/UI'
 import Head from 'next/head'
 import s from './index.module.scss'
-import Heading from '@components/UI/Heading/Heading'
-import { FC } from 'react'
 import Separator from '@components/UI/Separator/Separator'
+import StepsHero from '@components/UI/StepsHero/StepsHero'
 
 export async function getStaticProps() {
   const config = getConfig()
@@ -21,134 +20,6 @@ export async function getStaticProps() {
   }
 }
 
-interface StepProps {
-  renderImageFirst?: boolean
-  renderImage: () => JSX.Element
-  renderText: () => JSX.Element
-}
-
-const Step: FC<StepProps> = ({
-  renderImageFirst = false,
-  renderImage,
-  renderText
-}) => {
-  if (renderImageFirst) {
-    return (
-      <>
-        {renderImage()}
-        {renderText()}
-      </>
-    )
-  }
-
-  return (
-    <>
-      {renderText()}
-      {renderImage()}
-    </>
-  )
-}
-
-const StepsHero = () => {
-  return (
-    <section className={s['steps-hero-section']}>
-      <Container className={s['heading-box']}>
-        <span className={s.subheading}>Como funciona?</span>
-        <Heading as="h2">Criação de travessinhas e travessuras.</Heading>
-      </Container>
-      <Container>
-        <Grid cols={2} alignCenter>
-          <Step
-            renderImage={() => {
-              return (
-                <div className={s['step-img-box']}>
-                  <img
-                    src="/images/peca_06.jpg"
-                    className={s['step-img']}
-                    alt="Imagem da peça antes de ir ao forno"
-                  />
-                </div>
-              )
-            }}
-            renderText={() => {
-              return (
-                <div className={s['step-text-box']}>
-                  <p className={s['step-number']}>01</p>
-                  <Heading as="h3">Momento de travessura</Heading>
-                  <p className={s.desctiption}>
-                    Primeiramente todas peças são projetadas e pensadas
-                    previamente, na maior parte, pensadas como uma coleção,
-                    separamos o material e iniciamos o desenvolvimento das
-                    peças, todas manualmente e com muito amor bla bla bla bla
-                    bla bla.
-                  </p>
-                </div>
-              )
-            }}
-          />
-          <Step
-            renderImageFirst
-            renderImage={() => {
-              return (
-                <div className={s['step-img-box']}>
-                  <img
-                    src="/images/peca_04.jpg"
-                    className={s['step-img']}
-                    alt="Imagem da peça antes de ir ao forno"
-                  />
-                </div>
-              )
-            }}
-            renderText={() => {
-              return (
-                <div className={s['step-text-box']}>
-                  <p className={s['step-number']}>02</p>
-                  <Heading as="h3">Momento de travessura</Heading>
-                  <p className={s.desctiption}>
-                    Primeiramente todas peças são projetadas e pensadas
-                    previamente, na maior parte, pensadas como uma coleção,
-                    separamos o material e iniciamos o desenvolvimento das
-                    peças, todas manualmente e com muito amor bla bla bla bla
-                    bla bla.
-                  </p>
-                </div>
-              )
-            }}
-          />
-          <Step
-            renderImage={() => {
-              return (
-                <div className={s['step-img-box']}>
-                  <img
-                    src="/images/peca_07.jpg"
-                    className={s['step-img']}
-                    alt="Imagem da peça antes de ir ao forno"
-                  />
-                </div>
-              )
-            }}
-            renderText={() => {
-              return (
-                <div className={s['step-text-box']}>
-                  <p className={s['step-number']}>03</p>
-                  <Heading as="h3">Momento de travessura</Heading>
-                  <p className={s.desctiption}>
-                    Primeiramente todas peças são projetadas e pensadas
-                    previamente, na maior parte, pensadas como uma coleção,
-                    separamos o material e iniciamos o desenvolvimento das
-                    peças, todas manualmente e com muito amor bla bla bla bla
-                    bla bla.
-                  </p>
-                </div>
-              )
-            }}
-          />
-        </Grid>
-      </Container>
-    </section>
-  )
-}
-
 const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div>
@@ -160,6 +31,13 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
           <Hero />
         </Container>
         <Separator />
+        <Container>
+          <Grid cols={3}>
+            {products.slice(0, 6).map(product => (
+              <CardProduct product={product} key={product.id}></CardProduct>
+            ))}
+          </Grid>
+        </Container>
         <Container>
           <StepsHero />
         </Container>

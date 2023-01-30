@@ -1,0 +1,63 @@
+@import '../../../styles/theme.module.scss';
+
+.steps-hero-section {
+  padding: $spacing-96 0;
+}
+
+.heading-box {
+  padding: $spacing-96;
+}
+
+.subheading {
+  display: block;
+  font-size: $font-size-20;
+  font-weight: $fw-600;
+  color: $cl-primary-dark-2;
+  text-transform: uppercase;
+  margin-bottom: $spacing-16;
+  letter-spacing: $f-ls-75;
+}
+
+.step-img-box {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 0;
+}
+
+// .step-img-box::before {
+//   content: '';
+//   display: block;
+//   width: 60%;
+//   padding-bottom: 60%;
+//   background-color: $cl-primary-light-4;
+//   position: absolute;
+//   border-radius: 50%;
+
+//   top: 50%;
+//   left: 50%;
+
+//   transform: translate(-50%, -50%);
+//   z-index: -1;
+// }
+
+.step-img {
+  width: 35%;
+  height: 100%;
+}
+
+.step-number {
+  font-size: $font-size-86;
+  color: #cecece;
+  font-weight: $fw-600;
+  margin-bottom: $spacing-12;
+}
+
+.desctiption {
+  margin-top: 20px;
+  font-size: $font-size-18;
+  line-height: $f-ls-02;
+}

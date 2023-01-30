@@ -7,6 +7,7 @@ import Usernav from './Usernav/Usernav'
 import UIProvider from './UIProvider/UIProvider'
 import LinkButton from './LinkButton/LinkButton'
 import Container from './Container/Container'
+import StepsHero from './StepsHero/StepsHero'
 
 export {
   Layout,
@@ -17,5 +18,6 @@ export {
   Usernav,
   UIProvider,
   LinkButton,
-  Container
+  Container,
+  StepsHero
 }
