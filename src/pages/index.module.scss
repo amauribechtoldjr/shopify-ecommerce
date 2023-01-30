@@ -14,4 +14,9 @@
   color: $cl-primary-dark-2;
 
   font-size: $font-size-30;
+  text-align: center;
+
+  @media screen and (max-width: 600px) {
+    font-size: $font-size-16;
+  }
 }
