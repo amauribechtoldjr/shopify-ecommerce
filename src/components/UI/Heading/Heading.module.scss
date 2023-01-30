@@ -7,6 +7,7 @@
   font-family: $font-type-title;
   letter-spacing: $f-ls-002;
   user-select: none;
+  background-color: inherit;
 
   &.heading-h1 {
     font-size: $font-size-52;
@@ -21,5 +22,9 @@
   &.heading-h3 {
     font-size: $font-size-24;
     letter-spacing: $f-ls-02;
+  }
+
+  &.inline {
+    display: inline;
   }
 }

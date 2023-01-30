@@ -7,6 +7,7 @@ import Head from 'next/head'
 import s from './index.module.scss'
 import Heading from '@components/UI/Heading/Heading'
 import { FC } from 'react'
+import Separator from '@components/UI/Separator/Separator'
 
 export async function getStaticProps() {
   const config = getConfig()
@@ -50,7 +51,7 @@ const Step: FC<StepProps> = ({
 
 const StepsHero = () => {
   return (
-    <section>
+    <section className={s['steps-hero-section']}>
       <Container className={s['heading-box']}>
         <span className={s.subheading}>Como funciona?</span>
         <Heading as="h2">Criação de travessinhas e travessuras.</Heading>
@@ -158,6 +159,7 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <Container className={s['hero-container']}>
           <Hero />
         </Container>
+        <Separator />
         <Container>
           <StepsHero />
         </Container>
