@@ -22,7 +22,7 @@ const Hero: FC<Props> = ({
           <img src={image.url} alt={image.alt} className={s['hero-img']} />
         </div>
         <div className={s['headline-box']}>
-          <Heading className={s['headline-text']}>
+          <Heading as="h1" className={s['headline-text']}>
             {headline.toUpperCase()}
           </Heading>
           <LinkButton href="/produtos" className={s['hero-buy-button']}>

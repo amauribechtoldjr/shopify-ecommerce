@@ -21,6 +21,7 @@ function convertColsToClassname(cols: GridColumnOptions): string {
   return columnsOptions[cols]
 }
 
+// TODO: grid css trick repeat(auto-fit, minmax())
 const Grid: FC<GridProps> = ({
   children,
   cols,

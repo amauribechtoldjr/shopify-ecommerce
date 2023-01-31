@@ -18,3 +18,14 @@ body {
   color: $cl-text;
   font-size: $spacing-16;
 }
+
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+  background-color: inherit;
+}

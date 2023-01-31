@@ -11,12 +11,11 @@
 
 .headline-text {
   color: $cl-text;
-  font-size: $font-size-86;
-  font-weight: $fw-800;
-  line-height: $font-lineHeight-1;
-  font-family: $font-type-title;
-  letter-spacing: $f-ls-008;
-  user-select: none;
+  font-size: $font-size-86 !important;
+  font-weight: $fw-800 !important;
+  line-height: $font-lineHeight-1 !important;
+  letter-spacing: $f-ls-008 !important;
+  user-select: none !important;
 }
 
 .headline-box {

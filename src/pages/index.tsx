@@ -32,8 +32,8 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
         </Container>
         <Separator />
         <Container>
-          <Grid cols={3}>
-            {products.slice(0, 6).map(product => (
+          <Grid cols={4}>
+            {products.slice(0, 8).map(product => (
               <CardProduct product={product} key={product.id}></CardProduct>
             ))}
           </Grid>

@@ -3,7 +3,7 @@ import { FC } from 'react'
 import s from './Heading.module.scss'
 
 interface Props {
-  as?: 'h1' | 'h2' | 'h3' | 'span'
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'span'
   className?: string
   inline?: boolean
 }
@@ -15,9 +15,13 @@ const Heading: FC<Props> = ({
   inline = false,
   ...rest
 }) => {
-  const activeClassNames =
-    className ||
-    classNames(s.heading, s[`heading-${as}`], { [s.inline]: inline })
+  const activeClassNames = classNames(
+    className,
+    s.heading,
+    s[`heading-${as}`],
+    { [s.inline]: inline }
+  )
+
   const Component = as
 
   return (
