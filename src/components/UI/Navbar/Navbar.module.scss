@@ -17,6 +17,8 @@
 
 .logo-img {
   height: $spacing-48;
+  fill: $cl-text;
+  stroke: $cl-text;
 
   cursor: pointer;
 }

@@ -3,7 +3,7 @@ import { FC } from 'react'
 import s from './Heading.module.scss'
 
 interface Props {
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'span'
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
   className?: string
   inline?: boolean
 }

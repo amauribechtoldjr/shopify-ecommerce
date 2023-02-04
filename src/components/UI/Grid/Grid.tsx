@@ -7,7 +7,7 @@ type GridColumnOptions = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 interface GridProps {
   cols: GridColumnOptions
   alignCenter?: boolean
-  extraClasses?: string[]
+  extraClasses?: string
 }
 
 const columnsNumber = 9

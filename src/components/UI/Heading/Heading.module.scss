@@ -29,6 +29,16 @@
     letter-spacing: $f-ls-02;
   }
 
+  &.heading-h5 {
+    font-size: $font-size-18;
+    letter-spacing: $f-ls-02;
+  }
+
+  &.heading-h6 {
+    font-size: $font-size-16;
+    letter-spacing: $f-ls-02;
+  }
+
   &.inline {
     display: inline;
   }

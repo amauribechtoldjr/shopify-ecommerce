@@ -1,0 +1,75 @@
+@import '../../../styles/theme.module.scss';
+
+.footer {
+  padding: $spacing-96 0 $spacing-128 0;
+
+  background-color: $cl-text;
+
+  div,
+  p,
+  a,
+  address,
+  svg {
+    background-color: inherit;
+    color: $cl-background;
+
+    font-style: normal;
+  }
+}
+
+.street-text {
+  line-height: $font-lineHeight-4;
+}
+
+.logo-img {
+  stroke: $cl-background;
+  fill: $cl-background;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  background-color: $cl-text;
+  text-decoration: none;
+
+  color: $cl-background;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.media-link {
+  height: $spacing-24;
+  width: $spacing-24;
+}
+
+.copyright {
+  margin-top: auto;
+
+  line-height: $font-lineHeight-4;
+}
+
+.footer-box {
+  display: flex;
+
+  flex-direction: column;
+  gap: $spacing-24;
+}
+
+.footer-heading {
+  user-select: none;
+
+  font-size: $font-size-18;
+  font-weight: $fw-500;
+
+  margin-bottom: $spacing-32;
+}
+
+.footer-grid {
+  display: grid;
+
+  column-gap: $spacing-48;
+  row-gap: $spacing-96;
+
+  grid-template-columns: 3fr 3fr 1.5fr 1.5fr;
+}
