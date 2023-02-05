@@ -8,6 +8,7 @@ import UIProvider from './UIProvider/UIProvider'
 import LinkButton from './LinkButton/LinkButton'
 import Container from './Container/Container'
 import StepsHero from './StepsHero/StepsHero'
+import ImageBox from './ImageBox/ImageBox'
 
 export {
   Layout,
@@ -19,5 +20,6 @@ export {
   UIProvider,
   LinkButton,
   Container,
-  StepsHero
+  StepsHero,
+  ImageBox
 }

@@ -2,6 +2,7 @@ import { CardProduct } from '@components/product'
 import { getConfig } from '@framework/api/config'
 import type { InferGetStaticPropsType } from 'next'
 import { getAllProducts } from '@framework/database/fetchers'
+import { Grid } from '@components/UI'
 
 export async function getStaticProps() {
   const config = getConfig()
@@ -17,11 +18,11 @@ export async function getStaticProps() {
 
 const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <div>
+    <Grid cols={4}>
       {products.map(product => (
         <CardProduct key={product.id} product={product} />
       ))}
-    </div>
+    </Grid>
   )
 }
 

@@ -17,7 +17,7 @@ const Hero: FC<Props> = ({
 }) => {
   return (
     <section className={s.hero}>
-      <Grid cols={2} extraClasses={[s['grid-box']]}>
+      <Grid cols={2} extraClasses={s['grid-box']}>
         <div className={s['hero-img-box']}>
           <img src={image.url} alt={image.alt} className={s['hero-img']} />
         </div>

@@ -1,0 +1,32 @@
+@import '../../../styles/theme.module.scss';
+
+.color-option-box {
+  margin-left: $spacing-16;
+
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-12;
+}
+
+.color-option {
+  width: $spacing-24;
+  height: $spacing-24;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected-icon {
+  background-color: inherit;
+
+  &.black-option {
+    color: $cl-text;
+  }
+
+  &.white-option {
+    color: $cl-background;
+  }
+}

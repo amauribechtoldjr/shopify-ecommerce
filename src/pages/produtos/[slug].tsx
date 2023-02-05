@@ -4,9 +4,10 @@ import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { PageProps } from 'src/types/pages'
 import { ProductDetails } from '@components/product'
 
-import s from '../../styles/pages/products/slug.module.scss'
+import s from './slug.module.scss'
 // import useCart from '@framework/hooks/mutation-handlers/cart/use-cart'
 import Head from 'next/head'
+import { Container, Grid, ImageBox } from '@components/UI'
 
 type Props = {
   slug: string
@@ -40,24 +41,40 @@ export const getStaticProps = async ({
   }
 }
 
-const ProductDetailPage: PageProps<typeof getStaticProps> = ({ product }) => {
+// {product.images.map(image => (
+//   <div key={image.url}>
+//     <img src={image.url} alt={image.alt} width={1050} height={1050} />
+//   </div>
+// ))}
+
+const ProductSlug: PageProps<typeof getStaticProps> = ({ product }) => {
   return (
-    <div className={s['product-container']}>
+    <section className={s['product-details-box']}>
       <Head>
         <title>Travesssa - {product.name}</title>
       </Head>
-      <div>
-        {product.images.map(image => (
-          <div key={image.url}>
-            <img src={image.url} alt={image.alt} width={1050} height={1050} />
+      <Container>
+        <Grid cols={2}>
+          <div>
+            <ImageBox
+              src={product?.images[0]?.url}
+              alt={product?.images[0]?.alt}
+            />
           </div>
-        ))}
-      </div>
-      <div>
-        <ProductDetails product={product} />
-      </div>
-    </div>
+          <div>
+            <ProductDetails product={product} />
+          </div>
+        </Grid>
+        <Grid cols={3} extraClasses={s['product-images-box']}>
+          {product.images.map(image => (
+            <div key={image.url} className={s['product-images-slug-box']}>
+              <ImageBox src={image.url} alt={image.alt} />
+            </div>
+          ))}
+        </Grid>
+      </Container>
+    </section>
   )
 }
 
-export default ProductDetailPage
+export default ProductSlug

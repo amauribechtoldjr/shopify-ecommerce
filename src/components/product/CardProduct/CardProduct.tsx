@@ -7,12 +7,11 @@ import Heading from '@components/UI/Heading/Heading'
 import { Ghost } from '@components/icons'
 import { useRouter } from 'next/router'
 import { ROUTES } from '@components/UI/Navbar/Navbar'
+import { ImageBox } from '@components/UI'
 
 interface Props {
   product: Product
 }
-
-const PLACEHOLDER_IMAGE = '/product-placeholder.svg'
 
 const ProductCard: FC<Props> = ({ product }) => {
   const router = useRouter()
@@ -20,16 +19,11 @@ const ProductCard: FC<Props> = ({ product }) => {
   const renderProductImage = useCallback(() => {
     if (product.images) {
       return (
-        <div className={s['image-box']}>
-          <Image
-            src={product.images[0].url ?? PLACEHOLDER_IMAGE}
-            alt={product.name}
-            quality="85"
-            className={s['product-image']}
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
+        <ImageBox
+          src={product.images[0].url}
+          alt={product.name}
+          classes={s['card-product-image-effect']}
+        />
       )
     }
   }, [product.name, product.images])

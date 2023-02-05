@@ -1,0 +1,17 @@
+@import '../../../styles/theme.module.scss';
+
+.image-box {
+  width: 100%;
+  height: 100%;
+
+  & span {
+    position: unset !important;
+  }
+}
+
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}

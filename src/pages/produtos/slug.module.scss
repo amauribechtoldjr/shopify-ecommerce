@@ -1,0 +1,14 @@
+@import '../../styles/theme.module.scss';
+
+.product-images-box {
+  padding: $spacing-48 0;
+}
+
+.product-details-box {
+  padding: $spacing-96;
+}
+
+.product-images-slug-box {
+  width: 300px;
+  height: 450px;
+}
