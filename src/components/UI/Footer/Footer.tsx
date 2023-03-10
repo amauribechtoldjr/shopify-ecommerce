@@ -18,6 +18,7 @@ const Footer: FC = () => {
           <div className={s['footer-box']}>
             <Link href="/" passHref>
               <a>
+                {/** TODO: remover margins e paddings da logo svg (editar imagem) */}
                 <Logo classes={s['logo-img']} />
               </a>
             </Link>
@@ -27,7 +28,7 @@ const Footer: FC = () => {
             </p>
           </div>
           <div className={s['footer-box']}>
-            <p className={s['footer-heading']}>Entre em contato</p>
+            <p className={s['footer-heading']}>Contato</p>
             <address className={s['footer-box']}>
               <p className={s['street-text']}>
                 Rua: Professor Anacleto Damiani, 89

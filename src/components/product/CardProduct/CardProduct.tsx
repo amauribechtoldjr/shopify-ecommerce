@@ -56,6 +56,7 @@ const ProductCard: FC<Props> = ({ product }) => {
             </div>
             <span className={s['product-price']}>R$ {product.price.value}</span>
           </div>
+          {/** TODO: adicionar item ao carrinho aqui também */}
           <div className={s['buy-button']} onClick={handleBuyButton}>
             <span>QUERO!</span>
             <Ghost classes={s['ghost-icon']} />

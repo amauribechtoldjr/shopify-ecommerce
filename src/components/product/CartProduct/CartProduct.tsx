@@ -13,6 +13,8 @@ const CartProduct = ({
   currencyCode: string
 }) => {
   const removeItem = useRemoveItem()
+
+  // TODO: Verificar disponibilidade de quantidade e cor de items antes de adicionar
   const updateItem = useUpdateItem()
 
   const price = item.variant.price * item?.quantity || 0

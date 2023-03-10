@@ -9,6 +9,7 @@ import { Grid, LinkButton } from '@components/UI'
 import { Ghost } from '@components/icons'
 import Box from '@components/icons/Box'
 import Star from '@components/icons/Star'
+import { useUI } from '@hooks'
 
 type Props = {
   product: Product
@@ -18,6 +19,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>(null)
   const [isLoading, setLoading] = useState(false)
   const variant = getVariant(product, selectedOptions)
+  const { openSidebar } = useUI()
 
   const addItem = useAddItem()
 
@@ -39,6 +41,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
       await addItem(item)
 
       setLoading(false)
+      openSidebar()
     } catch {
       setLoading(false)
     }

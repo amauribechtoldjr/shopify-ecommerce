@@ -15,7 +15,7 @@ interface ColorOption extends ProductOptionValues {
   handleSelectOption: (value: ProductOptionValues) => void
 }
 
-function calcHexColor(color: string): boolean {
+function calcHexColor(color = ''): boolean {
   const rgb = parseInt(color.substring(1), 16)
   const r = (rgb >> 16) & 0xff
   const g = (rgb >> 8) & 0xff

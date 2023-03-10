@@ -1,6 +1,7 @@
-@import "../../../styles/theme.module.scss";
+@import '../../../styles/theme.module.scss';
 
-.button-link:link, .button-link:visited {
+.button-link:link,
+.button-link:visited {
   font-family: $font-type-title;
   font-size: $font-size-20;
   text-decoration: none;
@@ -17,7 +18,7 @@
 
   cursor: pointer;
 
-  transition: all .3s;
+  transition: all 0.3s;
 
   &:hover {
     background-color: $cl-primary-dark-2;
