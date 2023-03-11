@@ -1,9 +1,8 @@
 import s from './Navbar.module.scss'
 import Link from 'next/link'
 import { FC } from 'react'
-import LinkButton from '../LinkButton/LinkButton'
 import Logo from '@components/icons/Logo'
-// import { Usernav } from '@components/UI'
+import { useUI } from '@hooks'
 
 export const ROUTES = {
   HOME: '/',
@@ -16,6 +15,8 @@ export const ROUTES = {
 }
 
 const Navbar: FC = () => {
+  const { openSidebar } = useUI()
+
   return (
     <header className={s.header}>
       <Link href={ROUTES.HOME} passHref>
@@ -41,9 +42,12 @@ const Navbar: FC = () => {
             </Link>
           </li>
           <li>
-            <LinkButton href={ROUTES.HOME} className={s['nav-link-button']}>
-              Travessuras
-            </LinkButton>
+            <button
+              onClick={() => openSidebar()}
+              className={s['nav-link-button']}
+            >
+              Carrinho
+            </button>
           </li>
         </ul>
       </nav>

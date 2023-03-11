@@ -19,6 +19,18 @@ body {
   font-size: $spacing-16;
 }
 
+body::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: $cl-background;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: $cl-small-text;
+}
+
 span,
 h1,
 h2,

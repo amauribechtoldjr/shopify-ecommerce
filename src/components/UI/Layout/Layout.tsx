@@ -9,8 +9,8 @@ const Layout: FC = ({ children }) => {
 
   return (
     <ApiProvider>
+      <CartSidebar />
       <Navbar />
-      <CartSidebar isOpen={isSidebarOpen} onClose={() => closeSidebar()} />
       <main>
         <div>{children}</div>
       </main>
