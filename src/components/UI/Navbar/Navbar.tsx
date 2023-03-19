@@ -36,11 +36,11 @@ const Navbar: FC = () => {
               <a className={s['nav-link']}>Sobre</a>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href={ROUTES.COLLECTIONS} passHref>
               <a className={s['nav-link']}>Coleções</a>
             </Link>
-          </li>
+          </li> */}
           <li>
             <button
               onClick={() => openSidebar()}

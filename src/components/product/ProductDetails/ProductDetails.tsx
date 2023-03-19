@@ -5,11 +5,11 @@ import { getVariant, SelectedOptions } from '../helpers'
 import { useAddItem } from '@framework/hooks'
 import Heading from '@components/UI/Heading/Heading'
 import s from './ProductDetail.module.scss'
-import { Grid, LinkButton } from '@components/UI'
 import { Ghost } from '@components/icons'
 import Box from '@components/icons/Box'
 import Star from '@components/icons/Star'
 import { useUI } from '@hooks'
+import { ActionButton } from '@components/UI'
 
 type Props = {
   product: Product
@@ -54,9 +54,9 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
         <p className={s['product-price']}>{`R$ ${product.price.value}`}</p>
       </div>
       <div className={s['detail-box']}>
-        <button onClick={handleAddCart} className={s['add-product-button']}>
-          QUERO <Ghost classes={s['ghost-icon']} />
-        </button>
+        <ActionButton onClick={handleAddCart} disabled={isLoading}>
+          QUERO
+        </ActionButton>
       </div>
       <div className={s['detail-box']}>
         <div className={s['annotations-box']}>

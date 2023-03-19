@@ -1,27 +1,8 @@
-@import '../../../styles/theme.module.scss';
+@import '@theme';
 
 .detail-box {
   width: 100%;
   padding: $spacing-12 0;
-}
-
-.add-product-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: $font-size-14;
-  font-weight: 600;
-
-  padding: $spacing-8 $spacing-24;
-
-  border-radius: $spacing-24;
-  color: $cl-background;
-  background-color: $cl-text;
-
-  cursor: pointer;
-
-  min-width: 30rem;
 }
 
 .product-color-option-box {
@@ -52,16 +33,6 @@
 
   background-color: inherit;
   fill: $cl-text;
-
-  width: $spacing-16;
-  height: $spacing-16;
-}
-
-.ghost-icon {
-  margin-left: $spacing-12;
-
-  background-color: inherit;
-  fill: $cl-background;
 
   width: $spacing-16;
   height: $spacing-16;

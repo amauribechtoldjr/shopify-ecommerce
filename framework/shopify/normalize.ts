@@ -109,14 +109,16 @@ export function normalizeProduct(productNode: ShopifyProduct): Product {
     priceRange,
     options,
     variants,
+    totalInventory,
     ...rest
   } = productNode
 
   const product = {
     id,
-    name,
+    name: name.toUpperCase(),
     vendor,
     description,
+    totalInventory,
     path: `/${handle}`,
     slug: handle.replace(/^\/+|\/+$/g, ''),
     images: normalizeProductImages(imageConnection),
@@ -152,7 +154,7 @@ const normalizeLineItem = ({
     id,
     variantId: String(variant?.id),
     productId: String(variant?.id),
-    name: title,
+    name: title?.toUpperCase(),
     path: variant?.product?.handle ?? '',
     discounts: [],
     options: variant?.selectedOptions?.map(

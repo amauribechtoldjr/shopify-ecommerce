@@ -1,4 +1,4 @@
-@import '../../../styles/theme.module.scss';
+@import '@theme';
 
 .button-link:link,
 .button-link:visited {
@@ -8,8 +8,6 @@
   letter-spacing: normal;
 
   display: inline-block;
-
-  border-radius: $br-1;
 
   background-color: $cl-primary;
   color: $cl-background;

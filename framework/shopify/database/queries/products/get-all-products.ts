@@ -10,6 +10,7 @@ const productConnect = `
       vendor
       handle
       description
+      totalInventory
       priceRange {
         minVariantPrice {
           amount

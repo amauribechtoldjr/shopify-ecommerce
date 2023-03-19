@@ -1,22 +1,24 @@
-@import '../../../styles/theme.module.scss';
+@import '@theme';
 
 .color-option-box {
-  margin-left: $spacing-16;
-
   display: inline-flex;
   align-items: center;
   gap: $spacing-12;
 }
 
 .color-option {
-  width: $spacing-24;
-  height: $spacing-24;
+  width: $spacing-32;
+  height: $spacing-32;
 
   border-radius: 50%;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &.selected {
+    border: 2px dotted rgba($color: $cl-text, $alpha: 0.8);
+  }
 }
 
 .selected-icon {

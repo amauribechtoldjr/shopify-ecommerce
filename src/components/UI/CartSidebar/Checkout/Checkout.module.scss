@@ -1,0 +1,48 @@
+@import '@theme';
+
+.container {
+  flex: 3;
+
+  padding: 0 $spacing-16;
+}
+
+.total-values-container {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.values-list {
+  list-style: none;
+
+  width: auto;
+
+  li {
+    line-height: $font-lineHeight-4;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin: $spacing-4 0;
+
+    &:last-child {
+      margin-top: $spacing-32;
+    }
+  }
+}
+
+.label {
+  display: inline;
+}
+
+.value {
+  align-self: flex-end;
+}
+
+.checkout-button {
+  width: 100%;
+  height: $spacing-48;
+
+  margin-top: $spacing-16;
+}

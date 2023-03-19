@@ -1,12 +1,9 @@
-@import '../../../styles/theme.module.scss';
+@import '@theme';
 
 .card-product-box {
-  // min-height: 510px;
-
   border: 1px solid rgba($color: $cl-text, $alpha: 0.2);
   box-shadow: 0 $spacing-2 $spacing-8 rgba($color: $cl-text, $alpha: 0.1);
 
-  border-radius: $spacing-8;
   overflow: hidden;
 
   &:hover {

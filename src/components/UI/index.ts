@@ -9,7 +9,9 @@ import LinkButton from './LinkButton/LinkButton'
 import Container from './Container/Container'
 import StepsHero from './StepsHero/StepsHero'
 import ImageBox from './ImageBox/ImageBox'
+import Heading from './Heading/Heading'
 import CartSidebar from './CartSidebar/CartSidebar'
+import ActionButton from './ActionButton/ActionButton'
 
 export {
   Layout,
@@ -23,5 +25,7 @@ export {
   Container,
   StepsHero,
   ImageBox,
-  CartSidebar
+  CartSidebar,
+  Heading,
+  ActionButton
 }

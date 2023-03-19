@@ -5,7 +5,6 @@ import { PageProps } from 'src/types/pages'
 import { ImageSlider, ProductDetails } from '@components/product'
 
 import s from './slug.module.scss'
-// import useCart from '@framework/hooks/mutation-handlers/cart/use-cart'
 import Head from 'next/head'
 import { Container, Grid } from '@components/UI'
 

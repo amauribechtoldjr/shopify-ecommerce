@@ -41,10 +41,14 @@ const ColorOption: FC<ColorOption> = ({
     { [s['white-option']]: !isDark }
   )
 
+  const colorOptionClassNames = classNames(s['color-option'], {
+    [s.selected]: selected
+  })
+
   return (
     <div
       onClick={() => handleSelectOption({ label, hexColor })}
-      className={s['color-option']}
+      className={colorOptionClassNames}
       style={styles}
     >
       {selected ? (
