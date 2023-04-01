@@ -1,0 +1,33 @@
+@import '@theme';
+
+.product-filter {
+  display: inline-block;
+
+  padding: $spacing-16 $spacing-12;
+  margin: $spacing-12;
+
+  background-color: $cl-background;
+  box-shadow: 0 0 0 1px $cl-text inset;
+  cursor: pointer;
+  user-select: none;
+
+  &.selected {
+    box-shadow: 0 0 0 2px $cl-text inset;
+  }
+}
+
+.filters-container {
+  margin: $spacing-24 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-container {
+  min-height: 100vh;
+}
+
+.container {
+  padding: $spacing-48 0;
+}

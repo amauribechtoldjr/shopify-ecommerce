@@ -32,6 +32,20 @@ export interface ProductVariant {
   options: ProductOption[]
 }
 
+export type ProductType =
+  | 'xicara'
+  | 'cumbuca'
+  | 'prato'
+  | 'copo'
+  | 'travessa'
+  | 'escultura'
+  | 'vaso'
+  | 'moringa'
+  | 'travessuras'
+  | 'pote'
+  | 'cinzeiro'
+  | 'decorativos'
+
 export interface Product {
   id: string
   name: string
@@ -40,6 +54,7 @@ export interface Product {
   path: string
   images: ProductImage[]
   price: ProductPrice
+  type: ProductType
   options: ProductOption[]
   variants: ProductVariant[]
 }
