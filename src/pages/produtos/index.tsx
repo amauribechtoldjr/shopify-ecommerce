@@ -7,6 +7,7 @@ import { getAllProducts } from '@framework/database/fetchers'
 import { Container, Grid } from '@components/UI'
 import s from './index.module.scss'
 import classNames from 'classnames'
+import BreadCrumb from '@components/UI/Breadcrumb/Breadcrumb'
 
 export async function getStaticProps() {
   const config = getConfig()
@@ -70,6 +71,7 @@ const Products = ({
 
   return (
     <Container className={s.container}>
+      <BreadCrumb />
       <div className={s['filters-container']}>
         {productTypes.map(type => (
           <div

@@ -1,0 +1,17 @@
+@import '@theme';
+
+.container {
+  display: block;
+
+  margin: $spacing-48 0;
+}
+
+.route-container {
+  text-decoration: underline;
+
+  color: $cl-text;
+}
+
+.separator {
+  user-select: none;
+}

@@ -7,6 +7,7 @@ import { ImageSlider, ProductDetails } from '@components/product'
 import s from './slug.module.scss'
 import Head from 'next/head'
 import { Container, Grid } from '@components/UI'
+import BreadCrumb from '@components/UI/Breadcrumb/Breadcrumb'
 
 type Props = {
   slug: string
@@ -47,6 +48,7 @@ const ProductSlug: PageProps<typeof getStaticProps> = ({ product }) => {
         <title>Travesssa - {product.name}</title>
       </Head>
       <Container className={s['product-details-container']}>
+        <BreadCrumb />
         <Grid cols={2}>
           <div>
             <ImageSlider images={product.images} />
