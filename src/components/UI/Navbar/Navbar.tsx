@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { FC } from 'react'
 import Logo from '@components/icons/Logo'
 import { useUI } from '@hooks'
+import { Snake } from '@components/icons'
 
 export const ROUTES = {
   HOME: '/',
@@ -28,26 +29,20 @@ const Navbar: FC = () => {
         <ul className={s['nav-box']}>
           <li>
             <Link href={ROUTES.PRODUCTS} passHref>
-              <a className={s['nav-link']}>Produtos</a>
+              <a className={s['nav-link']}>PRODUTOS</a>
             </Link>
           </li>
           <li>
             <Link href={ROUTES.ABOUT} passHref>
-              <a className={s['nav-link']}>Sobre</a>
+              <a className={s['nav-link']}>SOBRE</a>
             </Link>
           </li>
-          {/* <li>
-            <Link href={ROUTES.COLLECTIONS} passHref>
-              <a className={s['nav-link']}>Coleções</a>
-            </Link>
-          </li> */}
           <li>
-            <button
-              onClick={() => openSidebar()}
-              className={s['nav-link-button']}
-            >
-              Carrinho
-            </button>
+            <div onClick={openSidebar}>
+              <Snake classes={s['snake-icon']} />
+              {/** TODO: substituir por quantidade de items reais */}
+              <span className={s['cart-count']}>5</span>
+            </div>
           </li>
         </ul>
       </nav>

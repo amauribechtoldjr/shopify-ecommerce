@@ -42,7 +42,30 @@
   color: $cl-primary-dark-1;
 }
 
-.nav-link-button {
-  padding: $spacing-12 $spacing-32 !important;
-  font-size: $spacing-16 !important;
+.snake-icon {
+  fill: $cl-text;
+
+  width: $spacing-20;
+  height: $spacing-20;
+
+  cursor: pointer;
+}
+
+.cart-count {
+  font-size: $font-size-12;
+  background: $cl-primary;
+  color: $cl-background;
+  vertical-align: top;
+
+  padding-left: $spacing-4;
+  padding-right: $spacing-4;
+
+  border-radius: 50%;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+.nav-container {
+  margin-right: $spacing-32;
 }

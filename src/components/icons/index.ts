@@ -7,6 +7,7 @@ export { default as Ghost } from './Ghost'
 export { default as Bomb } from './Bomb'
 export { default as Genius } from './Genius'
 export { default as Loading } from './Loading'
+export { default as Snake } from './Snake'
 
 export interface IconProps {
   classes?: string

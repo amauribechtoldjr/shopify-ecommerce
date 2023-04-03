@@ -49,7 +49,7 @@ const BreadCrumb: FC = () => {
   return (
     <div className={s.container}>
       {currentBreadcrumbs.map((bc, index) => (
-        <>
+        <div key={bc.name}>
           <Link href={bc.url} passHref key={bc.name}>
             <a className={s['route-container']}>
               <span>{bc.name}</span>
@@ -58,7 +58,7 @@ const BreadCrumb: FC = () => {
           <span className={s.separator}>
             {currentBreadcrumbs.length - 1 > index ? ' / ' : ''}
           </span>
-        </>
+        </div>
       ))}
     </div>
   )
