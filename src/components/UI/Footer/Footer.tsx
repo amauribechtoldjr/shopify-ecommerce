@@ -18,7 +18,6 @@ const Footer: FC = () => {
           <div className={s['footer-box']}>
             <Link href="/" passHref>
               <a>
-                {/** TODO: remover margins e paddings da logo svg (editar imagem) */}
                 <Logo classes={s['logo-img']} />
               </a>
             </Link>
@@ -28,7 +27,7 @@ const Footer: FC = () => {
             </p>
           </div>
           <div className={s['footer-box']}>
-            <p className={s['footer-heading']}>Contato</p>
+            <p className={s['footer-heading']}>CONTATO</p>
             <address className={s['footer-box']}>
               <p className={s['street-text']}>
                 Rua: Professor Anacleto Damiani, 89
@@ -43,7 +42,7 @@ const Footer: FC = () => {
             </address>
           </div>
           <div className={s['footer-box']}>
-            <p className={s['footer-heading']}>Travesssa</p>
+            <p className={s['footer-heading']}>TRAVESSSA</p>
             <div>
               <Link href="https://www.instagram.com/travesssa/" target="_blank">
                 <a target="_blank">
@@ -65,7 +64,7 @@ const Footer: FC = () => {
             </Link>
           </div>
           <div className={s['footer-box']}>
-            <p className={s['footer-heading']}>Loja</p>
+            <p className={s['footer-heading']}>LOJA</p>
             <Link href="/produtos" passHref>
               <a className={s['footer-link']}>Produtos</a>
             </Link>
