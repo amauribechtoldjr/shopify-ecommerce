@@ -1,7 +1,6 @@
-import s from './CardProduct.module.scss'
+import s from './index.module.scss'
 import { Product } from '@common/types/product'
 import Link from 'next/link'
-import Image from 'next/image'
 import { FC, useCallback } from 'react'
 import Heading from '@components/UI/Heading/Heading'
 import { Ghost } from '@components/icons'
