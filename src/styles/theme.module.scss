@@ -82,6 +82,11 @@ $f-ls-120: 1.2px;
 $font-type-text: 'Courier Prime', monospace;
 $font-type-title: 'Lexend Zetta', sans-serif;
 
+// container sizes
+$h-container-navbar: 8vh;
+$h-container-content: 52vh;
+$h-container-footer: 40vh;
+
 @mixin desktop {
   @media only screen and (min-width: 992px) {
     @content;

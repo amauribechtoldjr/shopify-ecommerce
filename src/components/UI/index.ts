@@ -1,6 +1,6 @@
 import Layout from './Layout/Layout'
 import Grid from './Grid/Grid'
-import Footer from './Footer/Footer'
+import Footer from './Footer'
 import Hero from './MainHero/Hero'
 import Navbar from './Navbar/Navbar'
 import Usernav from './Usernav/Usernav'
@@ -29,3 +29,5 @@ export {
   Heading,
   ActionButton
 }
+
+export { default as Separator } from './Separator/Separator'

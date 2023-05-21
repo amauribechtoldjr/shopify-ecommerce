@@ -4,6 +4,7 @@ import { FC } from 'react'
 import Logo from '@components/icons/Logo'
 import { useUI } from '@hooks'
 import { Snake } from '@components/icons'
+import Container from '../Container/Container'
 
 export const ROUTES = {
   HOME: '/',
@@ -19,34 +20,36 @@ const Navbar: FC = () => {
   const { openSidebar } = useUI()
 
   return (
-    <header className={s.header}>
-      <Link href={ROUTES.HOME} passHref>
-        <a>
-          <Logo classes={s['logo-img']} />
-        </a>
-      </Link>
-      <nav className={s['nav-container']}>
-        <ul className={s['nav-box']}>
-          <li>
-            <Link href={ROUTES.PRODUCTS} passHref>
-              <a className={s['nav-link']}>PRODUTOS</a>
-            </Link>
-          </li>
-          <li>
-            <Link href={ROUTES.ABOUT} passHref>
-              <a className={s['nav-link']}>SOBRE</a>
-            </Link>
-          </li>
-          <li>
-            <div onClick={openSidebar}>
-              <Snake classes={s['snake-icon']} />
-              {/** TODO: substituir por quantidade de items reais */}
-              <span className={s['cart-count']}>5</span>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <Container>
+      <header className={s.header}>
+        <Link href={ROUTES.HOME} passHref>
+          <a>
+            <Logo classes={s['logo-img']} />
+          </a>
+        </Link>
+        <nav className={s['nav-container']}>
+          <ul className={s['nav-box']}>
+            <li>
+              <Link href={ROUTES.PRODUCTS} passHref>
+                <a className={s['nav-link']}>PRODUTOS</a>
+              </Link>
+            </li>
+            <li>
+              <Link href={ROUTES.ABOUT} passHref>
+                <a className={s['nav-link']}>SOBRE</a>
+              </Link>
+            </li>
+            <li>
+              <div onClick={openSidebar}>
+                <Snake classes={s['snake-icon']} />
+                {/** TODO: substituir por quantidade de items reais */}
+                <span className={s['cart-count']}>5</span>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </Container>
   )
 }
 

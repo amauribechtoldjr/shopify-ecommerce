@@ -9,27 +9,13 @@
 
   display: inline-block;
 
-  background-color: $cl-primary;
+  background-color: $cl-text;
   color: $cl-background;
 
   padding: $spacing-16 $spacing-32;
 
   cursor: pointer;
 
+  box-shadow: inset 0 0 0 3px $cl-text;
   transition: all 0.3s;
-
-  &:hover {
-    background-color: $cl-primary-dark-2;
-  }
-
-  &.outline {
-    background-color: $cl-background;
-    color: $cl-primary;
-
-    box-shadow: inset 0 0 0 3px $cl-primary;
-
-    &:hover {
-      background-color: $cl-primary-light-2;
-    }
-  }
 }

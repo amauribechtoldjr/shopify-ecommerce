@@ -1,7 +1,8 @@
 @import '@theme';
 
 .footer {
-  padding: $spacing-96 0 $spacing-128 0;
+  height: $h-container-footer;
+  padding: $spacing-80 0;
 
   background-color: $cl-text;
 

@@ -1,8 +1,7 @@
-import s from './Footer.module.scss'
+import s from './index.module.scss'
 import { FC } from 'react'
 import Link from 'next/link'
 import Container from '../Container/Container'
-import Grid from '../Grid/Grid'
 import Logo from '@components/icons/Logo'
 import { BsInstagram } from 'react-icons/bs'
 
