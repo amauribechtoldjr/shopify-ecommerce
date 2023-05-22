@@ -6,8 +6,7 @@ import { ImageSlider, ProductDetails } from '@components/product'
 
 import s from './slug.module.scss'
 import Head from 'next/head'
-import { Container, Grid } from '@components/UI'
-import BreadCrumb from '@components/UI/Breadcrumb/Breadcrumb'
+import { Container, Grid, BreadCrumb } from '@components/UI'
 
 type Props = {
   slug: string
@@ -43,12 +42,12 @@ export const getStaticProps = async ({
 
 const ProductSlug: PageProps<typeof getStaticProps> = ({ product }) => {
   return (
-    <section className={s['product-details-box']}>
+    <Container className={s.container}>
+      <BreadCrumb />
       <Head>
         <title>Travesssa - {product.name}</title>
       </Head>
-      <Container className={s['product-details-container']}>
-        <BreadCrumb />
+      <Container className={s['content-height']}>
         <Grid cols={2}>
           <div>
             <ImageSlider images={product.images} />
@@ -58,7 +57,7 @@ const ProductSlug: PageProps<typeof getStaticProps> = ({ product }) => {
           </div>
         </Grid>
       </Container>
-    </section>
+    </Container>
   )
 }
 

@@ -1,9 +1,8 @@
 @import '@theme';
 
 .container {
-  display: block;
-
-  margin: $spacing-48 0;
+  margin-top: $spacing-20;
+  margin-bottom: $spacing-20;
 }
 
 .route-container {
@@ -14,4 +13,8 @@
 
 .separator {
   user-select: none;
+}
+
+.bread-item {
+  display: inline-block;
 }

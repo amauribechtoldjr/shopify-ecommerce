@@ -1,4 +1,4 @@
-import { Confuse, Genius } from '@components/icons'
+import { Confuse } from '@components/icons'
 import { Container, Heading, LinkButton } from '@components/UI'
 import s from './index.module.scss'
 

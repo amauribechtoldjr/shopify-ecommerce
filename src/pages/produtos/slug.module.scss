@@ -1,11 +1,11 @@
 @import '@theme';
 
-.product-images-box {
+.container {
   padding: $spacing-48 0;
 }
 
-.product-details-box {
-  padding: $spacing-96;
+.product-images-box {
+  padding: $spacing-48 0;
 }
 
 .product-images-slug-box {
@@ -13,6 +13,6 @@
   height: 450px;
 }
 
-.product-details-container {
-  height: 80vh;
+.content-height {
+  height: $h-container-content + $h-container-footer;
 }

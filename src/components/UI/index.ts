@@ -30,4 +30,6 @@ export {
   ActionButton
 }
 
+export { default as BreadCrumb } from './Breadcrumb'
 export { default as Separator } from './Separator/Separator'
+export { default as Button } from './Button'

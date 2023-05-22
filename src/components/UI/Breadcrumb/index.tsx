@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
-import s from './Breadcrumb.module.scss'
+import Container from '../Container/Container'
+import s from './index.module.scss'
 
 interface Breacrumb {
   name: string
@@ -47,20 +48,24 @@ const BreadCrumb: FC = () => {
   const currentBreadcrumbs: Breacrumb[] = getBreadcrumbsOfPage()
 
   return (
-    <div className={s.container}>
+    <Container className={s.container}>
       {currentBreadcrumbs.map((bc, index) => (
-        <div key={bc.name}>
+        <div key={bc.name} className={s['bread-item']}>
           <Link href={bc.url} passHref key={bc.name}>
             <a className={s['route-container']}>
               <span>{bc.name}</span>
             </a>
           </Link>
           <span className={s.separator}>
-            {currentBreadcrumbs.length - 1 > index ? ' / ' : ''}
+            {currentBreadcrumbs.length - 1 > index ? (
+              <>&nbsp;{'/'}&nbsp;</>
+            ) : (
+              ''
+            )}
           </span>
         </div>
       ))}
-    </div>
+    </Container>
   )
 }
 
