@@ -38,11 +38,6 @@
   transition: all 0.25s;
 }
 
-.nav-link:hover,
-.nav-link:active {
-  color: $cl-primary-dark-1;
-}
-
 .snake-icon {
   fill: $cl-text;
 
@@ -54,7 +49,7 @@
 
 .cart-count {
   font-size: $font-size-12;
-  background: $cl-primary;
+  background: $cl-text;
   color: $cl-background;
   vertical-align: top;
 
