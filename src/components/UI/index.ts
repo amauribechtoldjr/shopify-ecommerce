@@ -11,7 +11,6 @@ import StepsHero from './StepsHero/StepsHero'
 import ImageBox from './ImageBox/ImageBox'
 import Heading from './Heading/Heading'
 import CartSidebar from './CartSidebar/CartSidebar'
-import ActionButton from './ActionButton/ActionButton'
 
 export {
   Layout,
@@ -26,8 +25,7 @@ export {
   StepsHero,
   ImageBox,
   CartSidebar,
-  Heading,
-  ActionButton
+  Heading
 }
 
 export { default as BreadCrumb } from './Breadcrumb'

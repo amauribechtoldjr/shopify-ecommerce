@@ -1,5 +1,5 @@
 import { Cart } from '@common/types/cart'
-import ActionButton from '@components/UI/ActionButton/ActionButton'
+import Button from '@components/UI/Button'
 import Heading from '@components/UI/Heading/Heading'
 import Link from 'next/link'
 import { FC } from 'react'
@@ -47,12 +47,9 @@ const Checkout: FC<Props> = ({ data }) => {
           </ul>
         </div>
         <Link href="/api/checkout">
-          <ActionButton
-            onClick={() => null}
-            extraclasses={s['checkout-button']}
-          >
+          <Button onClick={() => null} className={s['checkout-button']}>
             EFETUAR O PAGAMENTO
-          </ActionButton>
+          </Button>
         </Link>
       </div>
     </>

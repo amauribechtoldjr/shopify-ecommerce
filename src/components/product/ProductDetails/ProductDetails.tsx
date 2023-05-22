@@ -9,7 +9,7 @@ import { Ghost } from '@components/icons'
 import Box from '@components/icons/Box'
 import Star from '@components/icons/Star'
 import { useUI } from '@hooks'
-import { ActionButton } from '@components/UI'
+import { Button } from '@components/UI'
 
 type Props = {
   product: Product
@@ -54,9 +54,10 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
         <p className={s['product-price']}>{`R$ ${product.price.value}`}</p>
       </div>
       <div className={s['detail-box']}>
-        <ActionButton onClick={handleAddCart} disabled={isLoading}>
-          QUERO
-        </ActionButton>
+        <Button onClick={handleAddCart} disabled={isLoading}>
+          COMPRAR
+          <Ghost classes={s['ghost-icon']} />
+        </Button>
       </div>
       <div className={s['detail-box']}>
         <div className={s['annotations-box']}>

@@ -19,6 +19,17 @@
   font-weight: $fw-600;
 }
 
+.ghost-icon {
+  background-color: $cl-text;
+
+  fill: $cl-background;
+
+  width: $spacing-20;
+  height: $spacing-20;
+
+  margin-left: $spacing-12;
+}
+
 .annotations-box {
   margin-bottom: $spacing-8;
 

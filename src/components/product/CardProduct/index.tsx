@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { FC, useCallback } from 'react'
 import Heading from '@components/UI/Heading/Heading'
 import { Ghost } from '@components/icons'
-import { useRouter } from 'next/router'
 import { ROUTES } from '@components/UI/Navbar/Navbar'
 import { ImageBox } from '@components/UI'
 
@@ -13,8 +12,6 @@ interface Props {
 }
 
 const ProductCard: FC<Props> = ({ product }) => {
-  const router = useRouter()
-
   const renderProductImage = useCallback(() => {
     if (product.images) {
       return (
@@ -27,15 +24,6 @@ const ProductCard: FC<Props> = ({ product }) => {
     }
   }, [product.name, product.images])
 
-  const handleCollectionClick = collection => e => {
-    e.preventDefault()
-    router.push(`/collections/${collection}`)
-  }
-
-  const handleBuyButton = e => {
-    e.preventDefault()
-  }
-
   return (
     <section className={s['card-product-box']}>
       <Link href={`${ROUTES.PRODUCTS}/${product.slug}`}>
@@ -46,20 +34,14 @@ const ProductCard: FC<Props> = ({ product }) => {
               <Heading as="h6" inline className={s['product-title']}>
                 {product.name}
               </Heading>
-              <span
-                className={s['product-collection']}
-                onClick={handleCollectionClick(product.name)}
-              >
-                drop-01
-              </span>
+              <span className={s['product-collection']}>drop-01</span>
             </div>
             <span className={s['product-price']}>R$ {product.price.value}</span>
           </div>
-          {/** TODO: adicionar item ao carrinho aqui também */}
-          <div className={s['buy-button']} onClick={handleBuyButton}>
-            <span>QUERO!</span>
+          <button className={s['buy-button']}>
+            <span>COMPRAR!</span>
             <Ghost classes={s['ghost-icon']} />
-          </div>
+          </button>
         </div>
       </Link>
     </section>
