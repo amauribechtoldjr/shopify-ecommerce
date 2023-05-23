@@ -1,4 +1,4 @@
-import { CardProduct } from '@components/product'
+import { Card } from '@components/product'
 import { getConfig } from '@framework/api/config'
 import type { InferGetStaticPropsType } from 'next'
 import { getAllProducts } from '@framework/database/fetchers'
@@ -32,7 +32,7 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <Container>
           <Grid cols={4}>
             {products.slice(0, 8).map(product => (
-              <CardProduct product={product} key={product.id}></CardProduct>
+              <Card product={product} key={product.id}></Card>
             ))}
           </Grid>
         </Container>

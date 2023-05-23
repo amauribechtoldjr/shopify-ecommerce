@@ -1,5 +1,5 @@
 import { Product, ProductType } from '@common/types/product'
-import { CardProduct } from '@components/product'
+import { Card } from '@components/product'
 import { Container, Grid } from '@components/UI'
 import { useMemo, useState } from 'react'
 import Filters from '../Filters'
@@ -49,7 +49,7 @@ const List = ({ products }: ListProps) => {
         {currentProducts?.length > 0 ? (
           <Grid cols={4}>
             {currentProducts.map(product => (
-              <CardProduct key={product.id} product={product} />
+              <Card key={product.id} product={product} />
             ))}
           </Grid>
         ) : null}

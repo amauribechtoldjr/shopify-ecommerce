@@ -11,7 +11,7 @@ interface Props {
   product: Product
 }
 
-const ProductCard: FC<Props> = ({ product }) => {
+const Card: FC<Props> = ({ product }) => {
   const renderProductImage = useCallback(() => {
     if (product.images) {
       return (
@@ -48,4 +48,4 @@ const ProductCard: FC<Props> = ({ product }) => {
   )
 }
 
-export default ProductCard
+export default Card

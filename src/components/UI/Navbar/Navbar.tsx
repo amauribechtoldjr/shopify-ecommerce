@@ -5,6 +5,7 @@ import Logo from '@components/icons/Logo'
 import { useUI } from '@hooks'
 import { Snake } from '@components/icons'
 import Container from '../Container/Container'
+import { useCart } from '@framework/hooks'
 
 export const ROUTES = {
   HOME: '/',
@@ -18,6 +19,7 @@ export const ROUTES = {
 
 const Navbar: FC = () => {
   const { openSidebar } = useUI()
+  const { data } = useCart()
 
   return (
     <Container>
@@ -43,7 +45,9 @@ const Navbar: FC = () => {
               <div onClick={openSidebar}>
                 <Snake classes={s['snake-icon']} />
                 {/** TODO: substituir por quantidade de items reais */}
-                <span className={s['cart-count']}>5</span>
+                <span className={s['cart-count']}>
+                  {data?.lineItems?.length}
+                </span>
               </div>
             </li>
           </ul>

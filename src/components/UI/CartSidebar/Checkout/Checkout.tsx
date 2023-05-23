@@ -48,7 +48,7 @@ const Checkout: FC<Props> = ({ data }) => {
         </div>
         <Link href="/api/checkout">
           <Button onClick={() => null} className={s['checkout-button']}>
-            EFETUAR O PAGAMENTO
+            FINALIZAR COMPRA
           </Button>
         </Link>
       </div>
