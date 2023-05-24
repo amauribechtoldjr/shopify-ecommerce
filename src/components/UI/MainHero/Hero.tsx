@@ -28,9 +28,6 @@ const Hero: FC<Props> = ({
           <LinkButton href="/produtos" className={s['hero-buy-button']}>
             COMPRAR
           </LinkButton>
-          <LinkButton href="/produtos" className={s['hero-buy-button']} outline>
-            TRAVESSURAS
-          </LinkButton>
         </div>
       </Grid>
     </section>

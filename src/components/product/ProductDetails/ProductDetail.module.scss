@@ -30,14 +30,6 @@
   margin-left: $spacing-12;
 }
 
-.annotations-box {
-  margin-bottom: $spacing-8;
-
-  &:last-child {
-    margin: 0;
-  }
-}
-
 .annotations-icon {
   display: inline;
   margin-right: $spacing-12;
@@ -68,4 +60,12 @@
   margin-top: $spacing-12;
   font-weight: $fw-600;
   font-size: $font-size-18;
+}
+
+.detail {
+  margin: $spacing-24 0;
+}
+
+.description {
+  max-width: $screen-xm;
 }
