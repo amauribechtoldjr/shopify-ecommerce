@@ -1,12 +1,20 @@
 @import '@theme';
 
 .hero {
-  padding: $spacing-48 0 $spacing-96 0;
+  height: $screen-md;
 }
 
 .grid-box {
+  width: 100%;
+  height: 100%;
+
   align-items: center;
   max-width: $screen-main-hero;
+  max-height: 100%;
+
+  @include sm-desktop {
+    max-width: $screen-xl;
+  }
 }
 
 .headline-text {
@@ -16,10 +24,10 @@
   line-height: $font-lineHeight-1 !important;
   letter-spacing: $f-ls-008 !important;
   user-select: none !important;
-}
 
-.headline-box {
-  max-width: 683px;
+  @include sm-desktop {
+    font-size: $font-size-74 !important;
+  }
 }
 
 .hero-buy-button {
@@ -27,8 +35,12 @@
   margin-right: $spacing-16;
 }
 
+.hero-img-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero-img {
-  width: 100%;
-  max-height: $screen-md;
   user-select: none;
 }

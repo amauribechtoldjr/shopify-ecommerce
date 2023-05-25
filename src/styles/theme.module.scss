@@ -76,8 +76,20 @@ $h-container-navbar: 8vh;
 $h-container-content: 52vh;
 $h-container-footer: 40vh;
 
-@mixin desktop {
-  @media only screen and (min-width: 992px) {
+/** 
+  * Mixins
+  * 
+  * rem and em do NOT depend on html font-size in media queries!
+  *
+  * instead, 1rem = 1em = 16px
+  *
+  * @mixin mobiles
+  * @mixin tablets 
+  * @mixin desktops (1350px / 16px) = 84em
+*/
+
+@mixin sm-desktop {
+  @media only screen and (max-width: 84em) {
     @content;
   }
 }

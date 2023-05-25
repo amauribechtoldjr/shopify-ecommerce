@@ -30,11 +30,11 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
         </Container>
         <Separator />
         <Container>
-          <Grid cols={4}>
+          <div className={s.products}>
             {products.slice(0, 8).map(product => (
               <Card product={product} key={product.id}></Card>
             ))}
-          </Grid>
+          </div>
         </Container>
         <Container>
           <StepsHero />

@@ -3,3 +3,17 @@
 .hero-container {
   max-width: $screen-main-hero;
 }
+
+.products {
+  padding: 0 $spacing-32;
+
+  display: grid;
+  column-gap: $spacing-64;
+  row-gap: $spacing-64;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  @include sm-desktop {
+    grid-template-columns: repeat(3, 0.8fr);
+  }
+}
