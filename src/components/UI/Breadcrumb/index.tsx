@@ -24,7 +24,7 @@ const breadcrumbs: Breacrumb[] = [
   }
 ]
 
-const BreadCrumb: FC = () => {
+const BreadCrumb = () => {
   const router = useRouter()
 
   function getBreadcrumbsOfPage(): Breacrumb[] {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Product, ProductOptionValues } from '@common/types/product'
-import { ProductOptions } from '@components/product'
 import { getVariant, SelectedOptions } from '../helpers'
 import { useAddItem } from '@framework/hooks'
 import Heading from '@components/UI/Heading/Heading'
@@ -15,7 +14,7 @@ type Props = {
   product: Product
 }
 
-const ProductDetails: React.FC<Props> = ({ product }) => {
+const ProductDetails = ({ product }: Props) => {
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>(null)
   const [isLoading, setLoading] = useState(false)
   const variant = getVariant(product, selectedOptions)
@@ -74,18 +73,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
         </div>
       </div>
       <div className={s['detail-box']}>
-        <div className={s['product-color-option-box']}>
-          <p className={s['option-title']}>CORES:</p>
-          {product.options.map(option => {
-            return (
-              <ProductOptions
-                key={option.id}
-                option={option}
-                onSelectOption={handleAddOption}
-              />
-            )
-          })}
-        </div>
+        <p>{product.description}</p>
       </div>
     </section>
   )

@@ -1,10 +1,9 @@
-import { FC } from 'react'
 import Container from '../Container/Container'
 import Heading from '../Heading/Heading'
 import Ghost from '../../icons/Ghost'
 import s from './Separator.module.scss'
 
-const Separator: FC = () => {
+const Separator = () => {
   return (
     <section className={s['separator-box']}>
       <Container className={s['separator-box-container']}>

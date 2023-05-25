@@ -1,13 +1,15 @@
 import { ProductType } from '@common/types/product'
-import classNames from 'classnames'
+import { Dropdown, Heading } from '@components/UI'
+import { getFirstLetterUppercase } from 'src/utils'
 import s from './index.module.scss'
 
 interface ProductTypes {
-  name: ProductType
+  name: ProductType | 'todos'
   key: number
 }
 
 const productTypes: ProductTypes[] = [
+  { name: 'todos', key: 1 },
   { name: 'xicara', key: 1 },
   { name: 'cumbuca', key: 2 },
   { name: 'prato', key: 3 },
@@ -28,30 +30,26 @@ interface FiltersProps {
 }
 
 const Filters = ({ updateTypeFilter, currentType }: FiltersProps) => {
-  function handleFilter(type) {
-    return () => {
-      if (type === currentType) {
-        return updateTypeFilter(null)
-      }
-
-      updateTypeFilter(type)
+  const handleFilter = (type: string) => {
+    if (type === currentType || type === 'todos') {
+      return updateTypeFilter(null)
     }
+
+    updateTypeFilter(type)
   }
 
-  const productFilterClassname = type =>
-    classNames(s['product-filter'], { [s.selected]: type === currentType })
-
   return (
-    <div className={s['filters-container']}>
-      {productTypes.map(type => (
-        <div
-          key={type.key}
-          className={productFilterClassname(type.name)}
-          onClick={handleFilter(type.name)}
-        >
-          {type.name}
-        </div>
-      ))}
+    <div className={s.container}>
+      <Heading as="h5" className={s['filter-text']}>
+        Filtro:
+      </Heading>
+      <Dropdown
+        menu={productTypes}
+        triggerText={
+          currentType ? getFirstLetterUppercase(currentType) : 'Todos'
+        }
+        onSelect={handleFilter}
+      />
     </div>
   )
 }
