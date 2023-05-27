@@ -9,6 +9,10 @@
 
 html {
   font-size: 62.5%;
+
+  @include tablets {
+    font-size: 56.25%;
+  }
 }
 
 body {

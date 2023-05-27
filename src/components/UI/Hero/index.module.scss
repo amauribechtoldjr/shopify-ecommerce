@@ -22,7 +22,7 @@
   font-size: $font-size-86 !important;
   font-weight: $fw-800 !important;
   line-height: $font-lineHeight-1 !important;
-  letter-spacing: $f-ls-008 !important;
+  letter-spacing: -8px !important;
   user-select: none !important;
 
   @include sm-desktop {

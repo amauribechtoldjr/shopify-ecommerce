@@ -47,11 +47,11 @@ const List = ({ products }: ListProps) => {
           <ProductTypeNotFound onClick={resetFilter} />
         )}
         {currentProducts?.length > 0 ? (
-          <Grid cols={4}>
+          <div className={s['grid-container']}>
             {currentProducts.map(product => (
               <Card key={product.id} product={product} />
             ))}
-          </Grid>
+          </div>
         ) : null}
       </div>
     </Container>
