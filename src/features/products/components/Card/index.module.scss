@@ -21,10 +21,7 @@
 }
 
 .product-title {
-  color: $cl-text !important;
   font-weight: $fw-600 !important;
-
-  cursor: pointer;
 }
 
 .card-box {
@@ -61,13 +58,6 @@
   }
 }
 
-.product-collection {
-  text-decoration: underline;
-  text-transform: uppercase;
-
-  cursor: pointer;
-}
-
 .product-price {
   display: block;
   margin-top: $spacing-8;
@@ -78,6 +68,8 @@
 
 .buy-button {
   flex: 1;
+
+  min-height: $spacing-64;
 
   color: $cl-background;
   background-color: $cl-text;

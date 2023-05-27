@@ -6,6 +6,7 @@ import Heading from '@components/UI/Heading/Heading'
 import { Ghost } from '@components/icons'
 import { ROUTES } from '@components/UI/Navbar/Navbar'
 import { ImageBox } from '@components/UI'
+import { getFirstLetterUppercase } from 'src/utils'
 
 interface Props {
   product: Product
@@ -32,9 +33,8 @@ const Card: FC<Props> = ({ product }) => {
           <div className={s['product-text-box']}>
             <div className={s['product-title-box']}>
               <Heading as="h6" inline className={s['product-title']}>
-                {product.name}
+                {getFirstLetterUppercase(product.name.toLowerCase())}
               </Heading>
-              <span className={s['product-collection']}>drop-01</span>
             </div>
             <span className={s['product-price']}>R$ {product.price.value}</span>
           </div>

@@ -12,18 +12,15 @@ const Footer: FC = () => {
 
   return (
     <footer className={s.footer}>
-      <Container>
+      <div className={s.container}>
         <div className={s['footer-grid']}>
-          <div className={s['footer-box']}>
+          <div className={s['logo-box']}>
             <Link href="/" passHref>
               <a>
                 <Logo classes={s['logo-img']} />
               </a>
             </Link>
-            <p className={s.copyright}>
-              Todos os direitos reservados por &copy; Travesssa -{' '}
-              {getCurrentYear()}
-            </p>
+            <p className={s.copyright}>&copy; Travesssa - {getCurrentYear()}</p>
           </div>
           <div className={s['footer-box']}>
             <p className={s['footer-heading']}>CONTATO</p>
@@ -67,12 +64,9 @@ const Footer: FC = () => {
             <Link href="/produtos" passHref>
               <a className={s['footer-link']}>Produtos</a>
             </Link>
-            {/* <Link href="/colecoes" passHref>
-              <a className={s['footer-link']}>Coleções</a>
-            </Link> */}
           </div>
         </div>
-      </Container>
+      </div>
     </footer>
   )
 }

@@ -1,7 +1,13 @@
 @import '@theme';
 
+.container {
+  max-width: $screen-xl;
+
+  padding: 0 0;
+  margin: 0 auto;
+}
+
 .footer {
-  height: $h-container-footer;
   padding: $spacing-80 $spacing-32;
 
   background-color: $cl-text;
@@ -25,6 +31,8 @@
 .logo-img {
   stroke: $cl-background;
   fill: $cl-background;
+
+  max-width: $screen-sm;
 }
 
 .footer-link:link,
@@ -65,18 +73,36 @@
   flex-direction: column;
   gap: $spacing-24;
 
-  padding-top: $spacing-12;
+  @include tablets {
+    grid-row-start: 2;
+  }
+}
 
-  &:first-child {
-    padding-top: 0;
+.logo-box {
+  display: flex;
+
+  flex-direction: column;
+  gap: $spacing-24;
+
+  @include tablets {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
   }
 }
 
 .footer-grid {
+  width: 100%;
+  height: 100%;
+
   display: grid;
 
   column-gap: $spacing-48;
   row-gap: $spacing-96;
 
-  grid-template-columns: 3fr 3fr 1.5fr 1.5fr;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include tablets {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
