@@ -1,6 +1,6 @@
 import s from './LinkButton.module.scss'
 import Link from 'next/link'
-import { AnchorHTMLAttributes, FC, ReactNode } from 'react'
+import { AnchorHTMLAttributes, ReactNode } from 'react'
 import classnames from 'classnames'
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -8,7 +8,7 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   outline?: boolean
 }
 
-const LinkButton: FC<Props> = ({ children, outline = false, ...props }) => {
+const LinkButton = ({ children, outline = false, ...props }: Props) => {
   return (
     <Link href={props.href} passHref>
       <a

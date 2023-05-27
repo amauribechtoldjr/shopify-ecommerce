@@ -84,7 +84,7 @@ $h-container-footer: 40vh;
   * instead, 1rem = 1em = 16px
   *
   * @mixin mobiles
-  * @mixin tablets 
+  * @mixin tablets (1200 / 16px) = 75rem
   * @mixin desktops (1350px / 16px) = 84em
 */
 
@@ -94,4 +94,8 @@ $h-container-footer: 40vh;
   }
 }
 
-// how to use mixin: import as "mixin". @include mixin.desktop {...css}
+@mixin tablets {
+  @media only screen and (max-width: 75em) {
+    @content;
+  }
+}

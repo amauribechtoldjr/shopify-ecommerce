@@ -1,7 +1,7 @@
 import { Cart } from '@common/types/cart'
 import Button from '@components/UI/Button'
 import Heading from '@components/UI/Heading/Heading'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { FC } from 'react'
 import s from './Checkout.module.scss'
 
@@ -10,6 +10,12 @@ interface Props {
 }
 
 const Checkout: FC<Props> = ({ data }) => {
+  const router = useRouter()
+
+  const handleCheckout = () => {
+    router.push('/api/checkout')
+  }
+
   return (
     <>
       <div className={s.container}>
@@ -20,7 +26,6 @@ const Checkout: FC<Props> = ({ data }) => {
                 Subtotal
               </Heading>
               <span className={s.value}>
-                {/** TODO: currency.code */}
                 {data?.lineItemsSubTotalPrie} {data?.currency.code}
               </span>
             </li>
@@ -31,7 +36,6 @@ const Checkout: FC<Props> = ({ data }) => {
               <span className={s.value}>Calculadas no pagamento</span>
             </li>
             <li>
-              {/** TODO: verificação situação do frete, como vamos fazer. */}
               <Heading as="h4" className={s.label}>
                 Frete estimado
               </Heading>
@@ -40,17 +44,14 @@ const Checkout: FC<Props> = ({ data }) => {
             <li>
               <Heading as="h3">Total</Heading>
               <span>
-                {/** TODO: currency.code */}
                 {data?.totalPrice} {data?.currency.code}
               </span>
             </li>
           </ul>
         </div>
-        <Link href="/api/checkout">
-          <Button onClick={() => null} className={s['checkout-button']}>
-            FINALIZAR COMPRA
-          </Button>
-        </Link>
+        <Button onClick={handleCheckout} className={s['checkout-button']}>
+          FINALIZAR COMPRA
+        </Button>
       </div>
     </>
   )

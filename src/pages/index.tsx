@@ -1,10 +1,10 @@
-import { Card } from '@components/product'
 import { getConfig } from '@framework/api/config'
 import type { InferGetStaticPropsType } from 'next'
 import { getAllProducts } from '@framework/database/fetchers'
-import { Hero, Container, Grid, Separator, StepsHero } from '@components/UI'
+import { Hero, Container, Separator, StepsHero } from '@components/UI'
 import Head from 'next/head'
 import s from './index.module.scss'
+import { Card } from '@features/products/components'
 
 export async function getStaticProps() {
   const config = getConfig()

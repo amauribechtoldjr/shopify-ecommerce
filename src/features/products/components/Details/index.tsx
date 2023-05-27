@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Product, ProductOptionValues } from '@common/types/product'
-import { getVariant, SelectedOptions } from '../helpers'
+import { getVariant, SelectedOptions } from '../../utils'
 import { useAddItem } from '@framework/hooks'
 import Heading from '@components/UI/Heading/Heading'
-import s from './ProductDetail.module.scss'
+import s from './index.module.scss'
 import { Ghost } from '@components/icons'
 import Box from '@components/icons/Box'
 import Star from '@components/icons/Star'
@@ -14,7 +14,7 @@ type Props = {
   product: Product
 }
 
-const ProductDetails = ({ product }: Props) => {
+const Details = ({ product }: Props) => {
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>(null)
   const [isLoading, setLoading] = useState(false)
   const variant = getVariant(product, selectedOptions)
@@ -54,7 +54,7 @@ const ProductDetails = ({ product }: Props) => {
       </div>
       <div className={s['detail-box']}>
         <Button onClick={handleAddCart} disabled={isLoading}>
-          COMPRAR
+          ADICIONAR AO CARRINHO
           <Ghost classes={s['ghost-icon']} />
         </Button>
       </div>
@@ -79,4 +79,4 @@ const ProductDetails = ({ product }: Props) => {
   )
 }
 
-export default ProductDetails
+export default Details

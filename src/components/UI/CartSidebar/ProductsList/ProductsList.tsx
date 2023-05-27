@@ -18,15 +18,10 @@ const ProductsList: FC<Props> = ({ data }) => {
       <Heading as="h4">Meu carrinho</Heading>
       <ul className={s['list-container']}>
         {data?.lineItems.map((item: LineItem) => (
-          <>
-            <CartProduct
-              key={item.id}
-              item={item}
-              currencyCode={data?.currency.code}
-              // TODO: adicionar função para formatar TODOS currency.code
-            />
+          <div key={item.id}>
+            <CartProduct item={item} currencyCode={data?.currency.code} />
             <CartListSeparator />
-          </>
+          </div>
         ))}
       </ul>
     </div>

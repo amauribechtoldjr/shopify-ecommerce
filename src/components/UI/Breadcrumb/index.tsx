@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { FC } from 'react'
 import Container from '../Container/Container'
 import s from './index.module.scss'
 

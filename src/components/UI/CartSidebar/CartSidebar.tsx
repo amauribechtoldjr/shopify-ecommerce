@@ -1,7 +1,6 @@
 import { useCart } from '@framework/hooks'
 import { useUI } from '@hooks'
 import classNames from 'classnames'
-import { FC } from 'react'
 import s from './CartSidebar.module.scss'
 import EmptyState from './EmptyState/EmptyState'
 
@@ -9,7 +8,7 @@ import { MdOutlineClose } from 'react-icons/md'
 import ProductsList from './ProductsList/ProductsList'
 import Checkout from './Checkout/Checkout'
 
-const CartSidebar: FC = () => {
+const CartSidebar = () => {
   const { data, isEmpty } = useCart()
   const { closeSidebar, isSidebarOpen } = useUI()
 
@@ -21,7 +20,7 @@ const CartSidebar: FC = () => {
     [s['modal-background-container']]: isSidebarOpen
   })
 
-  const handleCloseOutsideSidebar = () => e => {
+  const handleCloseOutsideSidebar = () => () => {
     // closeSidebar()
   }
 

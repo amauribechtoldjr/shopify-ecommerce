@@ -2,11 +2,11 @@ import { getConfig } from '@framework/api/config'
 import { getAllProductsPaths, getProduct } from '@framework/database/fetchers'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { PageProps } from 'src/types/pages'
-import { ImageSlider, ProductDetails } from '@components/product'
 
 import s from './slug.module.scss'
 import Head from 'next/head'
 import { Container, Grid, BreadCrumb } from '@components/UI'
+import { Details, ImageSlider } from '@features/products/components'
 
 type Props = {
   slug: string
@@ -53,7 +53,7 @@ const ProductSlug: PageProps<typeof getStaticProps> = ({ product }) => {
             <ImageSlider images={product.images} />
           </div>
           <div>
-            <ProductDetails product={product} />
+            <Details product={product} />
           </div>
         </Grid>
       </Container>

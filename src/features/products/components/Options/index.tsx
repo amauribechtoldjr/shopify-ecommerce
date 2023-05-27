@@ -1,4 +1,4 @@
-import s from './ProductOptions.module.scss'
+import s from './index.module.scss'
 import { CSSProperties, FC, memo, useState } from 'react'
 import { ProductOption, ProductOptionValues } from '@common/types/product'
 import { AiOutlineCheck } from 'react-icons/ai'
@@ -62,7 +62,7 @@ const ColorOption: FC<ColorOption> = ({
   )
 }
 
-const ProductOptions: FC<Props> = ({ option, onSelectOption }) => {
+const Options: FC<Props> = ({ option, onSelectOption }) => {
   const [selectedValue, setSelectedValue] = useState<ProductOptionValues>(null)
 
   const handleSelectOption = (value: ProductOptionValues) => {
@@ -94,4 +94,4 @@ const ProductOptions: FC<Props> = ({ option, onSelectOption }) => {
   )
 }
 
-export default memo(ProductOptions)
+export default memo(Options)

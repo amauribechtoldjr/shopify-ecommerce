@@ -14,7 +14,7 @@ const ProductTypeNotFound = ({ onClick }: ProductTypeNotFoundProps) => {
       <Heading
         as="h4"
         className={s['not-fount']}
-      >{`Opsss, Nenhum produto deste tipo encontrado!`}</Heading>
+      >{`Opsss, nenhum produto deste tipo encontrado!`}</Heading>
       <Button onClick={onClick}>Clique aqui para buscar outros produtos</Button>
     </div>
   )

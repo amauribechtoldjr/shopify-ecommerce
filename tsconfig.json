@@ -29,7 +29,9 @@
       "@hooks/*": ["src/hooks/*"],
       "@contexts": ["src/contexts"],
       "@contexts/*": ["src/contexts/*"],
-      "@theme": ["src/styles/theme.module.scss"]
+      "@theme": ["src/styles/theme.module.scss"],
+      "@features": ["src/features"],
+      "@features/*": ["src/features/*"]
     }
   },
   "include": [

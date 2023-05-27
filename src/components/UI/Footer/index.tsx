@@ -67,9 +67,9 @@ const Footer: FC = () => {
             <Link href="/produtos" passHref>
               <a className={s['footer-link']}>Produtos</a>
             </Link>
-            <Link href="/colecoes" passHref>
+            {/* <Link href="/colecoes" passHref>
               <a className={s['footer-link']}>Coleções</a>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </Container>

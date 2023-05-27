@@ -2,11 +2,11 @@ import { LineItem } from '@common/types/cart'
 import { Loading, Minus, Plus, Trash } from '../../../../icons'
 import Link from 'next/link'
 import { useRemoveItem, useUpdateItem } from '@framework/hooks'
-import ProductOptions from '../../../../product/ProductOptions/ProductOptions'
 import ImageBox from '@components/UI/ImageBox/ImageBox'
 import s from './CartProduct.module.scss'
 import Heading from '@components/UI/Heading/Heading'
 import { useState } from 'react'
+import { Options } from '@features/products/components'
 
 const CartProduct = ({
   item,
@@ -17,7 +17,6 @@ const CartProduct = ({
 }) => {
   const [updateItemLoading, setLoading] = useState(false)
   const removeItem = useRemoveItem()
-  // TODO: Verificar disponibilidade de quantidade e cor de items antes de adicionar
   const updateItem = useUpdateItem()
 
   const price = item.variant.price * item?.quantity || 0
@@ -59,11 +58,10 @@ const CartProduct = ({
             options.map(option => {
               const value = option.values[0].label
 
-              return <ProductOptions key={option.id + value} option={option} />
+              return <Options key={option.id + value} option={option} />
             })}
         </div>
         <div className={s['add-remove-container']}>
-          {/** TODO: adicionar loading no update item e verificar disponibilidade */}
           {!updateItemLoading && (
             <>
               <button

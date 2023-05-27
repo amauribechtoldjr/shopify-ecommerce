@@ -2,7 +2,7 @@ import { ProductImage } from '@common/types/product'
 import { Grid, ImageBox } from '@components/UI'
 import classNames from 'classnames'
 import { FC, useState } from 'react'
-import s from './ImageSlider.module.scss'
+import s from './index.module.scss'
 
 interface SliderProps {
   images: ProductImage[]
