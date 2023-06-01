@@ -70,6 +70,8 @@
 .footer-box {
   display: flex;
 
+  max-width: 200px;
+
   flex-direction: column;
   gap: $spacing-24;
 

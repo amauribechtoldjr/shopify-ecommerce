@@ -62,7 +62,7 @@ const Details = ({ product }: Props) => {
         <div className={s.detail}>
           <Star classes={s['annotations-icon']} />
           <Heading as="h5" className={s['product-important-annotations']}>
-            PODE IR AO MICROONDAS E LAVA-LOUÇAS
+            PODE IR AO MICROONDAS E LAVA-LOUÇAS!
           </Heading>
         </div>
         <div className={s.detail}>
@@ -73,7 +73,7 @@ const Details = ({ product }: Props) => {
         </div>
       </div>
       <div className={s['detail-box']}>
-        <p>{product.description}</p>
+        <div dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
       </div>
     </section>
   )

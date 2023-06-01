@@ -50,6 +50,7 @@ export interface Product {
   id: string
   name: string
   description: string
+  descriptionHtml: string
   slug: string
   path: string
   images: ProductImage[]

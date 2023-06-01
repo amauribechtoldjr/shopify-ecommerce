@@ -28,7 +28,7 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <Container className={s['hero-container']}>
           <Hero />
         </Container>
-        <Separator />
+        {/* <Separator /> */}
         <Container>
           <div className={s.products}>
             {products.slice(0, 8).map(product => (
@@ -36,6 +36,7 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
             ))}
           </div>
         </Container>
+        {/* TODO: parte imagem redonda com cobra */}
         <Container>
           <StepsHero />
         </Container>
