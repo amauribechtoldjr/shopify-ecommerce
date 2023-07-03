@@ -36,7 +36,7 @@ const ImageSlider: FC<SliderProps> = ({ images }) => {
   }
 
   return (
-    <div>
+    <>
       <div className={s['main-image-box']}>
         <div className={s['left-arrow']} onClick={goToPrevious}>
           &lsaquo;
@@ -44,6 +44,7 @@ const ImageSlider: FC<SliderProps> = ({ images }) => {
         <ImageBox
           src={images[currentIndex]?.url}
           alt={images[currentIndex]?.alt}
+          classes={s['tablet-classes']}
         />
         <div className={s['right-arrow']} onClick={goToNext}>
           &rsaquo;
@@ -60,7 +61,7 @@ const ImageSlider: FC<SliderProps> = ({ images }) => {
           ))}
         </div>
       </div>
-      <Grid cols={4} extraClasses={s['preshow-images-box']}>
+      <div className={s['preshow-images-box']}>
         {images.map((image, index) => (
           <div
             key={image.url}
@@ -70,8 +71,8 @@ const ImageSlider: FC<SliderProps> = ({ images }) => {
             <ImageBox src={image.url} alt={image.alt} />
           </div>
         ))}
-      </Grid>
-    </div>
+      </div>
+    </>
   )
 }
 

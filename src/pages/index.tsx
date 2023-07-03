@@ -31,15 +31,15 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
         {/* <Separator /> */}
         <Container>
           <div className={s.products}>
-            {products.slice(0, 8).map(product => (
+            {products.slice(0, 9).map(product => (
               <Card product={product} key={product.id}></Card>
             ))}
           </div>
         </Container>
         {/* TODO: parte imagem redonda com cobra */}
-        <Container>
+        {/* <Container>
           <StepsHero />
-        </Container>
+        </Container> */}
       </main>
     </div>
   )

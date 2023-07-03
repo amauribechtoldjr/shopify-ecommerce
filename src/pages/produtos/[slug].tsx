@@ -48,14 +48,14 @@ const ProductSlug: PageProps<typeof getStaticProps> = ({ product }) => {
         <title>Travesssa - {product.name}</title>
       </Head>
       <Container className={s['content-height']}>
-        <Grid cols={2}>
+        <div className={s['product-container']}>
           <div>
             <ImageSlider images={product.images} />
           </div>
           <div>
             <Details product={product} />
           </div>
-        </Grid>
+        </div>
       </Container>
     </Container>
   )

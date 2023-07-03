@@ -17,19 +17,21 @@ const Hero: FC<Props> = ({
 }) => {
   return (
     <section className={s.hero}>
-      <Grid cols={2} extraClasses={s['grid-box']}>
+      <div className={s['grid-box']}>
         <div className={s['hero-img-box']}>
           <img src={image.url} alt={image.alt} className={s['hero-img']} />
         </div>
-        <div>
-          <Heading as="h1" className={s['headline-text']}>
-            {headline.toUpperCase()}
-          </Heading>
+        <div className={s['title-container']}>
+          <div className={s['headline-container']}>
+            <Heading as="h1" className={s['headline-text']}>
+              {headline.toUpperCase()}
+            </Heading>
+          </div>
           <LinkButton href="/produtos" className={s['hero-buy-button']}>
             COMPRAR
           </LinkButton>
         </div>
-      </Grid>
+      </div>
     </section>
   )
 }

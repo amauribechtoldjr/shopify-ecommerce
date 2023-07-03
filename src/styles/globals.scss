@@ -13,6 +13,10 @@ html {
   @include tablets {
     font-size: 56.25%;
   }
+
+  @include sm-tablets {
+    font-size: 50%;
+  }
 }
 
 body {

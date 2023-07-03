@@ -2,6 +2,10 @@
 
 .hero {
   height: $screen-md;
+
+  @include xm-tablets {
+    height: 100%;
+  }
 }
 
 .grid-box {
@@ -9,11 +13,30 @@
   height: 100%;
 
   align-items: center;
+
   max-width: $screen-main-hero;
-  max-height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: $spacing-48;
 
   @include sm-desktop {
     max-width: $screen-xl;
+  }
+
+  @include xm-tablets {
+    grid-template-columns: 1fr;
+  }
+}
+
+.title-container {
+  @include xm-tablets {
+    width: 100%;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -30,9 +53,22 @@
   }
 }
 
+.headline-container {
+  @include xm-tablets {
+    max-width: 50%;
+    text-align: center;
+  }
+}
+
 .hero-buy-button {
   margin-top: $spacing-80;
   margin-right: $spacing-16;
+
+  @include xm-tablets {
+    margin-top: $spacing-48;
+    margin-bottom: $spacing-24;
+    margin-right: 0;
+  }
 }
 
 .hero-img-box {
@@ -43,4 +79,8 @@
 
 .hero-img {
   user-select: none;
+
+  @include xm-tablets {
+    height: 280px;
+  }
 }

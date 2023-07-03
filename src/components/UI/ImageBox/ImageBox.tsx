@@ -25,7 +25,7 @@ const ImageBox: FC<ImageBox> = ({
       <Image
         src={src ?? imgPlaceholder}
         alt={alt}
-        quality="85"
+        quality="100"
         className={activeClassnames}
         layout="fill"
         objectFit="cover"

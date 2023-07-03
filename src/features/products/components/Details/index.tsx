@@ -47,7 +47,7 @@ const Details = ({ product }: Props) => {
   }
 
   return (
-    <section>
+    <section className={s.container}>
       <div>
         <Heading as="h3">{product.name}</Heading>
         <p className={s['product-price']}>{`R$ ${product.price.value}`}</p>
@@ -72,7 +72,7 @@ const Details = ({ product }: Props) => {
           </Heading>
         </div>
       </div>
-      <div className={s['detail-box']}>
+      <div className={s['description-box']}>
         <div dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
       </div>
     </section>
