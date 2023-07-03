@@ -33,6 +33,14 @@
   fill: $cl-background;
 
   max-width: $screen-sm;
+
+  @include tablets {
+    max-width: $screen-xm;
+  }
+
+  @include xm-tablets {
+    max-width: 24rem;
+  }
 }
 
 .footer-link:link,
