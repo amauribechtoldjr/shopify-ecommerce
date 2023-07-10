@@ -9,6 +9,7 @@ export { default as Genius } from './Genius'
 export { default as Loading } from './Loading'
 export { default as Snake } from './Snake'
 export { default as Confuse } from './Confuse'
+export { default as Burguer } from './Burguer'
 
 export interface IconProps {
   classes?: string

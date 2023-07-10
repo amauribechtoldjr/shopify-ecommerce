@@ -12,17 +12,23 @@
 
   display: flex;
   align-items: center;
+
   gap: $spacing-32;
 }
 
 .logo-img {
   height: $spacing-24;
+
   margin-left: $spacing-32;
 
   fill: $cl-text;
   stroke: $cl-text;
 
   cursor: pointer;
+
+  @include xm-tablets {
+    height: $spacing-20;
+  }
 }
 
 .nav-link,
@@ -37,15 +43,35 @@
 
   cursor: pointer;
   transition: all 0.25s;
+
+  &:hover {
+    color: $cl-medium-text;
+  }
 }
 
-.snake-icon {
+.icons {
   fill: $cl-text;
 
   width: $spacing-20;
   height: $spacing-20;
 
   cursor: pointer;
+}
+
+.burguer-when-mobile {
+  display: none;
+
+  @include xm-tablets {
+    display: block;
+  }
+}
+
+.not-mobile-navigation {
+  display: block;
+
+  @include xm-tablets {
+    display: none;
+  }
 }
 
 .cart-count {

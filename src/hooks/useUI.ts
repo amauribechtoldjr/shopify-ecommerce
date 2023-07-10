@@ -3,7 +3,11 @@ import { UIContext } from '@contexts'
 import { StateValues } from '@contexts/ui'
 
 type Action = {
-  type: 'OPEN_SIDEBAR' | 'CLOSE_SIDEBAR'
+  type:
+    | 'OPEN_SIDEBAR'
+    | 'CLOSE_SIDEBAR'
+    | 'OPEN_BURGUER_MENU'
+    | 'CLOSE_BURGUER_MENU'
 }
 
 export function uiReducer(state: StateValues, action: Action) {
@@ -18,6 +22,18 @@ export function uiReducer(state: StateValues, action: Action) {
       return {
         ...state,
         isSidebarOpen: false
+      }
+    }
+    case 'OPEN_BURGUER_MENU': {
+      return {
+        ...state,
+        isBurguerMenuOpen: true
+      }
+    }
+    case 'CLOSE_BURGUER_MENU': {
+      return {
+        ...state,
+        isBurguerMenuOpen: false
       }
     }
   }

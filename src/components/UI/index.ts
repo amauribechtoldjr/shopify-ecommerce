@@ -28,6 +28,7 @@ export {
   Heading
 }
 
+export { default as NavbarMenu } from './NavbarMenu'
 export { default as Dropdown } from './Dropdown'
 export { default as BreadCrumb } from './Breadcrumb'
 export { default as Separator } from './Separator/Separator'

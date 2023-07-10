@@ -1,9 +1,8 @@
 import s from './Navbar.module.scss'
 import Link from 'next/link'
-import { FC } from 'react'
 import Logo from '@components/icons/Logo'
 import { useUI } from '@hooks'
-import { Snake } from '@components/icons'
+import { Burguer, Snake } from '@components/icons'
 import Container from '../Container/Container'
 import { useCart } from '@framework/hooks'
 
@@ -17,8 +16,8 @@ export const ROUTES = {
   POLICIES: '/sobre/politicas-termos'
 }
 
-const Navbar: FC = () => {
-  const { openSidebar } = useUI()
+const Navbar = () => {
+  const { openSidebar, openBurguerMenu } = useUI()
   const { data } = useCart()
 
   return (
@@ -31,23 +30,27 @@ const Navbar: FC = () => {
         </Link>
         <nav className={s['nav-container']}>
           <ul className={s['nav-box']}>
-            <li>
+            <li className={s['not-mobile-navigation']}>
               <Link href={ROUTES.PRODUCTS} passHref>
                 <a className={s['nav-link']}>PRODUTOS</a>
               </Link>
             </li>
-            <li>
+            <li className={s['not-mobile-navigation']}>
               <Link href={ROUTES.ABOUT} passHref>
                 <a className={s['nav-link']}>SOBRE</a>
               </Link>
             </li>
             <li>
               <div onClick={openSidebar}>
-                <Snake classes={s['snake-icon']} />
-                {/** TODO: substituir por quantidade de items reais */}
+                <Snake classes={s.icons} />
                 <span className={s['cart-count']}>
                   {data?.lineItems?.length}
                 </span>
+              </div>
+            </li>
+            <li className={s['burguer-when-mobile']}>
+              <div onClick={() => openBurguerMenu()}>
+                <Burguer classes={s.icons} />
               </div>
             </li>
           </ul>

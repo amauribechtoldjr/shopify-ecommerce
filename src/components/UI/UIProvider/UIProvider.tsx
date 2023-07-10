@@ -8,10 +8,18 @@ const UIProvider: FC = ({ children }) => {
 
   const openSidebar = () => dispatch({ type: 'OPEN_SIDEBAR' })
   const closeSidebar = () => dispatch({ type: 'CLOSE_SIDEBAR' })
+  const openBurguerMenu = () => dispatch({ type: 'OPEN_BURGUER_MENU' })
+  const closeBurguerMenu = () => dispatch({ type: 'CLOSE_BURGUER_MENU' })
 
   const value = useMemo(() => {
-    return { ...state, openSidebar, closeSidebar }
-  }, [state.isSidebarOpen])
+    return {
+      ...state,
+      openSidebar,
+      closeSidebar,
+      openBurguerMenu,
+      closeBurguerMenu
+    }
+  }, [state])
 
   return <UIContext.Provider value={value}>{children}</UIContext.Provider>
 }

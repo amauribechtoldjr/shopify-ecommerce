@@ -19,4 +19,12 @@
 
     row-gap: $spacing-32;
   }
+
+  @include xm-tablets {
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: $spacing-24;
+
+    padding-top: $spacing-128;
+  }
 }

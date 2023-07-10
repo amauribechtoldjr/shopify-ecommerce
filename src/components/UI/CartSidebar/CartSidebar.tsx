@@ -32,12 +32,15 @@ const CartSidebar = () => {
       <section className={sidebarStyles}>
         {isSidebarOpen ? (
           <div className={s['content-container']}>
-            <MdOutlineClose
-              onClick={() => closeSidebar()}
-              className={s['close-button']}
-              height={20}
-              width={20}
-            />
+            <div className={s['header-container']}>
+              <MdOutlineClose
+                onClick={() => closeSidebar()}
+                className={s['close-button']}
+                height={20}
+                width={20}
+              />
+            </div>
+
             {isEmpty ? (
               <EmptyState />
             ) : (
