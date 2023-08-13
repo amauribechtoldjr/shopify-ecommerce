@@ -12,6 +12,20 @@ interface ImageBox {
 
 const PLACEHOLDER_IMAGE = '/product-placeholder.svg'
 
+const myLoader = ({ src, width, quality }) => {
+  let newSrc = src
+    .split('.jpg')
+    .join(
+      `_${width}x@2x.progressive.jpg?width=${width}&quality=${quality || 75}`
+    )
+
+  newSrc = newSrc
+    .split('.png')
+    .join(`_${width}x@2x.png?format=jpg&w=${width}&quality=${quality || 75}`)
+
+  return `${newSrc}`
+}
+
 const ImageBox: FC<ImageBox> = ({
   src,
   alt,
@@ -23,12 +37,16 @@ const ImageBox: FC<ImageBox> = ({
   return (
     <div className={s['image-box']}>
       <Image
+        loader={myLoader}
         src={src ?? imgPlaceholder}
         alt={alt}
+        sizes="100vw"
         quality="100"
+        objectFit="cover"
         className={activeClassnames}
         layout="fill"
-        objectFit="cover"
+        placeholder="blur"
+        blurDataURL={imgPlaceholder}
       />
     </div>
   )
