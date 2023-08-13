@@ -55,22 +55,22 @@ const About = () => {
         </nav>
         <div className={s['about__left-img']}>
           <ImageBox
-            src={'/images/sobre_piece_02.png'}
-            alt={'Peça de cerâmica preta com espinhos em formato de árvore'}
-          />
-        </div>
-        <div className={s['about__right-img']}>
-          <ImageBox
-            src={'/images/sobre_piece_01.png'}
+            src={'/images/cinzeira-espinhos-azul.png'}
             alt={
               'Cinzeiro de cerâmica azul com espinhos que sobem pelas laterais'
             }
           />
         </div>
+        <div className={s['about__right-img']}>
+          <ImageBox
+            src={'/images/escultura-arvore-preta.png'}
+            alt={'Peça de cerâmica preta com espinhos em formato de árvore'}
+          />
+        </div>
       </div>
       <div className={s['about__grid']} id="sobre">
         <ImageBox
-          src="/images/sobre_img.png"
+          src="/images/pb-atelie-torno.png"
           alt="Imagem do estúdio de cerâmica com um torno ao centro da imagem e flores penduradas na parede ao fundo."
         />
         <div className={classNames(s['grid-text'], s['black-grid-color'])}>
@@ -98,7 +98,7 @@ const About = () => {
         <div className={classNames(s['pink-container'], s['pink-grid-color'])}>
           <div className={s['pink-img']}>
             <ImageBox
-              src="/images/sobre_piece_03.png"
+              src="/images/xicara-rosa.png"
               alt=""
               classes={s['pink-grid-color']}
             />
@@ -121,7 +121,7 @@ const About = () => {
         <div className={classNames(s['pink-container'], s['blue-grid-color'])}>
           <div className={s['pink-img']}>
             <ImageBox
-              src="/images/sobre_piece_03.png"
+              src="/images/xicara-rosa.png"
               alt=""
               classes={s['blue-grid-color']}
             />
@@ -145,7 +145,7 @@ function HowToCare() {
             </Heading>
             <div className={s['how-to-care__img']}>
               <ImageBox
-                src={'/images/sobre_piece_02.png'}
+                src={'/images/cinzeira-espinhos-azul.png'}
                 alt={'Peça de cerâmica preta com espinhos em formato de árvore'}
               />
             </div>
@@ -214,13 +214,13 @@ function HowToCare() {
           </div>
           <div className={s['how-to-care__title__container']}>
             <div className={s['how-to-care__img']}>
-              <ImageBox src="/images/sobre_piece_03.png" alt="" />
+              <ImageBox src="/images/xicara-rosa.png" alt="" />
             </div>
           </div>
           <div className={s['how-to-care__title__container']}>
             <div className={s['how-to-care__last-img']}>
               <ImageBox
-                src="/images/sobre_img.png"
+                src="/images/pb-atelie-torno.png"
                 alt="Imagem do estúdio de cerâmica com um torno ao centro da imagem e flores penduradas na parede ao fundo."
               />
             </div>
@@ -328,7 +328,7 @@ function HowToCare() {
             <div className={s['how-to-care__title__container']}>
               <div className={s['how-to-care__last-img']}>
                 <ImageBox
-                  src="/images/sobre_img.png"
+                  src="/images/pb-atelie-torno.png"
                   alt="Imagem do estúdio de cerâmica com um torno ao centro da imagem e flores penduradas na parede ao fundo."
                 />
               </div>
@@ -355,7 +355,7 @@ function AboutStepsProccess() {
             PREGANDO PEÇAS <Ghost classes={s['about-icon']} /> EM CERÂMICA
           </Heading>
           <div className={s['proccess-grid__img']}>
-            <ImageBox src="/images/sobre_piece_03.png" alt="" />
+            <ImageBox src="/images/xicara-rosa.png" alt="" />
           </div>
           <div className={s['proccess-grid-text']}>
             Nesta primeira etapa, eu mergulho na minha mente caótica e dou vida
@@ -374,7 +374,7 @@ function AboutStepsProccess() {
             FEITA COM CALOR <Heart classes={s['about-icon']} />
           </Heading>
           <div className={s['proccess-grid__img']}>
-            <ImageBox src="/images/sobre_piece_03.png" alt="" />
+            <ImageBox src="/images/xicara-rosa.png" alt="" />
           </div>
           <div className={s['proccess-grid-text']}>
             A segunda etapa é dedicada aos detalhes que fazem a diferença. Após
@@ -390,7 +390,7 @@ function AboutStepsProccess() {
             TRAVESSSURAS & GOSTOSURAS <Demon classes={s['about-icon']} />
           </Heading>
           <div className={s['proccess-grid__img']}>
-            <ImageBox src="/images/sobre_piece_03.png" alt="" />
+            <ImageBox src="/images/xicara-rosa.png" alt="" />
           </div>
           <div className={s['proccess-grid-text']}>
             Na última etapa, tiro o meu chapéu de ceramista e coloco o de
