@@ -1,0 +1,307 @@
+@import '@theme';
+
+.about {
+  padding: $spacing-64 $spacing-32;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .about__title {
+    font-size: $font-size-62;
+    font-weight: $fw-600;
+    color: $cl-blue-primary;
+    text-align: center;
+    max-width: 70%;
+  }
+
+  .about__description {
+    max-width: 50%;
+    padding: $spacing-64 0;
+    text-align: center;
+    line-height: 116%;
+    font-style: italic;
+    font-size: $font-size-24;
+  }
+
+  .about__relative-container {
+    margin: $spacing-64 0;
+    width: 100%;
+    position: relative;
+  }
+
+  .about__ul {
+    list-style: none;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: $fw-600;
+
+    li,
+    a {
+      padding: $spacing-12 0;
+      color: $cl-text;
+    }
+  }
+
+  .about__right-img {
+    position: absolute;
+    top: -85px;
+    margin-left: 75%;
+  }
+
+  .about__left-img {
+    position: absolute;
+
+    top: 35px;
+    margin-left: 5%;
+  }
+
+  .about__grid {
+    margin: $spacing-128 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 100%;
+  }
+
+  .about__grid-title-right {
+    margin: $spacing-32 0;
+
+    letter-spacing: 1px;
+
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+  }
+
+  .about__grid-title-left {
+    margin: $spacing-32 0;
+
+    letter-spacing: 1px;
+
+    display: flex;
+    align-items: center;
+  }
+}
+
+.grid-text {
+  padding: $spacing-48 $spacing-80;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  justify-content: center;
+  font-size: $font-size-24;
+  line-height: 122%;
+  min-height: $screen-md;
+}
+
+.black-grid-color {
+  background-color: $cl-text;
+  color: $cl-background;
+}
+
+.pink-grid-color {
+  background-color: $cl-pink-primary;
+
+  color: $cl-text;
+}
+
+.pink-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pink-img {
+  width: 450px !important;
+}
+
+.proccess-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.proccess-grid {
+  margin: $spacing-64 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  width: 100%;
+
+  .proccess-grid__img {
+    width: 70%;
+    margin: $spacing-32 0;
+  }
+
+  .proccess-grid__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.proccess-grid-title {
+  margin: $spacing-32 0;
+
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.proccess-grid-text {
+  text-align: center;
+
+  padding: 0 $spacing-16;
+
+  font-size: $font-size-14;
+
+  line-height: 116%;
+}
+
+.about-steps-title {
+  margin: 0 $spacing-64;
+
+  font-style: italic;
+  font-size: $font-size-24;
+
+  line-height: 116%;
+
+  text-align: center;
+}
+
+.about-icon {
+  margin: 0 $spacing-4;
+
+  width: $spacing-20;
+  height: $spacing-20;
+}
+
+.end-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .end-container__icons-list {
+    max-width: 160px;
+  }
+
+  .end-container__icon {
+    display: inline-block;
+
+    margin-left: $spacing-2;
+    margin-top: $spacing-2;
+
+    width: $spacing-32;
+    height: $spacing-32;
+  }
+}
+
+.blue-grid-color {
+  background-color: $cl-blue-primary;
+
+  color: $cl-background;
+}
+
+.white-icon {
+  display: inline-block;
+
+  fill: $cl-background;
+
+  background-color: $cl-blue-primary;
+
+  width: $spacing-32;
+  height: $spacing-32;
+
+  margin-left: $spacing-2;
+}
+
+.how-to-care__last-text {
+  margin: $spacing-128 0;
+
+  li,
+  p,
+  strong {
+    color: $cl-background;
+    background-color: $cl-blue-primary;
+
+    font-size: $font-size-20;
+  }
+}
+
+.how-to-care {
+  margin: $spacing-128 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  width: 100%;
+
+  .how-to-care__title {
+    text-align: center;
+
+    max-width: 80%;
+  }
+
+  .how-to-care__blue-container {
+    div,
+    ul,
+    li,
+    strong,
+    p {
+      background-color: $cl-blue-primary;
+
+      color: $cl-background;
+    }
+  }
+
+  .how-to-care__img {
+    margin: $spacing-80 0;
+
+    width: 350px;
+  }
+
+  .how-to-care__last-img {
+    margin: $spacing-80 0;
+
+    width: 100%;
+  }
+
+  .how-to-care__title__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .how-to-care__ul__container {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+      width: 80%;
+
+      list-style-position: inside;
+
+      li {
+        padding: $spacing-12;
+      }
+    }
+  }
+
+  .how-to-care__icon {
+    margin: 0 $spacing-4;
+
+    width: $spacing-24;
+    height: $spacing-24;
+  }
+}

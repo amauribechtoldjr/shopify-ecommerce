@@ -8,8 +8,6 @@ import { ROUTES } from '../Navbar/Navbar'
 const NavbarMenu = () => {
   const { closeBurguerMenu, isBurguerMenuOpen } = useUI()
 
-  console.log(isBurguerMenuOpen)
-
   const sidebarStyles = classNames(s['sidebar-container'], {
     [s.closed]: !isBurguerMenuOpen
   })

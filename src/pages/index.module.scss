@@ -27,4 +27,10 @@
 
     padding-top: $spacing-128;
   }
+
+  @include mobiles {
+    grid-template-columns: repeat(1, 1fr);
+
+    gap: $spacing-48;
+  }
 }

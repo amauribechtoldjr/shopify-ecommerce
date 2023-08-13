@@ -1,6 +1,6 @@
 import s from './index.module.scss'
 import { FC } from 'react'
-import { Grid, LinkButton } from '@components/UI'
+import { LinkButton } from '@components/UI'
 import Heading from '../Heading/Heading'
 
 interface Props {

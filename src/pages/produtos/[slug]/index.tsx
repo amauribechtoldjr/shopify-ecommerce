@@ -5,7 +5,7 @@ import { PageProps } from 'src/types/pages'
 
 import s from './slug.module.scss'
 import Head from 'next/head'
-import { Container, Grid, BreadCrumb } from '@components/UI'
+import { Container, BreadCrumb } from '@components/UI'
 import { Details, ImageSlider } from '@features/products/components'
 
 type Props = {

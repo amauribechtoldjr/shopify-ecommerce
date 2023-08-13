@@ -6,8 +6,6 @@ interface SnakeProps extends IconProps {
 }
 
 const Snake: FC<SnakeProps> = ({ classes, onClick }) => {
-  const qtd = 190
-
   return (
     <>
       <svg

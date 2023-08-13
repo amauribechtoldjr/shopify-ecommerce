@@ -4,6 +4,9 @@ $cl-medium-text: #545454;
 $cl-small-text: #232323;
 $cl-text-shadow: #cecece;
 
+$cl-blue-primary: #00007b;
+$cl-pink-primary: #eac5c2;
+
 // Screen Sizes
 $screen-xm: 32rem;
 $screen-sm: 48rem;
@@ -77,13 +80,12 @@ $h-container-footer: 40vh;
   rem and em do NOT depend on html font-size in media queries!
 
   instead, 1rem = 1em = 16px
-
-  
   
   @mixin desktops (1350px / 16px) = 84em
   @mixin tablets (1200 / 16px) = 75em
   @mixin sm-tablets (930 / 59px) = 59em
   @mixin xm-tablets (750  / 16px) = 47em
+  @mixin mobiles (550 / 16px) = 34em
 */
 
 @mixin sm-desktop {
@@ -109,3 +111,11 @@ $h-container-footer: 40vh;
     @content;
   }
 }
+
+@mixin mobiles {
+  @media only screen and (max-width: 34em) {
+    @content;
+  }
+}
+
+// TODO: include mini mobiles (280px width)

@@ -6,6 +6,10 @@
   @include xm-tablets {
     height: 100%;
   }
+
+  @include mobiles {
+    width: 100%;
+  }
 }
 
 .grid-box {
@@ -51,11 +55,17 @@
   @include sm-desktop {
     font-size: $font-size-74 !important;
   }
+
+  @include mobiles {
+    font-size: $font-size-52 !important;
+    line-height: $font-lineHeight-4 !important;
+    letter-spacing: -3px !important;
+  }
 }
 
 .headline-container {
   @include xm-tablets {
-    max-width: 50%;
+    max-width: 60%;
     text-align: center;
   }
 }

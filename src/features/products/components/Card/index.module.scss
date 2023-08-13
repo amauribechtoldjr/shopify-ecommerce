@@ -18,6 +18,20 @@
       height: $spacing-20;
     }
   }
+
+  max-height: 500px;
+
+  @include tablets {
+    max-height: 480px;
+  }
+
+  @include sm-tablets {
+    max-height: 460px;
+  }
+
+  @include xm-tablets {
+    max-height: 450px;
+  }
 }
 
 .product-title {
@@ -25,6 +39,11 @@
 
   @include xm-tablets {
     font-size: $font-size-18 !important;
+  }
+
+  @include mobiles {
+    font-size: $font-size-20 !important;
+    letter-spacing: 0.5px !important;
   }
 }
 
@@ -68,6 +87,11 @@
 
   font-weight: $fw-600;
   font-size: $font-size-14;
+
+  @include mobiles {
+    font-size: $font-size-16;
+    margin-top: $spacing-12;
+  }
 }
 
 .buy-button {
