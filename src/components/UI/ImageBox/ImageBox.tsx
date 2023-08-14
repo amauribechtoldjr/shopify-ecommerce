@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import { FC } from 'react'
 import s from './ImageBox.module.scss'
 
