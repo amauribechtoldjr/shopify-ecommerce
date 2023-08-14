@@ -24,20 +24,18 @@ const Navbar = () => {
     <Container>
       <header className={s.header}>
         <Link href={ROUTES.HOME} passHref>
-          <a>
-            <Logo classes={s['logo-img']} />
-          </a>
+          <Logo classes={s['logo-img']} />
         </Link>
         <nav className={s['nav-container']}>
           <ul className={s['nav-box']}>
             <li className={s['not-mobile-navigation']}>
-              <Link href={ROUTES.PRODUCTS} passHref>
-                <a className={s['nav-link']}>PRODUTOS</a>
+              <Link href={ROUTES.PRODUCTS} passHref className={s['nav-link']}>
+                PRODUTOS
               </Link>
             </li>
             <li className={s['not-mobile-navigation']}>
-              <Link href={ROUTES.ABOUT} passHref>
-                <a className={s['nav-link']}>SOBRE</a>
+              <Link href={ROUTES.ABOUT} passHref className={s['nav-link']}>
+                SOBRE
               </Link>
             </li>
             <li>

@@ -10,14 +10,14 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
 
 const LinkButton = ({ children, outline = false, ...props }: Props) => {
   return (
-    <Link href={props.href} passHref>
-      <a
-        className={classnames(props.className, s['button-link'], {
-          [s.outline]: outline
-        })}
-      >
-        {children}
-      </a>
+    <Link
+      href={props.href}
+      passHref
+      className={classnames(props.className, s['button-link'], {
+        [s.outline]: outline
+      })}
+    >
+      {children}
     </Link>
   )
 }

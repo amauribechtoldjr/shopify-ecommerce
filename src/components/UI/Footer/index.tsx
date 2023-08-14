@@ -16,9 +16,7 @@ const Footer: FC = () => {
         <div className={s['footer-grid']}>
           <div className={s['logo-box']}>
             <Link href="/" passHref>
-              <a>
-                <Logo classes={s['logo-img']} />
-              </a>
+              <Logo classes={s['logo-img']} />
             </Link>
             <p className={s.copyright}>&copy; Travesssa - {getCurrentYear()}</p>
           </div>
@@ -41,28 +39,34 @@ const Footer: FC = () => {
             <p className={s['footer-heading']}>TRAVESSSA</p>
             <div>
               <Link href="https://www.instagram.com/travesssa/" target="_blank">
-                <a target="_blank">
-                  <BsInstagram className={s['media-link']} />
-                </a>
+                <BsInstagram className={s['media-link']} />
               </Link>
             </div>
-            <Link href="/sobre" passHref>
-              <a className={s['footer-link']}>Sobre</a>
+            <Link href="/sobre" passHref className={s['footer-link']}>
+              Sobre
             </Link>
-            <Link href="/sobre#atelie" passHref>
-              <a className={s['footer-link']}>Ateliê</a>
+            <Link href="/sobre#atelie" passHref className={s['footer-link']}>
+              Ateliê
             </Link>
-            <Link href="/sobre#bons-cuidados" passHref>
-              <a className={s['footer-link']}>Bons cuidados</a>
+            <Link
+              href="/sobre#bons-cuidados"
+              passHref
+              className={s['footer-link']}
+            >
+              Bons cuidados
             </Link>
-            <Link href="/sobre#politicas-termos" passHref>
-              <a className={s['footer-link']}>Políticas e termos</a>
+            <Link
+              href="/sobre#politicas-termos"
+              passHref
+              className={s['footer-link']}
+            >
+              Políticas e termos
             </Link>
           </div>
           <div className={s['footer-box']}>
             <p className={s['footer-heading']}>LOJA</p>
-            <Link href="/produtos" passHref>
-              <a className={s['footer-link']}>Produtos</a>
+            <Link href="/produtos" passHref className={s['footer-link']}>
+              Produtos
             </Link>
           </div>
         </div>

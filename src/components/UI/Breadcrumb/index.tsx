@@ -50,10 +50,13 @@ const BreadCrumb = () => {
     <Container className={s.container}>
       {currentBreadcrumbs.map((bc, index) => (
         <div key={bc.name} className={s['bread-item']}>
-          <Link href={bc.url} passHref key={bc.name}>
-            <a className={s['route-container']}>
-              <span>{bc.name}</span>
-            </a>
+          <Link
+            href={bc.url}
+            passHref
+            key={bc.name}
+            className={s['route-container']}
+          >
+            <span>{bc.name}</span>
           </Link>
           <span className={s.separator}>
             {currentBreadcrumbs.length - 1 > index ? (

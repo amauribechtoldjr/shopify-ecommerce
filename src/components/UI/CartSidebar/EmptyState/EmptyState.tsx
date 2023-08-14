@@ -18,10 +18,13 @@ const EmptyState: FC = () => {
       <Genius className={s.icon} extraClassname={s['icon-extra']} />
       <Heading as="h5">O Carrinho está vazio!</Heading>
       <div className={s['action-container']}>
-        <Link href={ROUTES.PRODUCTS} passHref>
-          <a className={s['action-link']} onClick={() => handleCallAction()}>
-            Clique aqui
-          </a>
+        <Link
+          href={ROUTES.PRODUCTS}
+          passHref
+          className={s['action-link']}
+          onClick={() => handleCallAction()}
+        >
+          Clique aqui
         </Link>
         <span> para adicionar seu primeiro produto ao carrinho!</span>
       </div>
