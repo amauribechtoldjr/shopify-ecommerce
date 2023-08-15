@@ -18,29 +18,23 @@ const Usernav: FC = () => {
     <div>
       <div>
         <li>
-          <Link href="/cart">
-            <a>{data?.id}</a>
-          </Link>
+          <Link href="/cart">{data?.id}</Link>
         </li>
       </div>
       <div>
         <li>
           <Link href="/">
-            <a>
-              <User />
-            </a>
+            <User />
           </Link>
         </li>
       </div>
       <div>
         <li>
           <Link href="/cart">
-            <a>
-              <Cart />
-              <div>
-                <div>{itemsCount}</div>
-              </div>
-            </a>
+            <Cart />
+            <div>
+              <div>{itemsCount}</div>
+            </div>
           </Link>
         </li>
       </div>

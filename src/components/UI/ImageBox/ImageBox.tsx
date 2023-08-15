@@ -1,11 +1,13 @@
 import classNames from 'classnames'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import { FC } from 'react'
 import s from './ImageBox.module.scss'
 
 interface ImageBox {
   src: string
   alt: string
+  fill?: boolean
+  vercelLoader?: boolean
   classes?: string
   imgPlaceholder?: string
 }
@@ -30,23 +32,24 @@ const ImageBox: FC<ImageBox> = ({
   src,
   alt,
   classes,
+  fill = true,
+  vercelLoader = true,
   imgPlaceholder = PLACEHOLDER_IMAGE
 }) => {
-  const activeClassnames = classNames(s.image, classes)
-
+  // const activeClassnames = classNames(s.image, classes)
+  console.log(src)
   return (
     <div className={s['image-box']}>
       <Image
-        loader={myLoader}
+        // loader={vercelLoader ? myLoader : null}
         src={src ?? imgPlaceholder}
         alt={alt}
-        sizes="100vw"
         quality="100"
-        objectFit="cover"
-        className={activeClassnames}
-        layout="fill"
+        className={classes}
         placeholder="blur"
         blurDataURL={imgPlaceholder}
+        fill={fill}
+        sizes="100vw"
       />
     </div>
   )

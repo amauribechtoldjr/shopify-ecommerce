@@ -26,34 +26,39 @@
 
   .about__relative-container {
     margin: $spacing-64 0;
+
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    position: relative;
-  }
 
-  .about__ul {
-    list-style: none;
-    text-align: center;
-    text-decoration: underline;
-    font-weight: $fw-600;
+    .about__ul {
+      display: inline-block;
 
-    li,
-    a {
-      padding: $spacing-12 0;
-      color: $cl-text;
+      list-style: none;
+      text-align: center;
+      text-decoration: underline;
+      font-weight: $fw-600;
+
+      li,
+      a {
+        padding: $spacing-12 0;
+        color: $cl-text;
+      }
     }
-  }
 
-  .about__right-img {
-    position: absolute;
-    top: -85px;
-    margin-left: 75%;
-  }
+    .about__right-img {
+      display: inline-block;
 
-  .about__left-img {
-    position: absolute;
+      height: 270px;
+      width: 250px;
+    }
 
-    top: 35px;
-    margin-left: 5%;
+    .about__left-img {
+      display: inline-block;
+
+      height: 270px;
+      width: 270px;
+    }
   }
 
   .about__grid {
@@ -114,7 +119,8 @@
 }
 
 .pink-img {
-  width: 450px !important;
+  width: 450px;
+  height: 300px;
 }
 
 .proccess-container {
@@ -133,12 +139,19 @@
   width: 100%;
 
   .proccess-grid__img {
-    width: 70%;
-    margin: $spacing-32 0;
+    width: 270px;
+    height: 200px;
+
+    margin: $spacing-16 0;
+
+    .step-img {
+      object-fit: cover;
+    }
   }
 
   .proccess-grid__container {
     display: flex;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -146,7 +159,7 @@
 }
 
 .proccess-grid-title {
-  margin: $spacing-32 0;
+  margin: $spacing-16 0;
 
   text-align: center;
   letter-spacing: 1px;
@@ -203,6 +216,9 @@
 }
 
 .blue-grid-color {
+  height: 100%;
+  width: 100%;
+
   background-color: $cl-blue-primary;
 
   color: $cl-background;
@@ -249,6 +265,8 @@
   }
 
   .how-to-care__blue-container {
+    margin: $spacing-64 0;
+
     div,
     ul,
     li,
@@ -260,15 +278,22 @@
     }
   }
 
-  .how-to-care__img {
+  .how-to-care__img-01 {
     margin: $spacing-80 0;
 
-    width: 350px;
+    height: 230px;
+    width: 300px;
+  }
+
+  .how-to-care__img-02 {
+    margin: $spacing-80 0;
+
+    height: 220px;
+    width: 300px;
   }
 
   .how-to-care__last-img {
-    margin: $spacing-80 0;
-
+    height: 800px;
     width: 100%;
   }
 

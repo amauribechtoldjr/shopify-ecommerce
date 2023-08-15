@@ -14,7 +14,7 @@
 
   grid-template-columns: repeat(4, 1fr);
 
-  @include sm-desktop {
+  @include tablets {
     grid-template-columns: repeat(3, 1fr);
 
     row-gap: $spacing-32;

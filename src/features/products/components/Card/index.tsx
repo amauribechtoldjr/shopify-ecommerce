@@ -16,11 +16,9 @@ const Card: FC<Props> = ({ product }) => {
   const renderProductImage = useCallback(() => {
     if (product.images) {
       return (
-        <ImageBox
-          src={product.images[0].url}
-          alt={product.name}
-          classes={s['card-product-image-effect']}
-        />
+        <div className={s['img-card']}>
+          <ImageBox src={product.images[0].url} alt={product.name} />
+        </div>
       )
     }
   }, [product.name, product.images])
