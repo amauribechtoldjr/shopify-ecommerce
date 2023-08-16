@@ -1,7 +1,6 @@
 import s from './index.module.scss'
 import { FC } from 'react'
 import Link from 'next/link'
-import Container from '../Container/Container'
 import Logo from '@components/icons/Logo'
 import { BsInstagram } from 'react-icons/bs'
 
@@ -42,6 +41,9 @@ const Footer: FC = () => {
                 <BsInstagram className={s['media-link']} />
               </Link>
             </div>
+            <Link href="/produtos" passHref className={s['footer-link']}>
+              Produtos
+            </Link>
             <Link href="/sobre" passHref className={s['footer-link']}>
               Sobre
             </Link>
@@ -61,12 +63,6 @@ const Footer: FC = () => {
               className={s['footer-link']}
             >
               Políticas e termos
-            </Link>
-          </div>
-          <div className={s['footer-box']}>
-            <p className={s['footer-heading']}>LOJA</p>
-            <Link href="/produtos" passHref className={s['footer-link']}>
-              Produtos
             </Link>
           </div>
         </div>

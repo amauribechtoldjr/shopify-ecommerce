@@ -8,6 +8,7 @@ const getProductQuery = `
       description
       descriptionHtml
       totalInventory
+      productType
       options {
         id
         name

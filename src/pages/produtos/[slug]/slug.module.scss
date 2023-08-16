@@ -25,10 +25,6 @@
   padding: $spacing-48 0;
 }
 
-.content-height {
-  height: $h-container-content + $h-container-footer;
-
-  @include xm-tablets {
-    height: 100%;
-  }
+.content {
+  height: 100%;
 }

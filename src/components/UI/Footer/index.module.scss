@@ -82,10 +82,6 @@
 
   flex-direction: column;
   gap: $spacing-24;
-
-  @include tablets {
-    grid-row-start: 2;
-  }
 }
 
 .logo-box {

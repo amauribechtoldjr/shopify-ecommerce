@@ -1,5 +1,5 @@
 import { Product, ProductType } from '@common/types/product'
-import { Container, Grid } from '@components/UI'
+import { Container } from '@components/UI'
 import { useMemo, useState } from 'react'
 import Card from '../Card'
 import Filters from '../Filters'
