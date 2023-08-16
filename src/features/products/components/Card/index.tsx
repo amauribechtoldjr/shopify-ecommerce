@@ -17,7 +17,11 @@ const Card: FC<Props> = ({ product }) => {
     if (product.images) {
       return (
         <div className={s['img-card']}>
-          <ImageBox src={product.images[0].url} alt={product.name} />
+          <ImageBox
+            src={product.images[0].url}
+            alt={product.name}
+            classes={s['img-card__img']}
+          />
         </div>
       )
     }

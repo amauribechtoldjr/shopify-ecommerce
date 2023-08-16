@@ -37,17 +37,17 @@ const ImageSlider: FC<SliderProps> = ({ images }) => {
 
   return (
     <>
-      <div className={s['main-image-box']}>
+      <div className={s['img-box']}>
         <div className={s['left-arrow']} onClick={goToPrevious}>
-          &lsaquo;
+          <span className={s['arrow']}>{`<`}</span>
         </div>
         <ImageBox
           src={images[currentIndex]?.url}
           alt={images[currentIndex]?.alt}
-          classes={s['tablet-classes']}
+          classes={s['img-box__img']}
         />
         <div className={s['right-arrow']} onClick={goToNext}>
-          &rsaquo;
+          <span className={s['arrow']}>{`>`}</span>
         </div>
         <div className={s['dots-box']}>
           {images.map((image, index) => (
@@ -68,7 +68,11 @@ const ImageSlider: FC<SliderProps> = ({ images }) => {
             className={s['preshow-image']}
             onClick={handleUniqueClick(index)}
           >
-            <ImageBox src={image.url} alt={image.alt} />
+            <ImageBox
+              src={image.url}
+              alt={image.alt}
+              classes={s['preshow-image__img']}
+            />
           </div>
         ))}
       </div>

@@ -40,7 +40,6 @@ const CartSidebar = () => {
                 width={20}
               />
             </div>
-
             {isEmpty ? (
               <EmptyState />
             ) : (

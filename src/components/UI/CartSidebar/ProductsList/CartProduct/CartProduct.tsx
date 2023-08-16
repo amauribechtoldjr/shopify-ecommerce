@@ -44,7 +44,11 @@ const CartProduct = ({
   return (
     <li className={s['product-container']}>
       <div className={s['image-container']}>
-        <ImageBox alt={item.variant.image.alt} src={item.variant.image.url} />
+        <ImageBox
+          alt={item.variant.image.alt}
+          src={item.variant.image.url}
+          classes={s['image-container__img']}
+        />
       </div>
       <div className={s['product-options-container']}>
         <div className={s['product-title']}>
