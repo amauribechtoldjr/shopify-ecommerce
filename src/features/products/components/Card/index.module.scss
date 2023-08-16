@@ -18,24 +18,15 @@
       height: $spacing-20;
     }
   }
+}
 
-  // max-height: 500px;
-
-  // @include tablets {
-  //   max-height: 480px;
-  // }
-
-  // @include sm-tablets {
-  //   max-height: 460px;
-  // }
-
-  // @include xm-tablets {
-  //   max-height: 450px;
-  // }
+.product-link {
+  text-decoration: none;
 }
 
 .product-title {
   font-weight: $fw-600 !important;
+  color: $cl-text;
 
   @include xm-tablets {
     font-size: $font-size-18 !important;
@@ -103,6 +94,8 @@
 
   font-weight: $fw-600;
   font-size: $font-size-14;
+
+  color: $cl-text;
 
   @include mobiles {
     font-size: $font-size-16;

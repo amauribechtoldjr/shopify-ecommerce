@@ -16,10 +16,10 @@ const Heading: FC<Props> = ({
   ...rest
 }) => {
   const activeClassNames = classNames(
-    className,
     s.heading,
     s[`heading-${as}`],
-    { [s.inline]: inline }
+    { [s.inline]: inline },
+    className
   )
 
   const Component = as

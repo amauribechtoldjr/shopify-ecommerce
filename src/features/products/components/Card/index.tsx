@@ -29,7 +29,10 @@ const Card: FC<Props> = ({ product }) => {
 
   return (
     <section className={s['card-product-box']}>
-      <Link href={`${ROUTES.PRODUCTS}/${product.slug}`}>
+      <Link
+        href={`${ROUTES.PRODUCTS}/${product.slug}`}
+        className={s['product-link']}
+      >
         <div className={s['card-box']}>
           <div className={s['product-img-box']}>{renderProductImage()}</div>
           <div className={s['product-text-box']}>
