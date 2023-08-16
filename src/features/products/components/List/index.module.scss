@@ -1,0 +1,31 @@
+@import '@theme';
+
+.products-container {
+  min-height: $h-container-content + $h-container-footer;
+}
+
+.grid-container {
+  display: grid;
+  column-gap: $spacing-32;
+  row-gap: $spacing-48;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  @include tablets {
+    grid-template-columns: repeat(3, 1fr);
+
+    row-gap: $spacing-32;
+  }
+
+  @include xm-tablets {
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: $spacing-24;
+  }
+
+  @include mobiles {
+    grid-template-columns: repeat(1, 1fr);
+
+    row-gap: $spacing-20;
+  }
+}

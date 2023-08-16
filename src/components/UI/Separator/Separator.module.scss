@@ -1,0 +1,22 @@
+@import '@theme';
+
+.svg-ghost {
+  width: $spacing-32;
+  height: $spacing-32;
+
+  fill: $cl-text;
+
+  margin: 0 $spacing-96;
+}
+
+.separator-box {
+  margin: $spacing-96 0;
+  width: 100%;
+  padding: $spacing-32;
+}
+
+.separator-box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

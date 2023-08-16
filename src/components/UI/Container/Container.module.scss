@@ -1,0 +1,26 @@
+@import '@theme';
+
+.container {
+  background-color: inherit;
+
+  padding: 0 0;
+  margin: 0 auto;
+
+  max-width: $screen-xl;
+
+  @include tablets {
+    max-width: $screen-lg;
+  }
+
+  @include sm-tablets {
+    max-width: 90rem;
+  }
+
+  @include xm-tablets {
+    max-width: $screen-md;
+  }
+
+  @include mobiles {
+    max-width: 60rem;
+  }
+}

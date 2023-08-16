@@ -1,0 +1,116 @@
+@import '@theme';
+
+.preshow-image {
+  width: $spacing-128;
+  height: $spacing-128;
+
+  overflow: hidden;
+
+  margin-right: $spacing-24;
+}
+
+.tablet-classes {
+  @include xm-tablets {
+    object-fit: contain !important;
+  }
+}
+
+.preshow-images-box {
+  display: flex;
+
+  cursor: pointer;
+
+  margin: $spacing-24 0;
+
+  max-width: 550px;
+}
+
+.main-image-box {
+  cursor: pointer;
+
+  max-width: 550px;
+  height: 550px;
+
+  position: relative;
+
+  transition: all 0.5s ease-in;
+
+  @include tablets {
+    height: 480px;
+    max-width: 480px;
+  }
+
+  @include sm-tablets {
+    height: 410px;
+    max-width: 410px;
+  }
+
+  @include xm-tablets {
+    width: 100%;
+    max-width: 100%;
+
+    height: 600px;
+
+    border: 1px solid $cl-text;
+  }
+}
+
+.left-arrow {
+  user-select: none;
+
+  position: absolute;
+  top: 50%;
+  left: $spacing-12;
+  transform: translate(0, -50%);
+  z-index: 2;
+
+  font-size: $font-size-44;
+  background-color: transparent;
+
+  color: rgba($color: $cl-text, $alpha: 0.8);
+
+  cursor: pointer;
+}
+
+.right-arrow {
+  user-select: none;
+
+  position: absolute;
+  top: 50%;
+  right: $spacing-12;
+  transform: translate(0, -50%);
+  z-index: 2;
+
+  font-size: $font-size-44;
+  background-color: transparent;
+
+  color: rgba($color: $cl-text, $alpha: 0.8);
+
+  cursor: pointer;
+}
+
+.dots-box {
+  position: absolute;
+  background-color: transparent;
+  top: 90%;
+
+  width: 100%;
+  margin: $spacing-12 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.dots {
+  user-select: none;
+
+  font-size: $font-size-30;
+  cursor: pointer;
+
+  color: rgba($color: $cl-text, $alpha: 0.5);
+
+  &.selected {
+    color: rgba($color: $cl-text, $alpha: 1);
+  }
+}

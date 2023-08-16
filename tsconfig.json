@@ -28,14 +28,18 @@
       "@hooks": ["src/hooks"],
       "@hooks/*": ["src/hooks/*"],
       "@contexts": ["src/contexts"],
-      "@contexts/*": ["src/contexts/*"]
+      "@contexts/*": ["src/contexts/*"],
+      "@theme": ["src/styles/theme.module.scss"],
+      "@features": ["src/features"],
+      "@features/*": ["src/features/*"]
     }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "framework/common/config.js"
+    "framework/common/config.js",
+    "src/styles/global.module.sass"
   ],
   "exclude": ["node_modules"]
 }

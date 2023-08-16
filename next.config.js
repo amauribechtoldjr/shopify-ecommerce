@@ -10,7 +10,7 @@ module.exports =
       framework: {
         name: process.env.NEXT_PUBLIC_FRAMEWORK
       },
-      esModule: true
+      swcMinify: true,
     }
   )
 )

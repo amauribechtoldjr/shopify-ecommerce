@@ -1,11 +1,10 @@
-import { CardProduct } from '@components/product'
-import { Container } from '@styles/pages/Home'
 import { getConfig } from '@framework/api/config'
-
-import { observer } from 'mobx-react'
 import type { InferGetStaticPropsType } from 'next'
 import { getAllProducts } from '@framework/database/fetchers'
-import { Grid, Hero } from '@components/UI'
+import { Hero, Container, Separator, StepsHero } from '@components/UI'
+import Head from 'next/head'
+import s from './index.module.scss'
+import { Card } from '@features/products/components'
 
 export async function getStaticProps() {
   const config = getConfig()
@@ -21,20 +20,29 @@ export async function getStaticProps() {
 
 const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <Container>
+    <div>
+      <Head>
+        <title>Travesssa</title>
+      </Head>
       <main>
-        <Grid>
-          {products.slice(0, 4).map(product => (
-            <CardProduct product={product} key={product.id} />
-          ))}
-        </Grid>
-        <Hero
-          headline="Hero component"
-          description="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
-        />
+        <Container className={s['hero-container']}>
+          <Hero />
+        </Container>
+        {/* <Separator /> */}
+        <Container>
+          <div className={s.products}>
+            {products.slice(0, 9).map(product => (
+              <Card product={product} key={product.id}></Card>
+            ))}
+          </div>
+        </Container>
+        {/* TODO: parte imagem redonda com cobra */}
+        {/* <Container>
+          <StepsHero />
+        </Container> */}
       </main>
-    </Container>
+    </div>
   )
 }
 
-export default observer(Home)
+export default Home

@@ -1,0 +1,55 @@
+@import '@theme';
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  background-color: $cl-background;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include tablets {
+    font-size: 56.25%;
+  }
+
+  @include sm-tablets {
+    font-size: 50%;
+  }
+
+  @include mobiles {
+    font-size: 43.75%;
+  }
+}
+
+body {
+  font-family: $font-type-text;
+  line-height: $font-lineHeight-1;
+  font-weight: $fw-400;
+  color: $cl-text;
+  font-size: $spacing-16;
+}
+
+body::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: $cl-background;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: $cl-small-text;
+}
+
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+  background-color: inherit;
+}

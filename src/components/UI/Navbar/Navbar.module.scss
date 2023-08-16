@@ -1,0 +1,94 @@
+@import '@theme';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $h-container-navbar;
+}
+
+.nav-box {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+
+  gap: $spacing-32;
+}
+
+.logo-img {
+  height: $spacing-24;
+
+  margin-left: $spacing-32;
+
+  fill: $cl-text;
+  stroke: $cl-text;
+
+  cursor: pointer;
+
+  @include xm-tablets {
+    height: $spacing-20;
+  }
+}
+
+.nav-link,
+.nav-link:visited,
+.nav-link:link {
+  text-decoration: none;
+
+  font-size: $font-size-18;
+  font-weight: $fw-800;
+
+  color: $cl-text;
+
+  cursor: pointer;
+  transition: all 0.25s;
+
+  &:hover {
+    color: $cl-medium-text;
+  }
+}
+
+.icons {
+  fill: $cl-text;
+
+  width: $spacing-20;
+  height: $spacing-20;
+
+  cursor: pointer;
+}
+
+.burguer-when-mobile {
+  display: none;
+
+  @include xm-tablets {
+    display: block;
+  }
+}
+
+.not-mobile-navigation {
+  display: block;
+
+  @include xm-tablets {
+    display: none;
+  }
+}
+
+.cart-count {
+  font-size: $font-size-12;
+  background: $cl-text;
+  color: $cl-background;
+  vertical-align: top;
+
+  padding-left: $spacing-4;
+  padding-right: $spacing-4;
+
+  border-radius: 50%;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+.nav-container {
+  margin-right: $spacing-32;
+}

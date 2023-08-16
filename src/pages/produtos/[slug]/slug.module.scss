@@ -1,0 +1,34 @@
+@import '@theme';
+
+.container {
+  padding: $spacing-48 $spacing-32;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: $spacing-48;
+  row-gap: $spacing-96;
+
+  @include xm-tablets {
+    display: flex;
+    flex-direction: column;
+
+    max-height: 60%;
+
+    row-gap: $spacing-24;
+    column-gap: 0;
+  }
+}
+
+.product-images-box {
+  padding: $spacing-48 0;
+}
+
+.content-height {
+  height: $h-container-content + $h-container-footer;
+
+  @include xm-tablets {
+    height: 100%;
+  }
+}

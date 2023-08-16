@@ -3,19 +3,25 @@ import { createContext } from 'react'
 export interface StateModifiers {
   openSidebar: () => void
   closeSidebar: () => void
+  openBurguerMenu: () => void
+  closeBurguerMenu: () => void
 }
 
 export interface StateValues {
   isSidebarOpen: boolean
+  isBurguerMenuOpen: boolean
 }
 
 export const UI_DEFAULT_STATE_MODIFIES = {
   openSidebar: () => null,
-  closeSidebar: () => null
+  closeSidebar: () => null,
+  openBurguerMenu: () => null,
+  closeBurguerMenu: () => null
 }
 
 export const UI_INITIAL_STATE = {
-  isSidebarOpen: false
+  isSidebarOpen: false,
+  isBurguerMenuOpen: false
 }
 
 type State = StateValues & StateModifiers

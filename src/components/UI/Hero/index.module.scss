@@ -1,0 +1,96 @@
+@import '@theme';
+
+.hero {
+  height: $screen-md;
+
+  @include xm-tablets {
+    height: 100%;
+  }
+
+  @include mobiles {
+    width: 100%;
+  }
+}
+
+.grid-box {
+  width: 100%;
+  height: 100%;
+
+  align-items: center;
+
+  max-width: $screen-main-hero;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: $spacing-48;
+
+  @include sm-desktop {
+    max-width: $screen-xl;
+  }
+
+  @include xm-tablets {
+    grid-template-columns: 1fr;
+  }
+}
+
+.title-container {
+  @include xm-tablets {
+    width: 100%;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.headline-text {
+  color: $cl-text !important;
+  font-size: $font-size-86 !important;
+  font-weight: $fw-800 !important;
+  line-height: $font-lineHeight-1 !important;
+  letter-spacing: -8px !important;
+  user-select: none !important;
+
+  @include sm-desktop {
+    font-size: $font-size-74 !important;
+  }
+
+  @include mobiles {
+    font-size: $font-size-52 !important;
+    line-height: $font-lineHeight-4 !important;
+    letter-spacing: -3px !important;
+  }
+}
+
+.headline-container {
+  @include xm-tablets {
+    max-width: 60%;
+    text-align: center;
+  }
+}
+
+.hero-buy-button {
+  margin-top: $spacing-80;
+  margin-right: $spacing-16;
+
+  @include xm-tablets {
+    margin-top: $spacing-48;
+    margin-bottom: $spacing-24;
+    margin-right: 0;
+  }
+}
+
+.hero-img-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img {
+  user-select: none;
+
+  @include xm-tablets {
+    height: 280px;
+  }
+}

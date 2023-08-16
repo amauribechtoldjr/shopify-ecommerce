@@ -1,37 +1,60 @@
+import s from './Navbar.module.scss'
 import Link from 'next/link'
-import { FC } from 'react'
-import { Usernav } from '@components/UI'
+import Logo from '@components/icons/Logo'
+import { useUI } from '@hooks'
+import { Burguer, Snake } from '@components/icons'
+import Container from '../Container/Container'
+import { useCart } from '@framework/hooks'
 
-import * as S from './styles'
+export const ROUTES = {
+  HOME: '/',
+  PRODUCTS: '/produtos',
+  ABOUT: '/sobre',
+  COLLECTIONS: '/colecoes',
+  STUDIO: '/sobre#atelie',
+  GOOD_CARE: '/sobre#bons-cuidados',
+  POLICIES: '/sobre/politicas-termos'
+}
 
-const Navbar: FC = () => {
+const Navbar = () => {
+  const { openSidebar, openBurguerMenu } = useUI()
+  const { data } = useCart()
+
   return (
-    <S.NavbarContainer>
-      <S.NavbarContent>
-        <S.LinksContainer>
-          <Link href="/">
-            <h1>TRAVESSA</h1>
-          </Link>
-          <S.NavContainer>
-            <Link href="/products">
-              <S.NavLink>Produtos</S.NavLink>
-            </Link>
-            <Link href="/products">
-              <S.NavLink>Sobre</S.NavLink>
-            </Link>
-            <Link href="/products">
-              <S.NavLink>Coleções</S.NavLink>
-            </Link>
-            <Link href="/products">
-              <S.NavLink>Travesssuras</S.NavLink>
-            </Link>
-          </S.NavContainer>
-        </S.LinksContainer>
-        <S.UsernavContainer>
-          <Usernav />
-        </S.UsernavContainer>
-      </S.NavbarContent>
-    </S.NavbarContainer>
+    <Container>
+      <header className={s.header}>
+        <Link href={ROUTES.HOME} passHref>
+          <Logo classes={s['logo-img']} />
+        </Link>
+        <nav className={s['nav-container']}>
+          <ul className={s['nav-box']}>
+            <li className={s['not-mobile-navigation']}>
+              <Link href={ROUTES.PRODUCTS} passHref className={s['nav-link']}>
+                PRODUTOS
+              </Link>
+            </li>
+            <li className={s['not-mobile-navigation']}>
+              <Link href={ROUTES.ABOUT} passHref className={s['nav-link']}>
+                SOBRE
+              </Link>
+            </li>
+            <li>
+              <div onClick={openSidebar}>
+                <Snake classes={s.icons} />
+                <span className={s['cart-count']}>
+                  {data?.lineItems?.length}
+                </span>
+              </div>
+            </li>
+            <li className={s['burguer-when-mobile']}>
+              <div onClick={() => openBurguerMenu()}>
+                <Burguer classes={s.icons} />
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </Container>
   )
 }
 

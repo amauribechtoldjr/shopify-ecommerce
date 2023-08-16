@@ -1,0 +1,36 @@
+@import '@theme';
+
+.hero-container {
+  max-width: $screen-main-hero;
+}
+
+.products {
+  padding: 0 $spacing-32 $spacing-32 $spacing-32;
+  margin: $spacing-24 0;
+
+  display: grid;
+  column-gap: $spacing-32;
+  row-gap: $spacing-48;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  @include tablets {
+    grid-template-columns: repeat(3, 1fr);
+
+    row-gap: $spacing-32;
+  }
+
+  @include xm-tablets {
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: $spacing-24;
+
+    padding-top: $spacing-128;
+  }
+
+  @include mobiles {
+    grid-template-columns: repeat(1, 1fr);
+
+    gap: $spacing-48;
+  }
+}

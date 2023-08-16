@@ -1,0 +1,34 @@
+@import '@theme';
+
+.color-option-box {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-12;
+}
+
+.color-option {
+  width: $spacing-32;
+  height: $spacing-32;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.selected {
+    border: 2px dotted rgba($color: $cl-text, $alpha: 0.8);
+  }
+}
+
+.selected-icon {
+  background-color: inherit;
+
+  &.black-option {
+    color: $cl-text;
+  }
+
+  &.white-option {
+    color: $cl-background;
+  }
+}

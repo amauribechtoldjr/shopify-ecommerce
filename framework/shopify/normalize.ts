@@ -11,7 +11,7 @@ import {
 } from '@framework/types'
 
 import { Cart, LineItem } from '@common/types/cart'
-import { Product } from '@common/types/product'
+import { Product, ProductType } from '@common/types/product'
 
 export function normalizeProductImages({ edges }: { edges: Array<ImageEdge> }) {
   return edges.map(({ node: { originalSrc, ...rest } }) => ({
@@ -109,16 +109,20 @@ export function normalizeProduct(productNode: ShopifyProduct): Product {
     priceRange,
     options,
     variants,
+    totalInventory,
+    productType = null,
     ...rest
   } = productNode
 
   const product = {
     id,
-    name,
+    name: name.toUpperCase(),
     vendor,
     description,
+    totalInventory,
     path: `/${handle}`,
     slug: handle.replace(/^\/+|\/+$/g, ''),
+    type: productType as ProductType,
     images: normalizeProductImages(imageConnection),
     price: normalizeProductPrice(priceRange.minVariantPrice),
     options: getNormalizedOptionsIfExists(options),
@@ -152,7 +156,7 @@ const normalizeLineItem = ({
     id,
     variantId: String(variant?.id),
     productId: String(variant?.id),
-    name: title,
+    name: title?.toUpperCase(),
     path: variant?.product?.handle ?? '',
     discounts: [],
     options: variant?.selectedOptions?.map(

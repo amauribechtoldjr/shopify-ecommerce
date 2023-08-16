@@ -1,0 +1,24 @@
+@import '@theme';
+
+.container {
+  height: $h-container-content;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.not-fount {
+  margin: $spacing-24 0;
+}
+
+.icon {
+  fill: $cl-text;
+  display: block;
+
+  width: $spacing-64;
+  height: $spacing-64;
+
+  background-color: transparent;
+}

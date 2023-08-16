@@ -48,7 +48,7 @@ export const handler: SWRHook<UseCartHookDescriptor> = {
   useHook:
     ({ useData }) =>
     () => {
-      const { checkoutCookieKey } = useApiProvider();
+      const { checkoutCookieKey } = useApiProvider()
       const result = useData({
         swrOptions: {
           revalidateOnFocus: false

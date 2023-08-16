@@ -1,16 +1,18 @@
+import './Layout.module.scss'
 import { FC } from 'react'
-import { Footer, Navbar } from '@components/UI'
-import { LayoutContainer, Main } from './styles'
+import { CartSidebar, Footer, Navbar, NavbarMenu } from '@components/UI'
 import { ApiProvider } from '@framework/provider'
 
 const Layout: FC = ({ children }) => {
   return (
     <ApiProvider>
-      <LayoutContainer>
-        <Navbar />
-        <Main>{children}</Main>
-      </LayoutContainer>
-      <Footer />
+      <CartSidebar />
+      <NavbarMenu />
+      <Navbar />
+      <main>
+        <div>{children}</div>
+      </main>
+      {/* <Footer /> */}
     </ApiProvider>
   )
 }
