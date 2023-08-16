@@ -12,7 +12,7 @@ const Layout: FC = ({ children }) => {
       <main>
         <div>{children}</div>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </ApiProvider>
   )
 }

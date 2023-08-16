@@ -1,12 +1,23 @@
 import { getConfig } from '@framework/api/config'
-import { getAllProductsPaths, getProduct } from '@framework/database/fetchers'
+import {
+  getAllProducts,
+  getAllProductsPaths,
+  getProduct
+} from '@framework/database/fetchers'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { PageProps } from 'src/types/pages'
 
 import s from './slug.module.scss'
 import Head from 'next/head'
 import { Container, BreadCrumb } from '@components/UI'
-import { Details, ImageSlider } from '@features/products/components'
+import {
+  Card,
+  Details,
+  ImageSlider,
+  List,
+  MoreProducts
+} from '@features/products/components'
+import { useEffect, useState } from 'react'
 
 type Props = {
   slug: string
@@ -41,13 +52,31 @@ export const getStaticProps = async ({
 }
 
 const ProductSlug: PageProps<typeof getStaticProps> = ({ product }) => {
+  const [otherProducts, setOtherProducts] = useState([])
+
+  useEffect(() => {
+    loadOtherProducts()
+  }, [])
+
+  const loadOtherProducts = async () => {
+    const config = getConfig()
+    const products = await getAllProducts(config)
+
+    const filteredProducts = products.filter(
+      productItem =>
+        productItem.type === product.type && productItem.id !== product.id
+    )
+
+    setOtherProducts(filteredProducts)
+  }
+
   return (
-    <Container className={s.container}>
+    <div className={s.container}>
       <BreadCrumb />
       <Head>
         <title>Travesssa - {product.name}</title>
       </Head>
-      <Container className={s['content-height']}>
+      <Container className={s['content']}>
         <div className={s['product-container']}>
           <div>
             <ImageSlider images={product.images} />
@@ -56,8 +85,9 @@ const ProductSlug: PageProps<typeof getStaticProps> = ({ product }) => {
             <Details product={product} />
           </div>
         </div>
+        <MoreProducts products={otherProducts} />
       </Container>
-    </Container>
+    </div>
   )
 }
 
