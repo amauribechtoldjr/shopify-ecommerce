@@ -43,7 +43,7 @@ const ImageSlider: FC<SliderProps> = ({ images }) => {
         </div>
         <ImageBox
           src={images[currentIndex]?.url}
-          alt={images[currentIndex]?.alt}
+          alt={images[currentIndex]?.alt || "Product's image"}
           classes={s['img-box__img']}
         />
         <div className={s['right-arrow']} onClick={goToNext}>
@@ -70,7 +70,7 @@ const ImageSlider: FC<SliderProps> = ({ images }) => {
           >
             <ImageBox
               src={image.url}
-              alt={image.alt}
+              alt={image.alt || "Product's image"}
               classes={s['preshow-image__img']}
             />
           </div>
