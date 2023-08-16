@@ -28,6 +28,10 @@
   &::-webkit-scrollbar-thumb {
     background: $cl-small-text;
   }
+
+  @include xm-tablets {
+    width: 100%;
+  }
 }
 
 .modal-background-container {

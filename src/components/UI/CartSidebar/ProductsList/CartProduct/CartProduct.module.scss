@@ -5,6 +5,10 @@
 
   height: 100%;
   max-width: 100%;
+
+  .image-container__img {
+    object-fit: cover;
+  }
 }
 
 .product-container {

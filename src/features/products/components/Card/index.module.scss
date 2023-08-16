@@ -91,6 +91,10 @@
   @include mobiles {
     height: 400px;
   }
+
+  .img-card__img {
+    object-fit: cover;
+  }
 }
 
 .product-price {
