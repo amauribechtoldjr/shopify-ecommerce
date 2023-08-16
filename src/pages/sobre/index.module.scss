@@ -1,11 +1,15 @@
 @import '@theme';
 
 .about {
-  padding: $spacing-64 $spacing-32;
+  padding: 0 0;
+  margin: 0 auto;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
+  max-width: $screen-xl;
 
   .about__title {
     font-size: $font-size-62;
@@ -13,6 +17,21 @@
     color: $cl-blue-primary;
     text-align: center;
     max-width: 70%;
+    margin-top: $spacing-128;
+  }
+
+  .about__pb-container {
+    height: 100%;
+    width: 100%;
+
+    @include sm-tablets {
+      height: 600px;
+      width: 100%;
+    }
+  }
+
+  .about__imgs {
+    object-fit: cover;
   }
 
   .about__description {
@@ -31,6 +50,13 @@
     justify-content: space-between;
     width: 100%;
 
+    @include sm-tablets {
+      flex-direction: column;
+      align-items: center;
+
+      margin: $spacing-16 0;
+    }
+
     .about__ul {
       display: inline-block;
 
@@ -38,6 +64,11 @@
       text-align: center;
       text-decoration: underline;
       font-weight: $fw-600;
+
+      @include sm-tablets {
+        margin: $spacing-32 0;
+        font-size: $font-size-20;
+      }
 
       li,
       a {
@@ -49,15 +80,33 @@
     .about__right-img {
       display: inline-block;
 
+      margin: 0 $spacing-64;
+
       height: 270px;
       width: 250px;
+
+      @include sm-tablets {
+        margin: $spacing-32 0;
+
+        height: 220px;
+        width: 200px;
+      }
     }
 
     .about__left-img {
       display: inline-block;
 
+      margin: 0 $spacing-64;
+
       height: 270px;
       width: 270px;
+
+      @include sm-tablets {
+        margin: $spacing-32 0;
+
+        height: 220px;
+        width: 220px;
+      }
     }
   }
 
@@ -68,6 +117,10 @@
     grid-template-columns: repeat(2, 1fr);
 
     width: 100%;
+
+    @include sm-tablets {
+      grid-template-columns: 1fr;
+    }
   }
 
   .about__grid-title-right {
@@ -116,11 +169,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include sm-tablets {
+    height: 500px;
+    width: 100%;
+  }
+}
+
+.how-to-care-img {
+  width: 100%;
+  height: 100%;
+
+  @include sm-tablets {
+    height: 600px;
+    width: 100%;
+
+    img {
+      object-fit: cover;
+    }
+  }
 }
 
 .pink-img {
   width: 450px;
   height: 300px;
+
+  @include sm-tablets {
+    width: 300px;
+    height: 200px;
+  }
 }
 
 .proccess-container {
@@ -137,6 +214,10 @@
   grid-template-columns: repeat(3, 1fr);
 
   width: 100%;
+
+  @include sm-tablets {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
   .proccess-grid__img {
     width: 270px;
@@ -155,6 +236,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include sm-tablets {
+      margin: $spacing-16 0;
+    }
   }
 }
 
@@ -173,6 +258,12 @@
   font-size: $font-size-14;
 
   line-height: 116%;
+
+  @include sm-tablets {
+    max-width: 70%;
+    font-size: 12px;
+    margin-top: $spacing-16;
+  }
 }
 
 .about-steps-title {
@@ -251,12 +342,22 @@
 }
 
 .how-to-care {
-  margin: $spacing-128 0;
+  margin: $spacing-48 0;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
   width: 100%;
+
+  @include sm-tablets {
+    grid-template-columns: 1fr;
+
+    margin-bottom: 0;
+  }
+
+  div {
+    margin: $spacing-32 0;
+  }
 
   .how-to-care__title {
     text-align: center;
@@ -264,25 +365,16 @@
     max-width: 80%;
   }
 
-  .how-to-care__blue-container {
-    margin: $spacing-64 0;
-
-    div,
-    ul,
-    li,
-    strong,
-    p {
-      background-color: $cl-blue-primary;
-
-      color: $cl-background;
-    }
-  }
-
   .how-to-care__img-01 {
     margin: $spacing-80 0;
 
     height: 230px;
     width: 300px;
+
+    @include sm-tablets {
+      height: 160px;
+      width: 230px;
+    }
   }
 
   .how-to-care__img-02 {
@@ -290,11 +382,31 @@
 
     height: 220px;
     width: 300px;
+
+    @include sm-tablets {
+      margin: $spacing-32 0;
+      height: 160px;
+      width: 230px;
+    }
   }
 
-  .how-to-care__last-img {
-    height: 800px;
+  .how-to-care__title__container:nth-child(4) {
+    @include sm-tablets {
+      grid-row: 3;
+    }
+  }
+
+  .how-to-care__last-img-02 {
+    height: 700px;
     width: 100%;
+
+    @include sm-tablets {
+      height: 500px;
+
+      img {
+        object-fit: cover;
+      }
+    }
   }
 
   .how-to-care__title__container {
@@ -304,7 +416,7 @@
   }
 
   .how-to-care__ul__container {
-    height: 100%;
+    min-height: 350px;
     width: 100%;
 
     display: flex;
@@ -312,10 +424,17 @@
     justify-content: center;
     align-items: center;
 
+    @include sm-tablets {
+      margin: $spacing-32 0;
+    }
+
     ul {
       width: 80%;
+      list-style: inside;
 
-      list-style-position: inside;
+      @include sm-tablets {
+        margin: $spacing-8 0;
+      }
 
       li {
         padding: $spacing-12;
@@ -328,5 +447,55 @@
 
     width: $spacing-24;
     height: $spacing-24;
+  }
+}
+
+.last-part {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include sm-tablets {
+    grid-template-columns: 1fr;
+  }
+
+  .last-part__container-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0 $spacing-32;
+
+    color: $cl-background;
+    background-color: $cl-blue-primary;
+
+    @include sm-tablets {
+      height: 400px;
+    }
+  }
+
+  .last-part__ul {
+    list-style-position: inside;
+    background-color: $cl-blue-primary;
+
+    li,
+    strong,
+    p {
+      margin: $spacing-12 0;
+
+      color: $cl-background;
+      background-color: $cl-blue-primary;
+    }
+  }
+
+  color: $cl-background;
+  background-color: $cl-blue-primary;
+
+  .last-part--img {
+    height: 700px;
+    width: 100%;
+
+    @include sm-tablets {
+      height: 500px;
+    }
   }
 }

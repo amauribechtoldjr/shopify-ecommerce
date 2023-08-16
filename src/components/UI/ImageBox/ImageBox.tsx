@@ -37,7 +37,6 @@ const ImageBox: FC<ImageBox> = ({
   imgPlaceholder = PLACEHOLDER_IMAGE
 }) => {
   // const activeClassnames = classNames(s.image, classes)
-  console.log(src)
   return (
     <div className={s['image-box']}>
       <Image
