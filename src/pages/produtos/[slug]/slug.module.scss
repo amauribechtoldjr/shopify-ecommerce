@@ -2,22 +2,22 @@
 
 .container {
   padding: $spacing-48 $spacing-32;
-}
 
-.product-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: $spacing-48;
-  row-gap: $spacing-96;
+  .container__product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: $spacing-48;
+    row-gap: $spacing-96;
 
-  @include xm-tablets {
-    display: flex;
-    flex-direction: column;
+    @include xm-tablets {
+      display: flex;
+      flex-direction: column;
 
-    max-height: 60%;
+      max-height: 60%;
 
-    row-gap: $spacing-24;
-    column-gap: 0;
+      row-gap: $spacing-24;
+      column-gap: 0;
+    }
   }
 }
 

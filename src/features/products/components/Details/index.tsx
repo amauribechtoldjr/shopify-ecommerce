@@ -18,16 +18,16 @@ const Details = ({ product }: Props) => {
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>(null)
   const [isLoading, setLoading] = useState(false)
   const variant = getVariant(product, selectedOptions)
-  const { openSidebar } = useUI()
+  // const { openSidebar } = useUI()
 
   const addItem = useAddItem()
 
-  const handleAddOption = (option: ProductOptionValues, category) => {
-    setSelectedOptions({
-      ...selectedOptions,
-      [category]: option
-    })
-  }
+  // const handleAddOption = (option: ProductOptionValues, category) => {
+  //   setSelectedOptions({
+  //     ...selectedOptions,
+  //     [category]: option
+  //   })
+  // }
 
   const handleAddCart = async () => {
     try {
@@ -40,7 +40,6 @@ const Details = ({ product }: Props) => {
       await addItem(item)
 
       setLoading(false)
-      openSidebar()
     } catch {
       setLoading(false)
     }
