@@ -11,13 +11,12 @@ import s from './slug.module.scss'
 import Head from 'next/head'
 import { Container, BreadCrumb } from '@components/UI'
 import {
-  Card,
   Details,
   ImageSlider,
-  List,
   MoreProducts
 } from '@features/products/components'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { Product } from '@common/types/product'
 
 type Props = {
   slug: string
@@ -51,24 +50,45 @@ export const getStaticProps = async ({
   }
 }
 
+function searchSameTypeProducts(product: Product, products: Product[]) {
+  return products.filter(
+    productItem =>
+      productItem.type === product.type && productItem.id !== product.id
+  )
+}
+
+function addOtherProducts(
+  products: Product[],
+  filteredProducts: Product[],
+  product: Product,
+  quantity = 6
+) {
+  if (filteredProducts.length < quantity) {
+    products.forEach(productItem => {
+      if (filteredProducts.length < quantity && productItem.id !== product.id) {
+        filteredProducts.push(productItem)
+      }
+    })
+  }
+
+  return filteredProducts
+}
+
 const ProductSlug: PageProps<typeof getStaticProps> = ({ product }) => {
   const [otherProducts, setOtherProducts] = useState([])
 
-  useEffect(() => {
-    loadOtherProducts()
-  }, [])
-
-  const loadOtherProducts = async () => {
+  const loadOtherProducts = useCallback(async () => {
     const config = getConfig()
     const products = await getAllProducts(config)
 
-    const filteredProducts = products.filter(
-      productItem =>
-        productItem.type === product.type && productItem.id !== product.id
-    )
+    const sameTypeProducts = searchSameTypeProducts(product, products)
+    const finalList = addOtherProducts(products, sameTypeProducts, product, 8)
+    setOtherProducts(finalList)
+  }, [product])
 
-    setOtherProducts(filteredProducts)
-  }
+  useEffect(() => {
+    loadOtherProducts()
+  }, [loadOtherProducts])
 
   return (
     <div className={s.container}>
@@ -77,7 +97,7 @@ const ProductSlug: PageProps<typeof getStaticProps> = ({ product }) => {
         <title>Travesssa - {product.name}</title>
       </Head>
       <Container className={s['content']}>
-        <div className={s['product-container']}>
+        <div className={s['container__product']}>
           <div>
             <ImageSlider images={product.images} />
           </div>

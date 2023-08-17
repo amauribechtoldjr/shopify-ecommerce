@@ -21,7 +21,7 @@ const Navbar = () => {
   const { data } = useCart()
 
   return (
-    <Container>
+    <div className={s['navbar']}>
       <header className={s.header}>
         <Link href={ROUTES.HOME} passHref>
           <Logo classes={s['logo-img']} />
@@ -54,7 +54,7 @@ const Navbar = () => {
           </ul>
         </nav>
       </header>
-    </Container>
+    </div>
   )
 }
 
