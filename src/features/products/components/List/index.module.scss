@@ -1,6 +1,7 @@
 @import '@theme';
 
 .products-container {
+  display: inline;
   min-height: $h-container-content + $h-container-footer;
 }
 

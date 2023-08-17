@@ -1,0 +1,28 @@
+@import '@theme';
+
+.order {
+  z-index: 11;
+  margin: $spacing-32;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+
+  @include mobiles {
+    margin: $spacing-16 0;
+  }
+
+  .order__type {
+    cursor: pointer;
+    font-size: $font-size-18;
+    text-decoration: underline;
+  }
+
+  .order__type--active {
+    font-weight: 600;
+  }
+
+  .order__icon {
+    cursor: pointer;
+  }
+}

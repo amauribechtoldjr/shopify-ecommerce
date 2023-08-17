@@ -1,7 +1,12 @@
 @import '@theme';
 
 .container {
+  display: inline-block;
   padding: $spacing-32 0;
+
+  @include mobiles {
+    padding: $spacing-16 0;
+  }
 }
 
 .filter-text {

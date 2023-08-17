@@ -11,6 +11,7 @@ import StepsHero from './StepsHero/StepsHero'
 import ImageBox from './ImageBox/ImageBox'
 import Heading from './Heading/Heading'
 import CartSidebar from './CartSidebar/CartSidebar'
+import LineDropdown from './LineDropdown'
 
 export {
   Layout,
@@ -25,7 +26,8 @@ export {
   StepsHero,
   ImageBox,
   CartSidebar,
-  Heading
+  Heading,
+  LineDropdown
 }
 
 export { default as NavbarMenu } from './NavbarMenu'
