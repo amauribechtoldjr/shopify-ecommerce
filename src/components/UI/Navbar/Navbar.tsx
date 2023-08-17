@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Logo from '@components/icons/Logo'
 import { useUI } from '@hooks'
 import { Burguer, Snake } from '@components/icons'
-import Container from '../Container/Container'
 import { useCart } from '@framework/hooks'
 
 export const ROUTES = {
