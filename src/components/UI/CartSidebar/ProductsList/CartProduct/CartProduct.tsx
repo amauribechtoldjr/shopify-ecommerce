@@ -97,7 +97,7 @@ const CartProduct = ({
       </div>
       <div className={s['price-delete-container']}>
         <span>
-          {price} {currencyCode}
+          {currencyCode} {price}
         </span>
         <Trash onClick={handleRemoveItem} className={s['trash-icon']} />
       </div>

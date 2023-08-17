@@ -3,6 +3,7 @@ import CartProduct from './CartProduct/CartProduct'
 import { FC } from 'react'
 import s from './ProductsList.module.scss'
 import Heading from '@components/UI/Heading/Heading'
+import { getFormatedCurrency } from 'src/utils/getFormatedCurrency'
 
 interface Props {
   data: Cart
@@ -19,7 +20,10 @@ const ProductsList: FC<Props> = ({ data }) => {
       <ul className={s['list-container']}>
         {data?.lineItems.map((item: LineItem) => (
           <div key={item.id}>
-            <CartProduct item={item} currencyCode={data?.currency.code} />
+            <CartProduct
+              item={item}
+              currencyCode={getFormatedCurrency(data?.currency.code)}
+            />
             <CartListSeparator />
           </div>
         ))}

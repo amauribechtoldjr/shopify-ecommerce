@@ -3,6 +3,7 @@ import Button from '@components/UI/Button'
 import Heading from '@components/UI/Heading/Heading'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
+import { getFormatedCurrency } from 'src/utils/getFormatedCurrency'
 import s from './Checkout.module.scss'
 
 interface Props {
@@ -26,7 +27,9 @@ const Checkout: FC<Props> = ({ data }) => {
                 Subtotal
               </Heading>
               <span className={s.value}>
-                {data?.lineItemsSubTotalPrie} {data?.currency.code}
+                {`${getFormatedCurrency(data?.currency.code)} ${
+                  data?.lineItemsSubTotalPrice
+                }`}
               </span>
             </li>
             <li>
@@ -44,7 +47,9 @@ const Checkout: FC<Props> = ({ data }) => {
             <li>
               <Heading as="h3">Total</Heading>
               <span>
-                {data?.totalPrice} {data?.currency.code}
+                {`${getFormatedCurrency(data?.currency.code)} ${
+                  data?.totalPrice
+                }`}
               </span>
             </li>
           </ul>

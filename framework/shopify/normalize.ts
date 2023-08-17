@@ -142,7 +142,7 @@ export function normalizeCart(checkout: Checkout): Cart {
       code: checkout.totalPriceV2.currencyCode
     },
     taxesIncluded: checkout.taxesIncluded,
-    lineItemsSubTotalPrie: +checkout.subtotalPriceV2.amount,
+    lineItemsSubTotalPrice: +checkout.subtotalPriceV2.amount,
     totalPrice: checkout.totalPriceV2.amount,
     lineItems: checkout.lineItems?.edges?.map(normalizeLineItem),
     discounts: []
