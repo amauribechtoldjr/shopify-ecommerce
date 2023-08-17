@@ -9,6 +9,7 @@ import Box from '@components/icons/Box'
 import Star from '@components/icons/Star'
 import { useUI } from '@hooks'
 import { Button } from '@components/UI'
+import { getFormatedCurrency } from 'src/utils/getFormatedCurrency'
 
 type Props = {
   product: Product
@@ -49,7 +50,9 @@ const Details = ({ product }: Props) => {
     <section className={s.container}>
       <div>
         <Heading as="h3">{product.name}</Heading>
-        <p className={s['product-price']}>{`R$ ${product.price.value}`}</p>
+        <p className={s['product-price']}>{`${getFormatedCurrency(
+          product.price.currencyCode
+        )} ${product.price.value}`}</p>
       </div>
       <div className={s['detail-box']}>
         <Button onClick={handleAddCart} disabled={isLoading}>

@@ -25,7 +25,7 @@ export interface Cart {
   }
   taxesIncluded: boolean
   // discounts excluded
-  lineItemsSubTotalPrie: number
+  lineItemsSubTotalPrice: number
   // discounts included
   totalPrice: number
   lineItems: LineItem[]

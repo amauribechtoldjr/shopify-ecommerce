@@ -7,6 +7,7 @@ import { Ghost } from '@components/icons'
 import { ROUTES } from '@components/UI/Navbar/Navbar'
 import { ImageBox } from '@components/UI'
 import { getFirstLetterUppercase } from 'src/utils'
+import { getFormatedCurrency } from 'src/utils/getFormatedCurrency'
 
 interface Props {
   product: Product
@@ -41,7 +42,9 @@ const Card: FC<Props> = ({ product }) => {
                 {getFirstLetterUppercase(product.name.toLowerCase())}
               </Heading>
             </div>
-            <span className={s['product-price']}>R$ {product.price.value}</span>
+            <span className={s['product-price']}>{`${getFormatedCurrency(
+              product.price.currencyCode
+            )} ${product.price.value}`}</span>
           </div>
           <button className={s['buy-button']}>
             <span>COMPRAR!</span>
