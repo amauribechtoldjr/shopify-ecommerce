@@ -20,14 +20,14 @@ const CartSidebar = () => {
     [s['modal-background-container']]: isSidebarOpen
   })
 
-  const handleCloseOutsideSidebar = () => () => {
-    // closeSidebar()
-  }
+  // const handleCloseOutsideSidebar = () => () => {
+  //   closeSidebar()
+  // }
 
   return (
     <div
       className={modalContainerClassnames}
-      onClick={handleCloseOutsideSidebar()}
+      // onClick={handleCloseOutsideSidebar()}
     >
       <section className={sidebarStyles}>
         {isSidebarOpen ? (
