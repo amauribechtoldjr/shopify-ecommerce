@@ -27,7 +27,9 @@
 .img-box {
   cursor: pointer;
 
-  max-width: 550px;
+  position: relative;
+
+  width: 550px;
   height: 550px;
 
   position: relative;
@@ -53,6 +55,51 @@
     max-width: 100%;
 
     border: 1px solid $cl-text;
+  }
+
+  .img-box__mouse-zoom-box {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 1px solid $cl-blue-primary;
+    background-color: #00007b30;
+    opacity: 0;
+  }
+
+  .img-box__mouse-zoom-box--active {
+    opacity: 1;
+  }
+
+  .img-box__image-zoom-box {
+    position: absolute;
+    top: 0;
+    left: 105%;
+    width: 550px;
+    height: 550px;
+    border: 2px solid $cl-text;
+    transform: scale(0.5);
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+
+    @include tablets {
+      height: 480px;
+      max-width: 480px;
+    }
+
+    @include sm-tablets {
+      height: 410px;
+      max-width: 410px;
+    }
+
+    @include xm-tablets {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .img-box__image-zoom-box--active {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
