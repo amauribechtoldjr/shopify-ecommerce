@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, forwardRef } from 'react'
 import s from './ImageBox.module.scss'
 
-interface ImageBox {
+interface ImageBox extends React.HTMLAttributes<HTMLImageElement> {
   src: string
   alt: string
   fill?: boolean
@@ -28,30 +28,42 @@ const myLoader = ({ src, width, quality }) => {
   return `${newSrc}`
 }
 
-const ImageBox: FC<ImageBox> = ({
-  src,
-  alt,
-  classes,
-  fill = true,
-  vercelLoader = true,
-  imgPlaceholder = PLACEHOLDER_IMAGE
-}) => {
-  // const activeClassnames = classNames(s.image, classes)
-  return (
-    <div className={s['image-box']}>
-      <Image
-        // loader={vercelLoader ? myLoader : null}
-        src={src ?? imgPlaceholder}
-        alt={alt}
-        quality="100"
-        className={classes}
-        placeholder="blur"
-        blurDataURL={imgPlaceholder}
-        fill={fill}
-        sizes="100vw"
-      />
-    </div>
-  )
-}
+const ImageBox = forwardRef<HTMLImageElement, ImageBox>(
+  (
+    {
+      src,
+      alt,
+      classes,
+      fill = true,
+      // vercelLoader = true,
+      imgPlaceholder = PLACEHOLDER_IMAGE,
+      onMouseEnter,
+      onMouseMove
+    },
+    ref
+  ) => {
+    // const activeClassnames = classNames(s.image, classes)
+    return (
+      <div className={s['image-box']}>
+        <Image
+          // loader={vercelLoader ? myLoader : null}
+          ref={ref}
+          src={src ?? imgPlaceholder}
+          alt={alt}
+          quality="100"
+          className={classes}
+          placeholder="blur"
+          blurDataURL={imgPlaceholder}
+          fill={fill}
+          sizes="100vw"
+          onMouseEnter={onMouseEnter}
+          onMouseMove={onMouseMove}
+        />
+      </div>
+    )
+  }
+)
+
+ImageBox.displayName = 'ImageBox'
 
 export default ImageBox
