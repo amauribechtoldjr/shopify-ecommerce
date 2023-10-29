@@ -105,7 +105,7 @@ const ProductSlug: PageProps<typeof getStaticProps> = ({ product }) => {
             <Details product={product} />
           </div>
         </div>
-        <MoreProducts products={otherProducts} />
+        {/* <MoreProducts products={otherProducts} /> */}
       </Container>
     </div>
   )
